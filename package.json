@@ -1,0 +1,68 @@
+{
+    "name": "@dreamit/graphql-testing",
+    "version": "0.1.0",
+    "description": "Test helper and functions to test GraphQL logic.",
+    "scripts": {
+        "build": "tsup-node",
+        "check": "tsc --noEmit --pretty",
+        "checkformat": "prettier --check .",
+        "format": "prettier --cache --write .",
+        "lint": "oxlint -c .oxlintrc.json",
+        "lintfix": "oxlint -c .oxlintrc.json --fix",
+        "mutationtest": "stryker run",
+        "mutationtestCI": "stryker run --incremental --incrementalFile stryker-incremental.json",
+        "prepack": "npm run build",
+        "test": "vitest run --coverage"
+    },
+    "type": "module",
+    "main": "build/index.cjs",
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "import": "./build/index.js",
+            "require": "./build/index.cjs",
+            "default": "./build/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dreamit-de/graphql-testing.git"
+    },
+    "keywords": [
+        "GraphQL",
+        "server"
+    ],
+    "author": "dreamIT",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dreamit-de/graphql-testing/issues"
+    },
+    "homepage": "https://github.com/dreamit-de/graphql-testing#readme",
+    "devDependencies": {
+        "@fast-check/vitest": "0.1.4",
+        "@sgohlke/stryker-log-ignorer": "2.0.2",
+        "@stryker-mutator/vitest-runner": "8.7.1",
+        "@types/content-type": "1.1.8",
+        "@types/node": "22.10.2",
+        "@vitest/coverage-v8": "2.1.8",
+        "fast-check": "3.23.2",
+        "oxlint": "0.15.3",
+        "prettier": "3.4.2",
+        "prettier-plugin-organize-imports": "4.1.0",
+        "tsup": "8.3.5",
+        "typescript": "5.7.2",
+        "vite-tsconfig-paths": "5.1.4",
+        "vitest": "2.1.8"
+    },
+    "peerDependencies": {
+        "@dreamit/funpara": "^1.0.0",
+        "@dreamit/graphql-server-base": "^2.5.0",
+        "graphql": "^16.0.0"
+    },
+    "engines": {
+        "node": ">=v6.13.0"
+    }
+}

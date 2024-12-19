@@ -1,0 +1,11 @@
+name: Install and test graphql-testing
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  graphqltesting:
+    uses: dreamit-de/workflows/.github/workflows/nodejs-ci-libs.yml@main
+    with:
+      runMutationTests: true

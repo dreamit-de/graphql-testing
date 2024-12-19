@@ -1,0 +1,9 @@
+/.idea/
+/node_modules/
+/test-report/
+/coverage/
+/build/
+*.tgz
+# stryker temp files
+.stryker-tmp
+/reports/
