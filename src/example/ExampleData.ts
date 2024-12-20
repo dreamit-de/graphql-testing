@@ -11,6 +11,10 @@ export interface User {
     userName: string
 }
 
+interface LoginData {
+    jwt: string
+}
+
 export interface LogoutResult {
     result: string
 }
@@ -28,6 +32,7 @@ export const userVariables = '{"id201":"1"}'
 export const usersQuery = 'query users{ users { userId userName } }'
 export const usersQueryWithUnknownField =
     'query users{ users { userId userName hobby } }'
+export const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'
 export const returnErrorQuery = 'query returnError{ returnError { userId } }'
 export const loginMutation =
     'mutation login{ login(userName:"magic_man", password:"123456") { jwt } }'
@@ -59,6 +64,7 @@ export const userSchema = buildSchema(`
   }
   
   type Query {
+    fetchError: User
     returnError: User 
     users: [User]
     user(id: String!): User
@@ -84,6 +90,17 @@ export const userSchema = buildSchema(`
 `)
 
 export const userSchemaResolvers = {
+    fetchError(): User {
+        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})
+    },
+    login(input: unknown, context: Record<string, unknown>): LoginData {
+        let jwtValue = 'jwt-'
+        if (context.authHeader) {
+            jwtValue += context.authHeader
+            context.jwt = jwtValue
+        }
+        return { jwt: jwtValue }
+    },
     logout(): LogoutResult {
         return { result: 'Goodbye!' }
     },
