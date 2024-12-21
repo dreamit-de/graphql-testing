@@ -4,7 +4,9 @@ export {
     aggregateErrorQuery,
     aggregateErrorResponse,
     coercedNullValueError,
+    coercedNullValueErrorQuery,
     fetchErrorQuery,
+    fetchTimeoutError,
     initialSchemaWithOnlyDescription,
     introspectionQuery,
     loginMutation,
@@ -12,6 +14,7 @@ export {
     logoutMutation,
     returnErrorQuery,
     sdlNotFoundResponse,
+    sdlQuery,
     sensitiveDataErrorQuery,
     sensitiveDataInError,
     userOne,
@@ -26,11 +29,8 @@ export {
     usersRequest,
     usersRequestWithoutOperationName,
     usersRequestWithoutVariables,
-    validationErrorQuery,
-    coercedNullValueErrorQuery,
-    fetchTimeoutError,
     validationErrorMessage,
-    sdlQuery,
+    validationErrorQuery,
 } from './example/ExampleData'
 
 export { JsonTestLogger } from './logger/JsonTestLogger'
