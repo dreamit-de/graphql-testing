@@ -26,6 +26,48 @@ export const initialSchemaWithOnlyDescription = new GraphQLSchema({
 export const userOne: User = { userId: '1', userName: 'UserOne' }
 export const userTwo: User = { userId: '2', userName: 'UserTwo' }
 
+export const sdlNotFoundResponse = `{
+    "errors":[{"message":"Cannot query field \\"_service\\" on type \\"Query\\"."
+    ,"locations":[{"line":1,"column":30}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}]}`
+
+export const sensitiveDataInError =
+    'invalid value : invalid value : invalid value : ' +
+    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'
+export const coercedNullValueError =
+    "Variable 'userName' has an invalid value: " +
+    "Variable 'userName' has coerced Null value for NonNull type 'String!'"
+
+export const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'
+export const validationErrorMessage =
+    'Cannot query field "userId" on type "User".'
+
+export const aggregateErrorResponse = {
+    errors: [
+        new GraphQLError('The first error!, The second error!', {
+            originalError: {
+                errors: [
+                    new GraphQLError('The first error!', {}),
+                    new GraphQLError('The second error!', {}),
+                ],
+                message: 'The first error!, The second error!',
+                name: 'AggregateError',
+            } as AggregateError,
+        }),
+    ],
+}
+
+const validationError = new GraphQLError(validationErrorMessage, {
+    extensions: {
+        code: 'GRAPHQL_VALIDATION_FAILED',
+        serviceName: 'user',
+    },
+})
+
+export const aggregateErrorQuery =
+    'query AggregateError { aggregateError { id type } }'
+
+export const coercedNullValueErrorQuery =
+    'mutation CoercedNullValueError { coercedNullValueError(userName:"magic_man", password:"123456") { jwt } }'
 export const userQuery =
     'query user($id201: String!){ user(id: $id201) { userId userName } }'
 export const userVariables = '{"id201":"1"}'
@@ -38,7 +80,12 @@ export const loginMutation =
     'mutation login{ login(userName:"magic_man", password:"123456") { jwt } }'
 export const logoutMutation = 'mutation logout{ logout { result } }'
 export const introspectionQuery =
-    'query introspection{ __schema { queryType { name } } }'
+    'query introspection{ __schema { queryType { name } mutationType { name } } }'
+export const sensitiveDataErrorQuery =
+    'query SensitiveDataError { sensitiveDataError { userId } }'
+export const sdlQuery = 'query GetSDL { _service { sdl } }'
+export const validationErrorQuery =
+    'query ValidationError { validationError { userId } }'
 
 export const usersRequest: GraphQLRequestInfo = {
     operationName: 'users',
@@ -57,22 +104,29 @@ export const usersRequestWithoutVariables: GraphQLRequestInfo = {
     query: usersRequest.query,
 }
 
-export const userSchema = buildSchema(`
-  schema {
+export const userSchemaSDL = `schema {
     query: Query
     mutation: Mutation
   }
   
   type Query {
+    _service: _Service
     fetchError: User
-    returnError: User 
+    returnError: User
+    sensitiveDataError: User
     users: [User]
     user(id: String!): User
+    validationError: User
   }
   
   type Mutation {
+    coercedNullValueError(userName: String, password: String): LoginData
     login(userName: String, password: String): LoginData
     logout: LogoutResult
+  }
+
+  type _Service {
+    sdl: String
   }
   
   type User {
@@ -87,15 +141,23 @@ export const userSchema = buildSchema(`
   type LogoutResult {
     result: String
   }
-`)
+`
+
+export const userSchema = buildSchema(userSchemaSDL)
 
 export const userSchemaResolvers = {
+    _service(): { sdl: string } {
+        return { sdl: userSchemaSDL }
+    },
+    coercedNullValueError(_input: unknown): LoginData {
+        throw new GraphQLError(coercedNullValueError, {})
+    },
     fetchError(): User {
         throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})
     },
     login(input: unknown, context: Record<string, unknown>): LoginData {
         let jwtValue = 'jwt-'
-        if (context.authHeader) {
+        if (context && context.authHeader) {
             jwtValue += context.authHeader
             context.jwt = jwtValue
         }
@@ -106,6 +168,9 @@ export const userSchemaResolvers = {
     },
     returnError(): User {
         throw new GraphQLError('Something went wrong!', {})
+    },
+    sensitiveDataError(): User {
+        throw new GraphQLError(sensitiveDataInError, {})
     },
     user(input: { id: string }): User {
         switch (input.id) {
@@ -126,19 +191,7 @@ export const userSchemaResolvers = {
     users(): User[] {
         return [userOne, userTwo]
     },
-}
-
-export const multipleErrorResponse = {
-    errors: [
-        new GraphQLError('The first error!, The second error!', {
-            originalError: {
-                errors: [
-                    new GraphQLError('The first error!', {}),
-                    new GraphQLError('The second error!', {}),
-                ],
-                message: 'The first error!, The second error!',
-                name: 'AggregateError',
-            } as AggregateError,
-        }),
-    ],
+    validationError(): User {
+        throw validationError
+    },
 }
