@@ -3975,6 +3975,31 @@
           }
         },
         {
+          "id": "162",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 27
+            },
+            "start": {
+              "column": 31,
+              "line": 20
+            }
+          }
+        },
+        {
           "id": "163",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
@@ -4300,6 +4325,31 @@
           }
         },
         {
+          "id": "176",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to strictly equal {}",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 43
+            },
+            "start": {
+              "column": 36,
+              "line": 29
+            }
+          }
+        },
+        {
           "id": "177",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
@@ -4321,6 +4371,181 @@
             "start": {
               "column": 44,
               "line": 30
+            }
+          }
+        },
+        {
+          "id": "178",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected undefined to strictly equal {}",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 13,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "179",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 13,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "180",
+          "mutatorName": "LogicalOperator",
+          "replacement": "response || response instanceof Buffer === false",
+          "statusReason": "expected undefined to strictly equal {}",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 13,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "181",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected Buffer[ 72, 101, 108, 108, 111, …(-30) ] to strictly equal {}",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 25,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "182",
+          "mutatorName": "EqualityOperator",
+          "replacement": "response instanceof Buffer !== false",
+          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 25,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "183",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "true",
+          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 61,
+              "line": 31
+            },
+            "start": {
+              "column": 56,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "184",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 33
+            },
+            "start": {
+              "column": 63,
+              "line": 31
             }
           }
         },
@@ -4475,231 +4700,6 @@
             "start": {
               "column": 17,
               "line": 39
-            }
-          }
-        },
-        {
-          "id": "181",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "expected Buffer[ 72, 101, 108, 108, 111, …(-30) ] to strictly equal {}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 25,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "180",
-          "mutatorName": "LogicalOperator",
-          "replacement": "response || response instanceof Buffer === false",
-          "statusReason": "expected undefined to strictly equal {}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 13,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "178",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "expected undefined to strictly equal {}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 13,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "162",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 27
-            },
-            "start": {
-              "column": 31,
-              "line": 20
-            }
-          }
-        },
-        {
-          "id": "176",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to strictly equal {}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 43
-            },
-            "start": {
-              "column": 36,
-              "line": 29
-            }
-          }
-        },
-        {
-          "id": "179",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 13,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "183",
-          "mutatorName": "BooleanLiteral",
-          "replacement": "true",
-          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 56,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "182",
-          "mutatorName": "EqualityOperator",
-          "replacement": "response instanceof Buffer !== false",
-          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 61,
-              "line": 31
-            },
-            "start": {
-              "column": 25,
-              "line": 31
-            }
-          }
-        },
-        {
-          "id": "184",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 33
-            },
-            "start": {
-              "column": 63,
-              "line": 31
             }
           }
         }

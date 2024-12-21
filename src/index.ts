@@ -27,6 +27,10 @@ export {
     usersRequestWithoutOperationName,
     usersRequestWithoutVariables,
     validationErrorQuery,
+    coercedNullValueErrorQuery,
+    fetchTimeoutError,
+    validationErrorMessage,
+    sdlQuery,
 } from './example/ExampleData'
 
 export { JsonTestLogger } from './logger/JsonTestLogger'
