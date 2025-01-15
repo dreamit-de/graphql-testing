@@ -11,7 +11,7 @@ export interface User {
     userName: string
 }
 
-interface LoginData {
+export interface LoginData {
     jwt: string
 }
 
@@ -56,7 +56,7 @@ export const aggregateErrorResponse = {
     ],
 }
 
-const validationError = new GraphQLError(validationErrorMessage, {
+export const validationError = new GraphQLError(validationErrorMessage, {
     extensions: {
         code: 'GRAPHQL_VALIDATION_FAILED',
         serviceName: 'user',
@@ -104,6 +104,9 @@ export const usersRequestWithoutVariables: GraphQLRequestInfo = {
     query: usersRequest.query,
 }
 
+/**
+ * Example GraphQL schema SDL for a fictional user service.
+ */
 export const userSchemaSDL = `schema {
     query: Query
     mutation: Mutation
@@ -143,8 +146,14 @@ export const userSchemaSDL = `schema {
   }
 `
 
+/**
+ * Example GraphQL schema for a fictional user service.
+ */
 export const userSchema = buildSchema(userSchemaSDL)
 
+/**
+ * Schema resolvers for the fictional user service.
+ */
 export const userSchemaResolvers = {
     _service(): { sdl: string } {
         return { sdl: userSchemaSDL }

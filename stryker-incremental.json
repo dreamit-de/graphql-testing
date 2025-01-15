@@ -378,7 +378,7 @@
               "line": 64
             },
             "start": {
-              "column": 66,
+              "column": 73,
               "line": 59
             }
           }
@@ -831,11 +831,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 144
+              "line": 147
             },
             "start": {
               "column": 30,
-              "line": 107
+              "line": 110
             }
           }
         },
@@ -850,11 +850,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 197
+              "line": 206
             },
             "start": {
               "column": 36,
-              "line": 148
+              "line": 157
             }
           }
         },
@@ -875,11 +875,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 151
+              "line": 160
             },
             "start": {
               "column": 33,
-              "line": 149
+              "line": 158
             }
           }
         },
@@ -900,11 +900,11 @@
           "location": {
             "end": {
               "column": 38,
-              "line": 150
+              "line": 159
             },
             "start": {
               "column": 16,
-              "line": 150
+              "line": 159
             }
           }
         },
@@ -925,11 +925,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 154
+              "line": 163
             },
             "start": {
               "column": 55,
-              "line": 152
+              "line": 161
             }
           }
         },
@@ -950,11 +950,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 157
+              "line": 166
             },
             "start": {
               "column": 24,
-              "line": 155
+              "line": 164
             }
           }
         },
@@ -975,11 +975,11 @@
           "location": {
             "end": {
               "column": 76,
-              "line": 156
+              "line": 165
             },
             "start": {
               "column": 32,
-              "line": 156
+              "line": 165
             }
           }
         },
@@ -1000,11 +1000,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 165
+              "line": 174
             },
             "start": {
               "column": 72,
-              "line": 158
+              "line": 167
             }
           }
         },
@@ -1025,11 +1025,11 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 159
+              "line": 168
             },
             "start": {
               "column": 24,
-              "line": 159
+              "line": 168
             }
           }
         },
@@ -1050,11 +1050,11 @@
           "location": {
             "end": {
               "column": 42,
-              "line": 160
+              "line": 169
             },
             "start": {
               "column": 13,
-              "line": 160
+              "line": 169
             }
           }
         },
@@ -1075,11 +1075,11 @@
           "location": {
             "end": {
               "column": 42,
-              "line": 160
+              "line": 169
             },
             "start": {
               "column": 13,
-              "line": 160
+              "line": 169
             }
           }
         },
@@ -1100,11 +1100,11 @@
           "location": {
             "end": {
               "column": 42,
-              "line": 160
+              "line": 169
             },
             "start": {
               "column": 13,
-              "line": 160
+              "line": 169
             }
           }
         },
@@ -1125,11 +1125,11 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 163
+              "line": 172
             },
             "start": {
               "column": 44,
-              "line": 160
+              "line": 169
             }
           }
         },
@@ -1150,11 +1150,11 @@
           "location": {
             "end": {
               "column": 43,
-              "line": 161
+              "line": 170
             },
             "start": {
               "column": 13,
-              "line": 161
+              "line": 170
             }
           }
         },
@@ -1175,11 +1175,11 @@
           "location": {
             "end": {
               "column": 33,
-              "line": 164
+              "line": 173
             },
             "start": {
               "column": 16,
-              "line": 164
+              "line": 173
             }
           }
         },
@@ -1200,11 +1200,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 168
+              "line": 177
             },
             "start": {
               "column": 28,
-              "line": 166
+              "line": 175
             }
           }
         },
@@ -1225,11 +1225,11 @@
           "location": {
             "end": {
               "column": 38,
-              "line": 167
+              "line": 176
             },
             "start": {
               "column": 16,
-              "line": 167
+              "line": 176
             }
           }
         },
@@ -1250,11 +1250,11 @@
           "location": {
             "end": {
               "column": 36,
-              "line": 167
+              "line": 176
             },
             "start": {
               "column": 26,
-              "line": 167
+              "line": 176
             }
           }
         },
@@ -1275,11 +1275,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 171
+              "line": 180
             },
             "start": {
               "column": 25,
-              "line": 169
+              "line": 178
             }
           }
         },
@@ -1300,11 +1300,11 @@
           "location": {
             "end": {
               "column": 55,
-              "line": 170
+              "line": 179
             },
             "start": {
               "column": 32,
-              "line": 170
+              "line": 179
             }
           }
         },
@@ -1325,11 +1325,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 174
+              "line": 183
             },
             "start": {
               "column": 32,
-              "line": 172
+              "line": 181
             }
           }
         },
@@ -1350,11 +1350,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 190
+              "line": 199
             },
             "start": {
               "column": 39,
-              "line": 175
+              "line": 184
             }
           }
         },
@@ -1375,11 +1375,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 179
+              "line": 188
             },
             "start": {
               "column": 13,
-              "line": 177
+              "line": 186
             }
           }
         },
@@ -1400,11 +1400,11 @@
           "location": {
             "end": {
               "column": 21,
-              "line": 177
+              "line": 186
             },
             "start": {
               "column": 18,
-              "line": 177
+              "line": 186
             }
           }
         },
@@ -1425,11 +1425,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 179
+              "line": 188
             },
             "start": {
               "column": 23,
-              "line": 177
+              "line": 186
             }
           }
         },
@@ -1450,11 +1450,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 182
+              "line": 191
             },
             "start": {
               "column": 13,
-              "line": 180
+              "line": 189
             }
           }
         },
@@ -1475,11 +1475,11 @@
           "location": {
             "end": {
               "column": 21,
-              "line": 180
+              "line": 189
             },
             "start": {
               "column": 18,
-              "line": 180
+              "line": 189
             }
           }
         },
@@ -1500,11 +1500,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 182
+              "line": 191
             },
             "start": {
               "column": 23,
-              "line": 180
+              "line": 189
             }
           }
         },
@@ -1525,11 +1525,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 188
+              "line": 197
             },
             "start": {
               "column": 13,
-              "line": 183
+              "line": 192
             }
           }
         },
@@ -1550,11 +1550,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 188
+              "line": 197
             },
             "start": {
               "column": 22,
-              "line": 183
+              "line": 192
             }
           }
         },
@@ -1575,11 +1575,11 @@
           "location": {
             "end": {
               "column": 64,
-              "line": 185
+              "line": 194
             },
             "start": {
               "column": 21,
-              "line": 185
+              "line": 194
             }
           }
         },
@@ -1600,11 +1600,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 193
+              "line": 202
             },
             "start": {
               "column": 21,
-              "line": 191
+              "line": 200
             }
           }
         },
@@ -1625,11 +1625,11 @@
           "location": {
             "end": {
               "column": 34,
-              "line": 192
+              "line": 201
             },
             "start": {
               "column": 16,
-              "line": 192
+              "line": 201
             }
           }
         },
@@ -1650,16 +1650,16 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 196
+              "line": 205
             },
             "start": {
               "column": 29,
-              "line": 194
+              "line": 203
             }
           }
         }
       ],
-      "source": "import {\n    AggregateError,\n    GraphQLRequestInfo,\n} from '@dreamit/graphql-server-base'\nimport { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'\n\n// Contains example schemas and data that can be used across tests\n\nexport interface User {\n    userId: string\n    userName: string\n}\n\ninterface LoginData {\n    jwt: string\n}\n\nexport interface LogoutResult {\n    result: string\n}\n\nexport const initialSchemaWithOnlyDescription = new GraphQLSchema({\n    description: 'initial',\n})\n\nexport const userOne: User = { userId: '1', userName: 'UserOne' }\nexport const userTwo: User = { userId: '2', userName: 'UserTwo' }\n\nexport const sdlNotFoundResponse = `{\n    \"errors\":[{\"message\":\"Cannot query field \\\\\"_service\\\\\" on type \\\\\"Query\\\\\".\"\n    ,\"locations\":[{\"line\":1,\"column\":30}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}}]}`\n\nexport const sensitiveDataInError =\n    'invalid value : invalid value : invalid value : ' +\n    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'\nexport const coercedNullValueError =\n    \"Variable 'userName' has an invalid value: \" +\n    \"Variable 'userName' has coerced Null value for NonNull type 'String!'\"\n\nexport const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'\nexport const validationErrorMessage =\n    'Cannot query field \"userId\" on type \"User\".'\n\nexport const aggregateErrorResponse = {\n    errors: [\n        new GraphQLError('The first error!, The second error!', {\n            originalError: {\n                errors: [\n                    new GraphQLError('The first error!', {}),\n                    new GraphQLError('The second error!', {}),\n                ],\n                message: 'The first error!, The second error!',\n                name: 'AggregateError',\n            } as AggregateError,\n        }),\n    ],\n}\n\nconst validationError = new GraphQLError(validationErrorMessage, {\n    extensions: {\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    },\n})\n\nexport const aggregateErrorQuery =\n    'query AggregateError { aggregateError { id type } }'\n\nexport const coercedNullValueErrorQuery =\n    'mutation CoercedNullValueError { coercedNullValueError(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const userQuery =\n    'query user($id201: String!){ user(id: $id201) { userId userName } }'\nexport const userVariables = '{\"id201\":\"1\"}'\nexport const usersQuery = 'query users{ users { userId userName } }'\nexport const usersQueryWithUnknownField =\n    'query users{ users { userId userName hobby } }'\nexport const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'\nexport const returnErrorQuery = 'query returnError{ returnError { userId } }'\nexport const loginMutation =\n    'mutation login{ login(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const logoutMutation = 'mutation logout{ logout { result } }'\nexport const introspectionQuery =\n    'query introspection{ __schema { queryType { name } mutationType { name } } }'\nexport const sensitiveDataErrorQuery =\n    'query SensitiveDataError { sensitiveDataError { userId } }'\nexport const sdlQuery = 'query GetSDL { _service { sdl } }'\nexport const validationErrorQuery =\n    'query ValidationError { validationError { userId } }'\n\nexport const usersRequest: GraphQLRequestInfo = {\n    operationName: 'users',\n    query: usersQuery,\n}\n\nexport const loginRequest: GraphQLRequestInfo = {\n    operationName: 'login',\n    query: loginMutation,\n}\nexport const usersRequestWithoutOperationName: GraphQLRequestInfo = {\n    query: usersRequest.query,\n}\nexport const usersRequestWithoutVariables: GraphQLRequestInfo = {\n    operationName: usersRequest.operationName,\n    query: usersRequest.query,\n}\n\nexport const userSchemaSDL = `schema {\n    query: Query\n    mutation: Mutation\n  }\n  \n  type Query {\n    _service: _Service\n    fetchError: User\n    returnError: User\n    sensitiveDataError: User\n    users: [User]\n    user(id: String!): User\n    validationError: User\n  }\n  \n  type Mutation {\n    coercedNullValueError(userName: String, password: String): LoginData\n    login(userName: String, password: String): LoginData\n    logout: LogoutResult\n  }\n\n  type _Service {\n    sdl: String\n  }\n  \n  type User {\n    userId: String\n    userName: String\n  }\n  \n  type LoginData {\n    jwt: String\n  }\n  \n  type LogoutResult {\n    result: String\n  }\n`\n\nexport const userSchema = buildSchema(userSchemaSDL)\n\nexport const userSchemaResolvers = {\n    _service(): { sdl: string } {\n        return { sdl: userSchemaSDL }\n    },\n    coercedNullValueError(_input: unknown): LoginData {\n        throw new GraphQLError(coercedNullValueError, {})\n    },\n    fetchError(): User {\n        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})\n    },\n    login(input: unknown, context: Record<string, unknown>): LoginData {\n        let jwtValue = 'jwt-'\n        if (context && context.authHeader) {\n            jwtValue += context.authHeader\n            context.jwt = jwtValue\n        }\n        return { jwt: jwtValue }\n    },\n    logout(): LogoutResult {\n        return { result: 'Goodbye!' }\n    },\n    returnError(): User {\n        throw new GraphQLError('Something went wrong!', {})\n    },\n    sensitiveDataError(): User {\n        throw new GraphQLError(sensitiveDataInError, {})\n    },\n    user(input: { id: string }): User {\n        switch (input.id) {\n            case '1': {\n                return userOne\n            }\n            case '2': {\n                return userTwo\n            }\n            default: {\n                throw new GraphQLError(\n                    `User for userid=${input.id} was not found`,\n                    {},\n                )\n            }\n        }\n    },\n    users(): User[] {\n        return [userOne, userTwo]\n    },\n    validationError(): User {\n        throw validationError\n    },\n}\n"
+      "source": "import {\n    AggregateError,\n    GraphQLRequestInfo,\n} from '@dreamit/graphql-server-base'\nimport { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'\n\n// Contains example schemas and data that can be used across tests\n\nexport interface User {\n    userId: string\n    userName: string\n}\n\nexport interface LoginData {\n    jwt: string\n}\n\nexport interface LogoutResult {\n    result: string\n}\n\nexport const initialSchemaWithOnlyDescription = new GraphQLSchema({\n    description: 'initial',\n})\n\nexport const userOne: User = { userId: '1', userName: 'UserOne' }\nexport const userTwo: User = { userId: '2', userName: 'UserTwo' }\n\nexport const sdlNotFoundResponse = `{\n    \"errors\":[{\"message\":\"Cannot query field \\\\\"_service\\\\\" on type \\\\\"Query\\\\\".\"\n    ,\"locations\":[{\"line\":1,\"column\":30}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}}]}`\n\nexport const sensitiveDataInError =\n    'invalid value : invalid value : invalid value : ' +\n    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'\nexport const coercedNullValueError =\n    \"Variable 'userName' has an invalid value: \" +\n    \"Variable 'userName' has coerced Null value for NonNull type 'String!'\"\n\nexport const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'\nexport const validationErrorMessage =\n    'Cannot query field \"userId\" on type \"User\".'\n\nexport const aggregateErrorResponse = {\n    errors: [\n        new GraphQLError('The first error!, The second error!', {\n            originalError: {\n                errors: [\n                    new GraphQLError('The first error!', {}),\n                    new GraphQLError('The second error!', {}),\n                ],\n                message: 'The first error!, The second error!',\n                name: 'AggregateError',\n            } as AggregateError,\n        }),\n    ],\n}\n\nexport const validationError = new GraphQLError(validationErrorMessage, {\n    extensions: {\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    },\n})\n\nexport const aggregateErrorQuery =\n    'query AggregateError { aggregateError { id type } }'\n\nexport const coercedNullValueErrorQuery =\n    'mutation CoercedNullValueError { coercedNullValueError(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const userQuery =\n    'query user($id201: String!){ user(id: $id201) { userId userName } }'\nexport const userVariables = '{\"id201\":\"1\"}'\nexport const usersQuery = 'query users{ users { userId userName } }'\nexport const usersQueryWithUnknownField =\n    'query users{ users { userId userName hobby } }'\nexport const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'\nexport const returnErrorQuery = 'query returnError{ returnError { userId } }'\nexport const loginMutation =\n    'mutation login{ login(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const logoutMutation = 'mutation logout{ logout { result } }'\nexport const introspectionQuery =\n    'query introspection{ __schema { queryType { name } mutationType { name } } }'\nexport const sensitiveDataErrorQuery =\n    'query SensitiveDataError { sensitiveDataError { userId } }'\nexport const sdlQuery = 'query GetSDL { _service { sdl } }'\nexport const validationErrorQuery =\n    'query ValidationError { validationError { userId } }'\n\nexport const usersRequest: GraphQLRequestInfo = {\n    operationName: 'users',\n    query: usersQuery,\n}\n\nexport const loginRequest: GraphQLRequestInfo = {\n    operationName: 'login',\n    query: loginMutation,\n}\nexport const usersRequestWithoutOperationName: GraphQLRequestInfo = {\n    query: usersRequest.query,\n}\nexport const usersRequestWithoutVariables: GraphQLRequestInfo = {\n    operationName: usersRequest.operationName,\n    query: usersRequest.query,\n}\n\n/**\n * Example GraphQL schema SDL for a fictional user service.\n */\nexport const userSchemaSDL = `schema {\n    query: Query\n    mutation: Mutation\n  }\n  \n  type Query {\n    _service: _Service\n    fetchError: User\n    returnError: User\n    sensitiveDataError: User\n    users: [User]\n    user(id: String!): User\n    validationError: User\n  }\n  \n  type Mutation {\n    coercedNullValueError(userName: String, password: String): LoginData\n    login(userName: String, password: String): LoginData\n    logout: LogoutResult\n  }\n\n  type _Service {\n    sdl: String\n  }\n  \n  type User {\n    userId: String\n    userName: String\n  }\n  \n  type LoginData {\n    jwt: String\n  }\n  \n  type LogoutResult {\n    result: String\n  }\n`\n\n/**\n * Example GraphQL schema for a fictional user service.\n */\nexport const userSchema = buildSchema(userSchemaSDL)\n\n/**\n * Schema resolvers for the fictional user service.\n */\nexport const userSchemaResolvers = {\n    _service(): { sdl: string } {\n        return { sdl: userSchemaSDL }\n    },\n    coercedNullValueError(_input: unknown): LoginData {\n        throw new GraphQLError(coercedNullValueError, {})\n    },\n    fetchError(): User {\n        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})\n    },\n    login(input: unknown, context: Record<string, unknown>): LoginData {\n        let jwtValue = 'jwt-'\n        if (context && context.authHeader) {\n            jwtValue += context.authHeader\n            context.jwt = jwtValue\n        }\n        return { jwt: jwtValue }\n    },\n    logout(): LogoutResult {\n        return { result: 'Goodbye!' }\n    },\n    returnError(): User {\n        throw new GraphQLError('Something went wrong!', {})\n    },\n    sensitiveDataError(): User {\n        throw new GraphQLError(sensitiveDataInError, {})\n    },\n    user(input: { id: string }): User {\n        switch (input.id) {\n            case '1': {\n                return userOne\n            }\n            case '2': {\n                return userTwo\n            }\n            default: {\n                throw new GraphQLError(\n                    `User for userid=${input.id} was not found`,\n                    {},\n                )\n            }\n        }\n    },\n    users(): User[] {\n        return [userOne, userTwo]\n    },\n    validationError(): User {\n        throw validationError\n    },\n}\n"
     },
     "src/logger/JsonTestLogger.ts": {
       "language": "typescript",
@@ -2332,7 +2332,7 @@
           }
         }
       ],
-      "source": "/* eslint-disable no-empty-function, no-unused-vars */\nimport { DateFunction } from '@dreamit/funpara'\nimport { Logger } from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that does not log or output anything.\n */\nexport class NoLogger implements Logger {\n    loggerName: string\n    serviceName: string\n    debugEnabled: boolean\n\n    /**\n     * Creates a new instance of Logger.\n     * @param {string} loggerName - The logger name of the logger.\n     * @param {string} serviceName - The service name of the logger.\n     */\n    constructor(loggerName: string, serviceName: string) {\n        this.loggerName = loggerName\n        this.serviceName = serviceName\n        this.debugEnabled = false\n    }\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName?: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n}\n\nexport const NoOpTestLogger = new NoLogger('no-logger', 'myTestService')\n"
+      "source": "/* eslint-disable no-empty-function, no-unused-vars */\nimport { DateFunction } from '@dreamit/funpara'\nimport { Logger } from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that does not log or output anything.\n */\nexport class NoLogger implements Logger {\n    loggerName: string\n    serviceName: string\n    debugEnabled: boolean\n\n    /**\n     * Creates a new Logger instance.\n     * @param {string} loggerName - The logger name of the logger.\n     * @param {string} serviceName - The service name of the logger.\n     */\n    constructor(loggerName: string, serviceName: string) {\n        this.loggerName = loggerName\n        this.serviceName = serviceName\n        this.debugEnabled = false\n    }\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName?: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {}\n}\n\nexport const NoOpTestLogger = new NoLogger('no-logger', 'myTestService')\n"
     },
     "src/logger/TextTestLogger.ts": {
       "language": "typescript",
@@ -3105,11 +3105,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 20
+              "line": 25
             },
             "start": {
               "column": 11,
-              "line": 5
+              "line": 10
             }
           }
         },
@@ -3133,11 +3133,11 @@
           "location": {
             "end": {
               "column": 20,
-              "line": 6
+              "line": 11
             },
             "start": {
               "column": 18,
-              "line": 6
+              "line": 11
             }
           }
         },
@@ -3161,11 +3161,11 @@
           "location": {
             "end": {
               "column": 26,
-              "line": 7
+              "line": 12
             },
             "start": {
               "column": 9,
-              "line": 7
+              "line": 12
             }
           }
         },
@@ -3189,11 +3189,11 @@
           "location": {
             "end": {
               "column": 26,
-              "line": 7
+              "line": 12
             },
             "start": {
               "column": 9,
-              "line": 7
+              "line": 12
             }
           }
         },
@@ -3216,11 +3216,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 9
+              "line": 14
             },
             "start": {
               "column": 28,
-              "line": 7
+              "line": 12
             }
           }
         },
@@ -3243,11 +3243,11 @@
           "location": {
             "end": {
               "column": 48,
-              "line": 8
+              "line": 13
             },
             "start": {
               "column": 19,
-              "line": 8
+              "line": 13
             }
           }
         },
@@ -3271,11 +3271,11 @@
           "location": {
             "end": {
               "column": 34,
-              "line": 10
+              "line": 15
             },
             "start": {
               "column": 9,
-              "line": 10
+              "line": 15
             }
           }
         },
@@ -3299,11 +3299,11 @@
           "location": {
             "end": {
               "column": 34,
-              "line": 10
+              "line": 15
             },
             "start": {
               "column": 9,
-              "line": 10
+              "line": 15
             }
           }
         },
@@ -3326,11 +3326,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 12
+              "line": 17
             },
             "start": {
               "column": 36,
-              "line": 10
+              "line": 15
             }
           }
         },
@@ -3353,11 +3353,11 @@
           "location": {
             "end": {
               "column": 64,
-              "line": 11
+              "line": 16
             },
             "start": {
               "column": 19,
-              "line": 11
+              "line": 16
             }
           }
         },
@@ -3381,11 +3381,11 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 13
+              "line": 18
             },
             "start": {
               "column": 9,
-              "line": 13
+              "line": 18
             }
           }
         },
@@ -3409,11 +3409,11 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 13
+              "line": 18
             },
             "start": {
               "column": 9,
-              "line": 13
+              "line": 18
             }
           }
         },
@@ -3436,11 +3436,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 15
+              "line": 20
             },
             "start": {
               "column": 32,
-              "line": 13
+              "line": 18
             }
           }
         },
@@ -3463,11 +3463,11 @@
           "location": {
             "end": {
               "column": 71,
-              "line": 14
+              "line": 19
             },
             "start": {
               "column": 19,
-              "line": 14
+              "line": 19
             }
           }
         },
@@ -3491,11 +3491,11 @@
           "location": {
             "end": {
               "column": 29,
-              "line": 16
+              "line": 21
             },
             "start": {
               "column": 9,
-              "line": 16
+              "line": 21
             }
           }
         },
@@ -3519,11 +3519,11 @@
           "location": {
             "end": {
               "column": 29,
-              "line": 16
+              "line": 21
             },
             "start": {
               "column": 9,
-              "line": 16
+              "line": 21
             }
           }
         },
@@ -3547,11 +3547,11 @@
           "location": {
             "end": {
               "column": 29,
-              "line": 16
+              "line": 21
             },
             "start": {
               "column": 9,
-              "line": 16
+              "line": 21
             }
           }
         },
@@ -3575,11 +3575,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 16
+              "line": 21
             },
             "start": {
               "column": 25,
-              "line": 16
+              "line": 21
             }
           }
         },
@@ -3600,11 +3600,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 18
+              "line": 23
             },
             "start": {
               "column": 31,
-              "line": 16
+              "line": 21
             }
           }
         },
@@ -3625,11 +3625,11 @@
           "location": {
             "end": {
               "column": 37,
-              "line": 17
+              "line": 22
             },
             "start": {
               "column": 18,
-              "line": 17
+              "line": 22
             }
           }
         },
@@ -3650,16 +3650,16 @@
           "location": {
             "end": {
               "column": 36,
-              "line": 17
+              "line": 22
             },
             "start": {
               "column": 34,
-              "line": 17
+              "line": 22
             }
           }
         }
       ],
-      "source": "import { GraphQLRequestInfo } from '@dreamit/graphql-server-base'\n\nexport function generateGetParametersFromGraphQLRequestInfo(\n    requestInfo: GraphQLRequestInfo,\n): string {\n    let result = ''\n    if (requestInfo.query) {\n        result += `query=${requestInfo.query}&`\n    }\n    if (requestInfo.operationName) {\n        result += `operationName=${requestInfo.operationName}&`\n    }\n    if (requestInfo.variables) {\n        result += `variables=${JSON.stringify(requestInfo.variables)}`\n    }\n    if (result.endsWith('&')) {\n        result = result.slice(0, -1)\n    }\n    return encodeURI(result)\n}\n"
+      "source": "import { GraphQLRequestInfo } from '@dreamit/graphql-server-base'\n\n/**\n * Generates a URL param string with the query, operationName and variables of a GraphQLRequestInfo object.\n * @param {GraphQLRequestInfo} requestInfo - The GraphQL request info object.\n * @returns {string} A string with the query, operationName and variables of a GraphQL request info object.\n */\nexport function generateGetParametersFromGraphQLRequestInfo(\n    requestInfo: GraphQLRequestInfo,\n): string {\n    let result = ''\n    if (requestInfo.query) {\n        result += `query=${requestInfo.query}&`\n    }\n    if (requestInfo.operationName) {\n        result += `operationName=${requestInfo.operationName}&`\n    }\n    if (requestInfo.variables) {\n        result += `variables=${JSON.stringify(requestInfo.variables)}`\n    }\n    if (result.endsWith('&')) {\n        result = result.slice(0, -1)\n    }\n    return encodeURI(result)\n}\n"
     },
     "src/request/JsonContentTypeHeader.ts": {
       "language": "typescript",
@@ -3675,11 +3675,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 5
+              "line": 8
             },
             "start": {
               "column": 59,
-              "line": 3
+              "line": 6
             }
           }
         },
@@ -3694,16 +3694,16 @@
           "location": {
             "end": {
               "column": 39,
-              "line": 4
+              "line": 7
             },
             "start": {
               "column": 21,
-              "line": 4
+              "line": 7
             }
           }
         }
       ],
-      "source": "import { IncomingHttpHeaders } from 'node:http'\n\nexport const JsonContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'application/json',\n}\n"
+      "source": "import { IncomingHttpHeaders } from 'node:http'\n\n/**\n * The IncomingHttpHeaders for JSON content type\n */\nexport const JsonContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'application/json',\n}\n"
     },
     "src/request/RequestForQuery.ts": {
       "language": "typescript",
@@ -3727,11 +3727,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 15
+              "line": 21
             },
             "start": {
               "column": 25,
-              "line": 8
+              "line": 14
             }
           }
         },
@@ -3754,11 +3754,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 14
+              "line": 20
             },
             "start": {
               "column": 12,
-              "line": 9
+              "line": 15
             }
           }
         },
@@ -3781,11 +3781,11 @@
           "location": {
             "end": {
               "column": 38,
-              "line": 10
+              "line": 16
             },
             "start": {
               "column": 15,
-              "line": 10
+              "line": 16
             }
           }
         },
@@ -3808,11 +3808,11 @@
           "location": {
             "end": {
               "column": 23,
-              "line": 12
+              "line": 18
             },
             "start": {
               "column": 17,
-              "line": 12
+              "line": 18
             }
           }
         },
@@ -3835,16 +3835,16 @@
           "location": {
             "end": {
               "column": 24,
-              "line": 13
+              "line": 19
             },
             "start": {
               "column": 14,
-              "line": 13
+              "line": 19
             }
           }
         }
       ],
-      "source": "import { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{ query: '${query}' }`,\n        headers: headers,\n        method: 'POST',\n        url: '/graphql',\n    }\n}\n"
+      "source": "import { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{ query: '${query}' }`,\n        headers: headers,\n        method: 'POST',\n        url: '/graphql',\n    }\n}\n"
     },
     "src/response/StandaloneGraphQLServerResponse.ts": {
       "language": "typescript",
@@ -3866,11 +3866,11 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 7
+              "line": 14
             },
             "start": {
               "column": 28,
-              "line": 7
+              "line": 14
             }
           }
         },
@@ -3891,11 +3891,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 12
+              "line": 19
             },
             "start": {
               "column": 79,
-              "line": 9
+              "line": 16
             }
           }
         },
@@ -3916,11 +3916,11 @@
           "location": {
             "end": {
               "column": 50,
-              "line": 10
+              "line": 17
             },
             "start": {
               "column": 26,
-              "line": 10
+              "line": 17
             }
           }
         },
@@ -3941,11 +3941,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 16
+              "line": 23
             },
             "start": {
               "column": 31,
-              "line": 13
+              "line": 20
             }
           }
         },
@@ -3966,11 +3966,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 19
+              "line": 26
             },
             "start": {
               "column": 38,
-              "line": 17
+              "line": 24
             }
           }
         },
@@ -3991,11 +3991,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 27
+              "line": 39
             },
             "start": {
               "column": 31,
-              "line": 20
+              "line": 32
             }
           }
         },
@@ -4016,11 +4016,11 @@
           "location": {
             "end": {
               "column": 46,
-              "line": 21
+              "line": 33
             },
             "start": {
               "column": 44,
-              "line": 21
+              "line": 33
             }
           }
         },
@@ -4041,11 +4041,11 @@
           "location": {
             "end": {
               "column": 51,
-              "line": 22
+              "line": 34
             },
             "start": {
               "column": 13,
-              "line": 22
+              "line": 34
             }
           }
         },
@@ -4066,11 +4066,11 @@
           "location": {
             "end": {
               "column": 51,
-              "line": 22
+              "line": 34
             },
             "start": {
               "column": 13,
-              "line": 22
+              "line": 34
             }
           }
         },
@@ -4091,11 +4091,11 @@
           "location": {
             "end": {
               "column": 51,
-              "line": 22
+              "line": 34
             },
             "start": {
               "column": 13,
-              "line": 22
+              "line": 34
             }
           }
         },
@@ -4116,11 +4116,11 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 53,
-              "line": 22
+              "line": 34
             }
           }
         },
@@ -4141,11 +4141,11 @@
           "location": {
             "end": {
               "column": 44,
-              "line": 23
+              "line": 35
             },
             "start": {
               "column": 38,
-              "line": 23
+              "line": 35
             }
           }
         },
@@ -4166,11 +4166,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 20,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4191,11 +4191,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 20,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4216,11 +4216,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 20,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4241,11 +4241,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 32,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4266,11 +4266,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 32,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4291,11 +4291,11 @@
           "location": {
             "end": {
               "column": 60,
-              "line": 24
+              "line": 36
             },
             "start": {
               "column": 52,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4316,11 +4316,11 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 26
+              "line": 38
             },
             "start": {
               "column": 62,
-              "line": 24
+              "line": 36
             }
           }
         },
@@ -4341,11 +4341,11 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 43
+              "line": 60
             },
             "start": {
               "column": 36,
-              "line": 29
+              "line": 46
             }
           }
         },
@@ -4366,11 +4366,11 @@
           "location": {
             "end": {
               "column": 46,
-              "line": 30
+              "line": 47
             },
             "start": {
               "column": 44,
-              "line": 30
+              "line": 47
             }
           }
         },
@@ -4391,11 +4391,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 13,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4416,11 +4416,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 13,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4441,11 +4441,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 13,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4466,11 +4466,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 25,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4491,11 +4491,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 25,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4516,11 +4516,11 @@
           "location": {
             "end": {
               "column": 61,
-              "line": 31
+              "line": 48
             },
             "start": {
               "column": 56,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4541,11 +4541,11 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 33
+              "line": 50
             },
             "start": {
               "column": 63,
-              "line": 31
+              "line": 48
             }
           }
         },
@@ -4563,11 +4563,11 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 39
+              "line": 56
             },
             "start": {
               "column": 13,
-              "line": 35
+              "line": 52
             }
           }
         },
@@ -4585,11 +4585,11 @@
           "location": {
             "end": {
               "column": 55,
-              "line": 36
+              "line": 53
             },
             "start": {
               "column": 17,
-              "line": 36
+              "line": 53
             }
           }
         },
@@ -4607,11 +4607,11 @@
           "location": {
             "end": {
               "column": 55,
-              "line": 36
+              "line": 53
             },
             "start": {
               "column": 17,
-              "line": 36
+              "line": 53
             }
           }
         },
@@ -4629,11 +4629,11 @@
           "location": {
             "end": {
               "column": 55,
-              "line": 36
+              "line": 53
             },
             "start": {
               "column": 17,
-              "line": 36
+              "line": 53
             }
           }
         },
@@ -4651,11 +4651,11 @@
           "location": {
             "end": {
               "column": 14,
-              "line": 38
+              "line": 55
             },
             "start": {
               "column": 57,
-              "line": 36
+              "line": 53
             }
           }
         },
@@ -4673,11 +4673,11 @@
           "location": {
             "end": {
               "column": 59,
-              "line": 37
+              "line": 54
             },
             "start": {
               "column": 53,
-              "line": 37
+              "line": 54
             }
           }
         },
@@ -4695,16 +4695,16 @@
           "location": {
             "end": {
               "column": 10,
-              "line": 41
+              "line": 58
             },
             "start": {
               "column": 17,
-              "line": 39
+              "line": 56
             }
           }
         }
       ],
-      "source": "import { GraphQLServerResponse } from '@dreamit/graphql-server-base'\n\nexport class StandaloneGraphQLServerResponse implements GraphQLServerResponse {\n    statusCode = 400\n    // Response headers are set to lowercase to ease testing\n    headers = new Map<string, string | number | readonly string[]>()\n    responses: unknown[] = []\n\n    setHeader(name: string, value: string | number | readonly string[]): this {\n        this.headers.set(name.toLocaleLowerCase(), value)\n        return this\n    }\n    end(chunk: unknown): this {\n        this.responses.push(chunk)\n        return this\n    }\n    removeHeader(name: string): void {\n        this.headers.delete(name)\n    }\n    getLastResponse(): string {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer) {\n            return response.toString('utf8')\n        } else if (response && typeof response === 'string') {\n            return response\n        } else return JSON.stringify(response)\n    }\n    // eslint-disable-next-line no-explicit-any\n    getLastResponseAsObject(): any {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer === false) {\n            return response\n        }\n\n        try {\n            if (response && response instanceof Buffer) {\n                return JSON.parse(response.toString('utf8'))\n            }\n        } catch {\n            return {}\n        }\n        return {}\n    }\n}\n"
+      "source": "import { GraphQLServerResponse } from '@dreamit/graphql-server-base'\n\n/**\n * GraphQLServerResponse implementation that can be used standalone without a webserver\n */\nexport class StandaloneGraphQLServerResponse implements GraphQLServerResponse {\n    statusCode = 400\n    // Response headers are set to lowercase to ease testing\n    headers = new Map<string, string | number | readonly string[]>()\n\n    /**\n     * Set responses in an unknown array\n     */\n    responses: unknown[] = []\n\n    setHeader(name: string, value: string | number | readonly string[]): this {\n        this.headers.set(name.toLocaleLowerCase(), value)\n        return this\n    }\n    end(chunk: unknown): this {\n        this.responses.push(chunk)\n        return this\n    }\n    removeHeader(name: string): void {\n        this.headers.delete(name)\n    }\n\n    /**\n     * Returns the last response as a string\n     * @returns {string} The last response as a string\n     */\n    getLastResponse(): string {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer) {\n            return response.toString('utf8')\n        } else if (response && typeof response === 'string') {\n            return response\n        } else return JSON.stringify(response)\n    }\n\n    /**\n     * Returns the last response as an object\n     * @returns {string} The last response as a string\n     */\n    // eslint-disable-next-line no-explicit-any\n    getLastResponseAsObject(): any {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer === false) {\n            return response\n        }\n\n        try {\n            if (response && response instanceof Buffer) {\n                return JSON.parse(response.toString('utf8'))\n            }\n        } catch {\n            return {}\n        }\n        return {}\n    }\n}\n"
     }
   },
   "schemaVersion": "1.0",
@@ -4953,7 +4953,7 @@
       "imageUrl": "data:image/svg+xml;utf8,%3Csvg viewBox='0 0 1458 1458' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cpath fill='none' d='M0 0h1458v1458H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h1458v1458H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M1458 729c0 402.655-326.345 729-729 729S0 1131.655 0 729C0 326.445 326.345 0 729 0s729 326.345 729 729' fill='%23e74c3c' fill-rule='nonzero'/%3E%3Cpath d='M778.349 1456.15L576.6 1254.401l233-105 85-78.668v-64.332l-257-257-44-187-50-208 251.806-82.793L1076.6 389.401l380.14 379.15c-19.681 367.728-311.914 663.049-678.391 687.599z' fill-opacity='.3'/%3E%3Cpath d='M753.4 329.503c41.79 0 74.579 7.83 97.925 25.444 23.571 18.015 41.69 43.956 55.167 77.097l11.662 28.679 165.733-58.183-14.137-32.13c-26.688-60.655-64.896-108.61-114.191-144.011-49.329-35.423-117.458-54.302-204.859-54.302-50.78 0-95.646 7.376-134.767 21.542-40.093 14.671-74.09 34.79-102.239 60.259-28.84 26.207-50.646 57.06-65.496 92.701-14.718 35.052-22.101 72.538-22.101 112.401 0 72.536 20.667 133.294 61.165 182.704 38.624 47.255 98.346 88.037 179.861 121.291 42.257 17.475 78.715 33.125 109.227 46.994 27.193 12.361 49.294 26.124 66.157 41.751 15.309 14.186 26.497 30.584 33.63 49.258 7.721 20.214 11.16 45.69 11.16 76.402 0 28.021-4.251 51.787-13.591 71.219-8.832 18.374-20.171 33.178-34.523 44.219-14.787 11.374-31.193 19.591-49.393 24.466-19.68 5.359-39.14 7.993-58.69 7.993-29.359 0-54.387-3.407-75.182-10.747-20.112-7.013-37.144-16.144-51.259-27.486-13.618-11.009-24.971-23.766-33.744-38.279-9.64-15.8-17.272-31.924-23.032-48.408l-10.965-31.376-161.669 60.585 10.734 30.124c10.191 28.601 24.197 56.228 42.059 82.748 18.208 27.144 41.322 51.369 69.525 72.745 27.695 21.075 60.904 38.218 99.481 51.041 37.777 12.664 82.004 19.159 132.552 19.159 49.998 0 95.818-8.321 137.611-24.622 42.228-16.471 78.436-38.992 108.835-67.291 30.719-28.597 54.631-62.103 71.834-100.642 17.263-38.56 25.923-79.392 25.923-122.248 0-54.339-8.368-100.37-24.208-138.32-16.29-38.759-38.252-71.661-65.948-98.797-26.965-26.418-58.269-48.835-93.858-67.175-33.655-17.241-69.196-33.11-106.593-47.533-35.934-13.429-65.822-26.601-89.948-39.525-22.153-11.868-40.009-24.21-53.547-37.309-11.429-11.13-19.83-23.678-24.718-37.664-5.413-15.49-7.98-33.423-7.98-53.577 0-40.883 11.293-71.522 37.086-90.539 28.443-20.825 64.985-30.658 109.311-30.658z' fill='%23f1c40f' fill-rule='nonzero'/%3E%3Cpath d='M720 0h18v113h-18zM1458 738v-18h-113v18h113zM720 1345h18v113h-18zM113 738v-18H0v18h113z'/%3E%3C/g%3E%3C/svg%3E"
     },
     "dependencies": {
-      "typescript": "5.7.2"
+      "typescript": "5.7.3"
     }
   }
 }

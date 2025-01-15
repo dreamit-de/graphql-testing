@@ -1,5 +1,10 @@
 import { GraphQLRequestInfo } from '@dreamit/graphql-server-base'
 
+/**
+ * Generates a URL param string with the query, operationName and variables of a GraphQLRequestInfo object.
+ * @param {GraphQLRequestInfo} requestInfo - The GraphQL request info object.
+ * @returns {string} A string with the query, operationName and variables of a GraphQL request info object.
+ */
 export function generateGetParametersFromGraphQLRequestInfo(
     requestInfo: GraphQLRequestInfo,
 ): string {

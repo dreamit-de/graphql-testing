@@ -1,4 +1,5 @@
 export {
+    LoginData,
     LogoutResult,
     User,
     aggregateErrorQuery,
@@ -29,6 +30,7 @@ export {
     usersRequest,
     usersRequestWithoutOperationName,
     usersRequestWithoutVariables,
+    validationError,
     validationErrorMessage,
     validationErrorQuery,
 } from './example/ExampleData'

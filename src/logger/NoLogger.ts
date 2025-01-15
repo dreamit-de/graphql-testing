@@ -11,7 +11,7 @@ export class NoLogger implements Logger {
     debugEnabled: boolean
 
     /**
-     * Creates a new instance of Logger.
+     * Creates a new Logger instance.
      * @param {string} loggerName - The logger name of the logger.
      * @param {string} serviceName - The service name of the logger.
      */
