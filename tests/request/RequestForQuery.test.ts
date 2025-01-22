@@ -11,8 +11,8 @@ const textContentTypeHeader: IncomingHttpHeaders = {
 
 test.each`
     query         | headers                  | expectedBody                    | expectedHeaders
-    ${usersQuery} | ${undefined}             | ${`{ query: '${usersQuery}' }`} | ${JsonContentTypeHeader}
-    ${usersQuery} | ${textContentTypeHeader} | ${`{ query: '${usersQuery}' }`} | ${textContentTypeHeader}
+    ${usersQuery} | ${undefined}             | ${`{"query":"${usersQuery}"}`} | ${JsonContentTypeHeader}
+    ${usersQuery} | ${textContentTypeHeader} | ${`{"query":"${usersQuery}"}`} | ${textContentTypeHeader}
 `(
     'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',
     ({ query, headers, expectedBody, expectedHeaders }) => {

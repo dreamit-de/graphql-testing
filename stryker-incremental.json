@@ -3705,147 +3705,6 @@
       ],
       "source": "import { IncomingHttpHeaders } from 'node:http'\n\n/**\n * The IncomingHttpHeaders for JSON content type\n */\nexport const JsonContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'application/json',\n}\n"
     },
-    "src/request/RequestForQuery.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "152",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected {} to strictly equal undefined",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 21
-            },
-            "start": {
-              "column": 25,
-              "line": 14
-            }
-          }
-        },
-        {
-          "id": "153",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected {} to strictly equal { …(4) }",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "20"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 20
-            },
-            "start": {
-              "column": 12,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "154",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expected { body: '', headers: { …(1) }, …(2) } to strictly equal { …(4) }",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "20"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 38,
-              "line": 16
-            },
-            "start": {
-              "column": 15,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "155",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "20"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 23,
-              "line": 18
-            },
-            "start": {
-              "column": 17,
-              "line": 18
-            }
-          }
-        },
-        {
-          "id": "156",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "20"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 24,
-              "line": 19
-            },
-            "start": {
-              "column": 14,
-              "line": 19
-            }
-          }
-        }
-      ],
-      "source": "import { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{ query: '${query}' }`,\n        headers: headers,\n        method: 'POST',\n        url: '/graphql',\n    }\n}\n"
-    },
     "src/response/StandaloneGraphQLServerResponse.ts": {
       "language": "typescript",
       "mutants": [
@@ -4705,6 +4564,147 @@
         }
       ],
       "source": "import { GraphQLServerResponse } from '@dreamit/graphql-server-base'\n\n/**\n * GraphQLServerResponse implementation that can be used standalone without a webserver\n */\nexport class StandaloneGraphQLServerResponse implements GraphQLServerResponse {\n    statusCode = 400\n    // Response headers are set to lowercase to ease testing\n    headers = new Map<string, string | number | readonly string[]>()\n\n    /**\n     * Set responses in an unknown array\n     */\n    responses: unknown[] = []\n\n    setHeader(name: string, value: string | number | readonly string[]): this {\n        this.headers.set(name.toLocaleLowerCase(), value)\n        return this\n    }\n    end(chunk: unknown): this {\n        this.responses.push(chunk)\n        return this\n    }\n    removeHeader(name: string): void {\n        this.headers.delete(name)\n    }\n\n    /**\n     * Returns the last response as a string\n     * @returns {string} The last response as a string\n     */\n    getLastResponse(): string {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer) {\n            return response.toString('utf8')\n        } else if (response && typeof response === 'string') {\n            return response\n        } else return JSON.stringify(response)\n    }\n\n    /**\n     * Returns the last response as an object\n     * @returns {string} The last response as a string\n     */\n    // eslint-disable-next-line no-explicit-any\n    getLastResponseAsObject(): any {\n        const response = this.responses.at(-1)\n        if (response && response instanceof Buffer === false) {\n            return response\n        }\n\n        try {\n            if (response && response instanceof Buffer) {\n                return JSON.parse(response.toString('utf8'))\n            }\n        } catch {\n            return {}\n        }\n        return {}\n    }\n}\n"
+    },
+    "src/request/RequestForQuery.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "152",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected {} to strictly equal undefined",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 21
+            },
+            "start": {
+              "column": 25,
+              "line": 14
+            }
+          }
+        },
+        {
+          "id": "153",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected {} to strictly equal { …(4) }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "20"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 20
+            },
+            "start": {
+              "column": 12,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "155",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "20"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 23,
+              "line": 18
+            },
+            "start": {
+              "column": 17,
+              "line": 18
+            }
+          }
+        },
+        {
+          "id": "156",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "20"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 24,
+              "line": 19
+            },
+            "start": {
+              "column": 14,
+              "line": 19
+            }
+          }
+        },
+        {
+          "id": "154",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expected { body: '', headers: { …(1) }, …(2) } to strictly equal { …(4) }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "20"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 37,
+              "line": 16
+            },
+            "start": {
+              "column": 15,
+              "line": 16
+            }
+          }
+        }
+      ],
+      "source": "import { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{\"query\":\"${query}\"}`,\n        headers: headers,\n        method: 'POST',\n        url: '/graphql',\n    }\n}\n"
     }
   },
   "schemaVersion": "1.0",
@@ -4830,7 +4830,7 @@
           "name": "For the given query 'query users{ users { userId userName …' and headers { 'content-type': 'text/html' } the expected Request object is created with body undefined"
         }
       ],
-      "source": "/* eslint-disable max-len */\nimport { IncomingHttpHeaders } from 'node:http'\nimport { usersQuery } from 'src/example/ExampleData'\nimport { JsonContentTypeHeader } from 'src/request/JsonContentTypeHeader'\nimport { requestForQuery } from 'src/request/RequestForQuery'\nimport { expect, test } from 'vitest'\n\nconst textContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'text/html',\n}\n\ntest.each`\n    query         | headers                  | expectedBody                    | expectedHeaders\n    ${usersQuery} | ${undefined}             | ${`{ query: '${usersQuery}' }`} | ${JsonContentTypeHeader}\n    ${usersQuery} | ${textContentTypeHeader} | ${`{ query: '${usersQuery}' }`} | ${textContentTypeHeader}\n`(\n    'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',\n    ({ query, headers, expectedBody, expectedHeaders }) => {\n        expect(requestForQuery(query, headers)).toStrictEqual({\n            body: expectedBody,\n            headers: expectedHeaders,\n            method: 'POST',\n            url: '/graphql',\n        })\n    },\n)\n"
+      "source": "/* eslint-disable max-len */\nimport { IncomingHttpHeaders } from 'node:http'\nimport { usersQuery } from 'src/example/ExampleData'\nimport { JsonContentTypeHeader } from 'src/request/JsonContentTypeHeader'\nimport { requestForQuery } from 'src/request/RequestForQuery'\nimport { expect, test } from 'vitest'\n\nconst textContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'text/html',\n}\n\ntest.each`\n    query         | headers                  | expectedBody                    | expectedHeaders\n    ${usersQuery} | ${undefined}             | ${`{\"query\":\"${usersQuery}\"}`} | ${JsonContentTypeHeader}\n    ${usersQuery} | ${textContentTypeHeader} | ${`{\"query\":\"${usersQuery}\"}`} | ${textContentTypeHeader}\n`(\n    'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',\n    ({ query, headers, expectedBody, expectedHeaders }) => {\n        expect(requestForQuery(query, headers)).toStrictEqual({\n            body: expectedBody,\n            headers: expectedHeaders,\n            method: 'POST',\n            url: '/graphql',\n        })\n    },\n)\n"
     },
     "tests/logger/NoLogger.test.ts": {
       "tests": [

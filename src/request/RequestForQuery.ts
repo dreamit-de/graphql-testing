@@ -13,7 +13,7 @@ export function requestForQuery(
     headers: IncomingHttpHeaders = JsonContentTypeHeader,
 ): GraphQLServerRequest {
     return {
-        body: `{ query: '${query}' }`,
+        body: `{"query":"${query}"}`,
         headers: headers,
         method: 'POST',
         url: '/graphql',
