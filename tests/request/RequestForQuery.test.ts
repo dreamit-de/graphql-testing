@@ -10,7 +10,7 @@ const textContentTypeHeader: IncomingHttpHeaders = {
 }
 
 test.each`
-    query         | headers                  | expectedBody                    | expectedHeaders
+    query         | headers                  | expectedBody                   | expectedHeaders
     ${usersQuery} | ${undefined}             | ${`{"query":"${usersQuery}"}`} | ${JsonContentTypeHeader}
     ${usersQuery} | ${textContentTypeHeader} | ${`{"query":"${usersQuery}"}`} | ${textContentTypeHeader}
 `(
