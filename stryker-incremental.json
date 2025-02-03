@@ -850,7 +850,7 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 206
+              "line": 203
             },
             "start": {
               "column": 36,
@@ -1334,56 +1334,6 @@
           }
         },
         {
-          "id": "64",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected { user: null } to deeply equal { user: { userId: '1', …(1) } }",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 199
-            },
-            "start": {
-              "column": 39,
-              "line": 184
-            }
-          }
-        },
-        {
-          "id": "65",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "case '1':",
-          "statusReason": "expected { user: { userId: '2', …(1) } } to deeply equal { user: { userId: '1', …(1) } }",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 188
-            },
-            "start": {
-              "column": 13,
-              "line": 186
-            }
-          }
-        },
-        {
           "id": "66",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -1409,57 +1359,7 @@
           }
         },
         {
-          "id": "67",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected { user: { userId: '2', …(1) } } to deeply equal { user: { userId: '1', …(1) } }",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 188
-            },
-            "start": {
-              "column": 23,
-              "line": 186
-            }
-          }
-        },
-        {
           "id": "68",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "case '2':",
-          "statusReason": "expected { user: null } to deeply equal { user: { userId: '2', …(1) } }",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 191
-            },
-            "start": {
-              "column": 13,
-              "line": 189
-            }
-          }
-        },
-        {
-          "id": "69",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { user: null } to deeply equal { user: { userId: '2', …(1) } }",
@@ -1475,91 +1375,16 @@
           "location": {
             "end": {
               "column": 21,
-              "line": 189
+              "line": 188
             },
             "start": {
               "column": 18,
-              "line": 189
+              "line": 188
             }
           }
         },
         {
           "id": "70",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected { user: null } to deeply equal { user: { userId: '2', …(1) } }",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 191
-            },
-            "start": {
-              "column": 23,
-              "line": 189
-            }
-          }
-        },
-        {
-          "id": "71",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "default:",
-          "statusReason": "expected undefined to deeply equal 'User for userid=3 was not found'",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 197
-            },
-            "start": {
-              "column": 13,
-              "line": 192
-            }
-          }
-        },
-        {
-          "id": "72",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to deeply equal 'User for userid=3 was not found'",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 197
-            },
-            "start": {
-              "column": 22,
-              "line": 192
-            }
-          }
-        },
-        {
-          "id": "73",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected '' to deeply equal 'User for userid=3 was not found'",
@@ -1575,16 +1400,16 @@
           "location": {
             "end": {
               "column": 64,
-              "line": 194
+              "line": 192
             },
             "start": {
               "column": 21,
-              "line": 194
+              "line": 192
             }
           }
         },
         {
-          "id": "74",
+          "id": "71",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected { users: null } to deeply equal { users: [ …(2) ] }",
@@ -1600,16 +1425,16 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 202
+              "line": 199
             },
             "start": {
               "column": 21,
-              "line": 200
+              "line": 197
             }
           }
         },
         {
-          "id": "75",
+          "id": "72",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[]",
           "statusReason": "expected { users: [] } to deeply equal { users: [ …(2) ] }",
@@ -1625,16 +1450,16 @@
           "location": {
             "end": {
               "column": 34,
-              "line": 201
+              "line": 198
             },
             "start": {
               "column": 16,
-              "line": 201
+              "line": 198
             }
           }
         },
         {
-          "id": "76",
+          "id": "73",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to deeply equal 'Cannot query field \"userId\" on type \"…'",
@@ -1650,22 +1475,122 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 205
+              "line": 202
             },
             "start": {
               "column": 29,
-              "line": 203
+              "line": 200
+            }
+          }
+        },
+        {
+          "id": "65",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "case '1':",
+          "statusReason": "expected { user: { userId: '2', …(1) } } to deeply equal { user: { userId: '1', …(1) } }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 187
+            },
+            "start": {
+              "column": 13,
+              "line": 186
+            }
+          }
+        },
+        {
+          "id": "69",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "default:",
+          "statusReason": "expected undefined to deeply equal 'User for userid=3 was not found'",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 18,
+              "line": 194
+            },
+            "start": {
+              "column": 13,
+              "line": 190
+            }
+          }
+        },
+        {
+          "id": "64",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected { user: null } to deeply equal { user: { userId: '1', …(1) } }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 196
+            },
+            "start": {
+              "column": 39,
+              "line": 184
+            }
+          }
+        },
+        {
+          "id": "67",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "case '2':",
+          "statusReason": "expected { user: null } to deeply equal { user: { userId: '2', …(1) } }",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 189
+            },
+            "start": {
+              "column": 13,
+              "line": 188
             }
           }
         }
       ],
-      "source": "import {\n    AggregateError,\n    GraphQLRequestInfo,\n} from '@dreamit/graphql-server-base'\nimport { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'\n\n// Contains example schemas and data that can be used across tests\n\nexport interface User {\n    userId: string\n    userName: string\n}\n\nexport interface LoginData {\n    jwt: string\n}\n\nexport interface LogoutResult {\n    result: string\n}\n\nexport const initialSchemaWithOnlyDescription = new GraphQLSchema({\n    description: 'initial',\n})\n\nexport const userOne: User = { userId: '1', userName: 'UserOne' }\nexport const userTwo: User = { userId: '2', userName: 'UserTwo' }\n\nexport const sdlNotFoundResponse = `{\n    \"errors\":[{\"message\":\"Cannot query field \\\\\"_service\\\\\" on type \\\\\"Query\\\\\".\"\n    ,\"locations\":[{\"line\":1,\"column\":30}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}}]}`\n\nexport const sensitiveDataInError =\n    'invalid value : invalid value : invalid value : ' +\n    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'\nexport const coercedNullValueError =\n    \"Variable 'userName' has an invalid value: \" +\n    \"Variable 'userName' has coerced Null value for NonNull type 'String!'\"\n\nexport const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'\nexport const validationErrorMessage =\n    'Cannot query field \"userId\" on type \"User\".'\n\nexport const aggregateErrorResponse = {\n    errors: [\n        new GraphQLError('The first error!, The second error!', {\n            originalError: {\n                errors: [\n                    new GraphQLError('The first error!', {}),\n                    new GraphQLError('The second error!', {}),\n                ],\n                message: 'The first error!, The second error!',\n                name: 'AggregateError',\n            } as AggregateError,\n        }),\n    ],\n}\n\nexport const validationError = new GraphQLError(validationErrorMessage, {\n    extensions: {\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    },\n})\n\nexport const aggregateErrorQuery =\n    'query AggregateError { aggregateError { id type } }'\n\nexport const coercedNullValueErrorQuery =\n    'mutation CoercedNullValueError { coercedNullValueError(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const userQuery =\n    'query user($id201: String!){ user(id: $id201) { userId userName } }'\nexport const userVariables = '{\"id201\":\"1\"}'\nexport const usersQuery = 'query users{ users { userId userName } }'\nexport const usersQueryWithUnknownField =\n    'query users{ users { userId userName hobby } }'\nexport const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'\nexport const returnErrorQuery = 'query returnError{ returnError { userId } }'\nexport const loginMutation =\n    'mutation login{ login(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const logoutMutation = 'mutation logout{ logout { result } }'\nexport const introspectionQuery =\n    'query introspection{ __schema { queryType { name } mutationType { name } } }'\nexport const sensitiveDataErrorQuery =\n    'query SensitiveDataError { sensitiveDataError { userId } }'\nexport const sdlQuery = 'query GetSDL { _service { sdl } }'\nexport const validationErrorQuery =\n    'query ValidationError { validationError { userId } }'\n\nexport const usersRequest: GraphQLRequestInfo = {\n    operationName: 'users',\n    query: usersQuery,\n}\n\nexport const loginRequest: GraphQLRequestInfo = {\n    operationName: 'login',\n    query: loginMutation,\n}\nexport const usersRequestWithoutOperationName: GraphQLRequestInfo = {\n    query: usersRequest.query,\n}\nexport const usersRequestWithoutVariables: GraphQLRequestInfo = {\n    operationName: usersRequest.operationName,\n    query: usersRequest.query,\n}\n\n/**\n * Example GraphQL schema SDL for a fictional user service.\n */\nexport const userSchemaSDL = `schema {\n    query: Query\n    mutation: Mutation\n  }\n  \n  type Query {\n    _service: _Service\n    fetchError: User\n    returnError: User\n    sensitiveDataError: User\n    users: [User]\n    user(id: String!): User\n    validationError: User\n  }\n  \n  type Mutation {\n    coercedNullValueError(userName: String, password: String): LoginData\n    login(userName: String, password: String): LoginData\n    logout: LogoutResult\n  }\n\n  type _Service {\n    sdl: String\n  }\n  \n  type User {\n    userId: String\n    userName: String\n  }\n  \n  type LoginData {\n    jwt: String\n  }\n  \n  type LogoutResult {\n    result: String\n  }\n`\n\n/**\n * Example GraphQL schema for a fictional user service.\n */\nexport const userSchema = buildSchema(userSchemaSDL)\n\n/**\n * Schema resolvers for the fictional user service.\n */\nexport const userSchemaResolvers = {\n    _service(): { sdl: string } {\n        return { sdl: userSchemaSDL }\n    },\n    coercedNullValueError(_input: unknown): LoginData {\n        throw new GraphQLError(coercedNullValueError, {})\n    },\n    fetchError(): User {\n        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})\n    },\n    login(input: unknown, context: Record<string, unknown>): LoginData {\n        let jwtValue = 'jwt-'\n        if (context && context.authHeader) {\n            jwtValue += context.authHeader\n            context.jwt = jwtValue\n        }\n        return { jwt: jwtValue }\n    },\n    logout(): LogoutResult {\n        return { result: 'Goodbye!' }\n    },\n    returnError(): User {\n        throw new GraphQLError('Something went wrong!', {})\n    },\n    sensitiveDataError(): User {\n        throw new GraphQLError(sensitiveDataInError, {})\n    },\n    user(input: { id: string }): User {\n        switch (input.id) {\n            case '1': {\n                return userOne\n            }\n            case '2': {\n                return userTwo\n            }\n            default: {\n                throw new GraphQLError(\n                    `User for userid=${input.id} was not found`,\n                    {},\n                )\n            }\n        }\n    },\n    users(): User[] {\n        return [userOne, userTwo]\n    },\n    validationError(): User {\n        throw validationError\n    },\n}\n"
+      "source": "import {\n    AggregateError,\n    GraphQLRequestInfo,\n} from '@dreamit/graphql-server-base'\nimport { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'\n\n// Contains example schemas and data that can be used across tests\n\nexport interface User {\n    userId: string\n    userName: string\n}\n\nexport interface LoginData {\n    jwt: string\n}\n\nexport interface LogoutResult {\n    result: string\n}\n\nexport const initialSchemaWithOnlyDescription = new GraphQLSchema({\n    description: 'initial',\n})\n\nexport const userOne: User = { userId: '1', userName: 'UserOne' }\nexport const userTwo: User = { userId: '2', userName: 'UserTwo' }\n\nexport const sdlNotFoundResponse = `{\n    \"errors\":[{\"message\":\"Cannot query field \\\\\"_service\\\\\" on type \\\\\"Query\\\\\".\"\n    ,\"locations\":[{\"line\":1,\"column\":30}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}}]}`\n\nexport const sensitiveDataInError =\n    'invalid value : invalid value : invalid value : ' +\n    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'\nexport const coercedNullValueError =\n    \"Variable 'userName' has an invalid value: \" +\n    \"Variable 'userName' has coerced Null value for NonNull type 'String!'\"\n\nexport const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'\nexport const validationErrorMessage =\n    'Cannot query field \"userId\" on type \"User\".'\n\nexport const aggregateErrorResponse = {\n    errors: [\n        new GraphQLError('The first error!, The second error!', {\n            originalError: {\n                errors: [\n                    new GraphQLError('The first error!', {}),\n                    new GraphQLError('The second error!', {}),\n                ],\n                message: 'The first error!, The second error!',\n                name: 'AggregateError',\n            } as AggregateError,\n        }),\n    ],\n}\n\nexport const validationError = new GraphQLError(validationErrorMessage, {\n    extensions: {\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    },\n})\n\nexport const aggregateErrorQuery =\n    'query AggregateError { aggregateError { id type } }'\n\nexport const coercedNullValueErrorQuery =\n    'mutation CoercedNullValueError { coercedNullValueError(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const userQuery =\n    'query user($id201: String!){ user(id: $id201) { userId userName } }'\nexport const userVariables = '{\"id201\":\"1\"}'\nexport const usersQuery = 'query users{ users { userId userName } }'\nexport const usersQueryWithUnknownField =\n    'query users{ users { userId userName hobby } }'\nexport const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'\nexport const returnErrorQuery = 'query returnError{ returnError { userId } }'\nexport const loginMutation =\n    'mutation login{ login(userName:\"magic_man\", password:\"123456\") { jwt } }'\nexport const logoutMutation = 'mutation logout{ logout { result } }'\nexport const introspectionQuery =\n    'query introspection{ __schema { queryType { name } mutationType { name } } }'\nexport const sensitiveDataErrorQuery =\n    'query SensitiveDataError { sensitiveDataError { userId } }'\nexport const sdlQuery = 'query GetSDL { _service { sdl } }'\nexport const validationErrorQuery =\n    'query ValidationError { validationError { userId } }'\n\nexport const usersRequest: GraphQLRequestInfo = {\n    operationName: 'users',\n    query: usersQuery,\n}\n\nexport const loginRequest: GraphQLRequestInfo = {\n    operationName: 'login',\n    query: loginMutation,\n}\nexport const usersRequestWithoutOperationName: GraphQLRequestInfo = {\n    query: usersRequest.query,\n}\nexport const usersRequestWithoutVariables: GraphQLRequestInfo = {\n    operationName: usersRequest.operationName,\n    query: usersRequest.query,\n}\n\n/**\n * Example GraphQL schema SDL for a fictional user service.\n */\nexport const userSchemaSDL = `schema {\n    query: Query\n    mutation: Mutation\n  }\n  \n  type Query {\n    _service: _Service\n    fetchError: User\n    returnError: User\n    sensitiveDataError: User\n    users: [User]\n    user(id: String!): User\n    validationError: User\n  }\n  \n  type Mutation {\n    coercedNullValueError(userName: String, password: String): LoginData\n    login(userName: String, password: String): LoginData\n    logout: LogoutResult\n  }\n\n  type _Service {\n    sdl: String\n  }\n  \n  type User {\n    userId: String\n    userName: String\n  }\n  \n  type LoginData {\n    jwt: String\n  }\n  \n  type LogoutResult {\n    result: String\n  }\n`\n\n/**\n * Example GraphQL schema for a fictional user service.\n */\nexport const userSchema = buildSchema(userSchemaSDL)\n\n/**\n * Schema resolvers for the fictional user service.\n */\nexport const userSchemaResolvers = {\n    _service(): { sdl: string } {\n        return { sdl: userSchemaSDL }\n    },\n    coercedNullValueError(_input: unknown): LoginData {\n        throw new GraphQLError(coercedNullValueError, {})\n    },\n    fetchError(): User {\n        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})\n    },\n    login(input: unknown, context: Record<string, unknown>): LoginData {\n        let jwtValue = 'jwt-'\n        if (context && context.authHeader) {\n            jwtValue += context.authHeader\n            context.jwt = jwtValue\n        }\n        return { jwt: jwtValue }\n    },\n    logout(): LogoutResult {\n        return { result: 'Goodbye!' }\n    },\n    returnError(): User {\n        throw new GraphQLError('Something went wrong!', {})\n    },\n    sensitiveDataError(): User {\n        throw new GraphQLError(sensitiveDataInError, {})\n    },\n    user(input: { id: string }): User {\n        switch (input.id) {\n            case '1':\n                return userOne\n            case '2':\n                return userTwo\n            default:\n                throw new GraphQLError(\n                    `User for userid=${input.id} was not found`,\n                    {},\n                )\n        }\n    },\n    users(): User[] {\n        return [userOne, userTwo]\n    },\n    validationError(): User {\n        throw validationError\n    },\n}\n"
     },
     "src/logger/JsonTestLogger.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "77",
+          "id": "74",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'test-logger' // Object.is equality",
@@ -1696,7 +1621,7 @@
           }
         },
         {
-          "id": "78",
+          "id": "75",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'myTestService' // Object.is equality",
@@ -1727,7 +1652,7 @@
           }
         },
         {
-          "id": "79",
+          "id": "76",
           "mutatorName": "ArrayDeclaration",
           "replacement": "new Array([])",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -1758,7 +1683,7 @@
           }
         },
         {
-          "id": "80",
+          "id": "77",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected true to be false // Object.is equality",
@@ -1788,7 +1713,7 @@
           }
         },
         {
-          "id": "81",
+          "id": "78",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be false // Object.is equality",
@@ -1819,7 +1744,7 @@
           }
         },
         {
-          "id": "82",
+          "id": "79",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -1845,7 +1770,7 @@
           }
         },
         {
-          "id": "83",
+          "id": "80",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 1 to be +0 // Object.is equality",
@@ -1871,7 +1796,7 @@
           }
         },
         {
-          "id": "84",
+          "id": "81",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -1897,7 +1822,7 @@
           }
         },
         {
-          "id": "85",
+          "id": "82",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -1922,7 +1847,7 @@
           }
         },
         {
-          "id": "86",
+          "id": "83",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -1947,7 +1872,7 @@
           }
         },
         {
-          "id": "87",
+          "id": "84",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'ERROR' // Object.is equality",
@@ -1972,7 +1897,7 @@
           }
         },
         {
-          "id": "88",
+          "id": "85",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected 'INFO' to be 'ERROR' // Object.is equality",
@@ -1997,7 +1922,7 @@
           }
         },
         {
-          "id": "89",
+          "id": "86",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'INFO' // Object.is equality",
@@ -2022,7 +1947,7 @@
           }
         },
         {
-          "id": "90",
+          "id": "87",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'info' // Object.is equality",
@@ -2047,7 +1972,7 @@
           }
         },
         {
-          "id": "91",
+          "id": "88",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'WARN' // Object.is equality",
@@ -2072,7 +1997,7 @@
           }
         },
         {
-          "id": "92",
+          "id": "89",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected 'INFO' to be 'WARN' // Object.is equality",
@@ -2097,7 +2022,7 @@
           }
         },
         {
-          "id": "93",
+          "id": "90",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -2126,7 +2051,7 @@
           }
         },
         {
-          "id": "94",
+          "id": "91",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'test' // Object.is equality",
@@ -2155,7 +2080,7 @@
           }
         },
         {
-          "id": "95",
+          "id": "92",
           "mutatorName": "LogicalOperator",
           "replacement": "logEntryInput.loglevel && LogLevel.info",
           "statusReason": "expected undefined to be 'INFO' // Object.is equality",
@@ -2184,7 +2109,7 @@
           }
         },
         {
-          "id": "96",
+          "id": "93",
           "mutatorName": "OptionalChaining",
           "replacement": "logEntryInput.error.stack",
           "statusReason": "Cannot read properties of undefined (reading 'stack')",
@@ -2213,7 +2138,7 @@
           }
         },
         {
-          "id": "97",
+          "id": "94",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'stacktrace' // Object.is equality",
@@ -2244,7 +2169,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "98",
+          "id": "95",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be false // Object.is equality",
@@ -2269,7 +2194,7 @@
           }
         },
         {
-          "id": "99",
+          "id": "96",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected true to be false // Object.is equality",
@@ -2294,7 +2219,7 @@
           }
         },
         {
-          "id": "100",
+          "id": "97",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -2313,7 +2238,7 @@
           }
         },
         {
-          "id": "101",
+          "id": "98",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -2338,7 +2263,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "102",
+          "id": "99",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'test-logger' // Object.is equality",
@@ -2369,7 +2294,7 @@
           }
         },
         {
-          "id": "103",
+          "id": "100",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'myTestService' // Object.is equality",
@@ -2400,7 +2325,7 @@
           }
         },
         {
-          "id": "104",
+          "id": "101",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[\"Stryker was here\"]",
           "statusReason": "expected 'Stryker was here' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2431,7 +2356,7 @@
           }
         },
         {
-          "id": "105",
+          "id": "102",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected true to be false // Object.is equality",
@@ -2461,7 +2386,7 @@
           }
         },
         {
-          "id": "106",
+          "id": "103",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be false // Object.is equality",
@@ -2492,7 +2417,7 @@
           }
         },
         {
-          "id": "107",
+          "id": "104",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
@@ -2518,7 +2443,7 @@
           }
         },
         {
-          "id": "108",
+          "id": "105",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 1 to be +0 // Object.is equality",
@@ -2544,7 +2469,7 @@
           }
         },
         {
-          "id": "109",
+          "id": "106",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
@@ -2570,7 +2495,7 @@
           }
         },
         {
-          "id": "110",
+          "id": "107",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
@@ -2595,7 +2520,7 @@
           }
         },
         {
-          "id": "111",
+          "id": "108",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
@@ -2620,7 +2545,7 @@
           }
         },
         {
-          "id": "112",
+          "id": "109",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -2645,7 +2570,7 @@
           }
         },
         {
-          "id": "113",
+          "id": "110",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -2670,7 +2595,7 @@
           }
         },
         {
-          "id": "114",
+          "id": "111",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2695,7 +2620,7 @@
           }
         },
         {
-          "id": "115",
+          "id": "112",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2720,7 +2645,7 @@
           }
         },
         {
-          "id": "116",
+          "id": "113",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
@@ -2745,7 +2670,7 @@
           }
         },
         {
-          "id": "117",
+          "id": "114",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
@@ -2770,7 +2695,7 @@
           }
         },
         {
-          "id": "118",
+          "id": "115",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2799,7 +2724,7 @@
           }
         },
         {
-          "id": "119",
+          "id": "116",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
@@ -2828,7 +2753,7 @@
           }
         },
         {
-          "id": "120",
+          "id": "117",
           "mutatorName": "LogicalOperator",
           "replacement": "logEntryInput.loglevel && LogLevel.info",
           "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
@@ -2857,7 +2782,7 @@
           }
         },
         {
-          "id": "121",
+          "id": "118",
           "mutatorName": "OptionalChaining",
           "replacement": "logEntryInput.error.stack",
           "statusReason": "Cannot read properties of undefined (reading 'stack')",
@@ -2886,7 +2811,7 @@
           }
         },
         {
-          "id": "122",
+          "id": "119",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [ERROR]test-…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -2911,7 +2836,7 @@
           }
         },
         {
-          "id": "123",
+          "id": "120",
           "mutatorName": "ArithmeticOperator",
           "replacement": "`${logEntry.timestamp} [${logEntry.level.toUpperCase()}]` + `${this.loggerName}-${this.serviceName} :` + logEntry.message - (logEntry.stacktrace ? ` ${logEntry.stacktrace}` : '')",
           "statusReason": "expected NaN to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2940,7 +2865,7 @@
           }
         },
         {
-          "id": "124",
+          "id": "121",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'test-logger-myTestService :test' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2969,7 +2894,7 @@
           }
         },
         {
-          "id": "125",
+          "id": "122",
           "mutatorName": "MethodExpression",
           "replacement": "logEntry.level.toLowerCase()",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [info]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2998,7 +2923,7 @@
           }
         },
         {
-          "id": "126",
+          "id": "123",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -3027,7 +2952,7 @@
           }
         },
         {
-          "id": "127",
+          "id": "124",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [ERROR]test-…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -3052,7 +2977,7 @@
           }
         },
         {
-          "id": "128",
+          "id": "125",
           "mutatorName": "StringLiteral",
           "replacement": "\"Stryker was here!\"",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -3086,7 +3011,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "129",
+          "id": "126",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3114,7 +3039,7 @@
           }
         },
         {
-          "id": "130",
+          "id": "127",
           "mutatorName": "StringLiteral",
           "replacement": "\"Stryker was here!\"",
           "statusReason": "expected 'Stryker%20was%20here!query=testQuery&…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3142,7 +3067,7 @@
           }
         },
         {
-          "id": "131",
+          "id": "128",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=undefined&operationName=testOpN…' to be 'operationName=testOpName&variables=%2…' // Object.is equality",
@@ -3170,7 +3095,7 @@
           }
         },
         {
-          "id": "132",
+          "id": "129",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3198,7 +3123,7 @@
           }
         },
         {
-          "id": "133",
+          "id": "130",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3225,7 +3150,7 @@
           }
         },
         {
-          "id": "134",
+          "id": "131",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3252,7 +3177,7 @@
           }
         },
         {
-          "id": "135",
+          "id": "132",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=undefin…' to be 'query=testQuery&variables=%22testVars…' // Object.is equality",
@@ -3280,7 +3205,7 @@
           }
         },
         {
-          "id": "136",
+          "id": "133",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3308,7 +3233,7 @@
           }
         },
         {
-          "id": "137",
+          "id": "134",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3335,7 +3260,7 @@
           }
         },
         {
-          "id": "138",
+          "id": "135",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3362,7 +3287,7 @@
           }
         },
         {
-          "id": "139",
+          "id": "136",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3390,7 +3315,7 @@
           }
         },
         {
-          "id": "140",
+          "id": "137",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3418,7 +3343,7 @@
           }
         },
         {
-          "id": "141",
+          "id": "138",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3445,7 +3370,7 @@
           }
         },
         {
-          "id": "142",
+          "id": "139",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3472,7 +3397,7 @@
           }
         },
         {
-          "id": "143",
+          "id": "140",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3500,7 +3425,7 @@
           }
         },
         {
-          "id": "144",
+          "id": "141",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3528,7 +3453,7 @@
           }
         },
         {
-          "id": "145",
+          "id": "142",
           "mutatorName": "MethodExpression",
           "replacement": "result.startsWith('&')",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3556,7 +3481,7 @@
           }
         },
         {
-          "id": "146",
+          "id": "143",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3584,7 +3509,7 @@
           }
         },
         {
-          "id": "147",
+          "id": "144",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3609,7 +3534,7 @@
           }
         },
         {
-          "id": "148",
+          "id": "145",
           "mutatorName": "MethodExpression",
           "replacement": "result",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3634,7 +3559,7 @@
           }
         },
         {
-          "id": "149",
+          "id": "146",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected 'q' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3665,7 +3590,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "150",
+          "id": "147",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -3684,7 +3609,7 @@
           }
         },
         {
-          "id": "151",
+          "id": "148",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -3709,7 +3634,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "152",
+          "id": "149",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected {} to strictly equal undefined",
@@ -3736,13 +3661,13 @@
           }
         },
         {
-          "id": "153",
+          "id": "150",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected {} to strictly equal { …(4) }",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 2,
+          "static": false,
           "killedBy": [
             "20"
           ],
@@ -3763,13 +3688,13 @@
           }
         },
         {
-          "id": "154",
+          "id": "151",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected { body: '', headers: { …(1) }, …(2) } to strictly equal { …(4) }",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 2,
+          "static": false,
           "killedBy": [
             "20"
           ],
@@ -3790,40 +3715,13 @@
           }
         },
         {
-          "id": "156",
+          "id": "152",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { …(4) } to strictly equal { …(4) }",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 2,
-          "killedBy": [
-            "20"
-          ],
-          "coveredBy": [
-            "15",
-            "20",
-            "21"
-          ],
-          "location": {
-            "end": {
-              "column": 24,
-              "line": 19
-            },
-            "start": {
-              "column": 14,
-              "line": 19
-            }
-          }
-        },
-        {
-          "id": "155",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
-          "status": "Killed",
           "static": false,
-          "testsCompleted": 2,
           "killedBy": [
             "20"
           ],
@@ -3842,6 +3740,33 @@
               "line": 18
             }
           }
+        },
+        {
+          "id": "153",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected { …(4) } to strictly equal { …(4) }",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "20"
+          ],
+          "coveredBy": [
+            "15",
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 24,
+              "line": 19
+            },
+            "start": {
+              "column": 14,
+              "line": 19
+            }
+          }
         }
       ],
       "source": "import { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{\"query\":\"${query}\"}`,\n        headers: headers,\n        method: 'POST',\n        url: '/graphql',\n    }\n}\n"
@@ -3850,7 +3775,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "157",
+          "id": "154",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[\"Stryker was here\"]",
           "statusReason": "expected [ 'Stryker was here' ] to strictly equal []",
@@ -3875,7 +3800,7 @@
           }
         },
         {
-          "id": "158",
+          "id": "155",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'application/json' // Object.is equality",
@@ -3900,7 +3825,7 @@
           }
         },
         {
-          "id": "159",
+          "id": "156",
           "mutatorName": "MethodExpression",
           "replacement": "name.toLocaleUpperCase()",
           "statusReason": "expected undefined to be 'application/json' // Object.is equality",
@@ -3925,7 +3850,7 @@
           }
         },
         {
-          "id": "160",
+          "id": "157",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -3950,7 +3875,7 @@
           }
         },
         {
-          "id": "161",
+          "id": "158",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'application/json' to be undefined",
@@ -3975,7 +3900,7 @@
           }
         },
         {
-          "id": "162",
+          "id": "159",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4000,7 +3925,7 @@
           }
         },
         {
-          "id": "163",
+          "id": "160",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4025,7 +3950,7 @@
           }
         },
         {
-          "id": "164",
+          "id": "161",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "Cannot read properties of undefined (reading 'toString')",
@@ -4050,7 +3975,7 @@
           }
         },
         {
-          "id": "165",
+          "id": "162",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected '{\"type\":\"Buffer\",\"data\":[72,101,108,1…' to be 'Hello, World!' // Object.is equality",
@@ -4075,7 +4000,7 @@
           }
         },
         {
-          "id": "166",
+          "id": "163",
           "mutatorName": "LogicalOperator",
           "replacement": "response || response instanceof Buffer",
           "statusReason": "expected '[object Object]' to be '{\"body\":\"{ query: \\'query user($id201…' // Object.is equality",
@@ -4100,7 +4025,7 @@
           }
         },
         {
-          "id": "167",
+          "id": "164",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4125,7 +4050,7 @@
           }
         },
         {
-          "id": "168",
+          "id": "165",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Unknown encoding: ",
@@ -4150,7 +4075,7 @@
           }
         },
         {
-          "id": "169",
+          "id": "166",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected { …(4) } to be '{\"body\":\"{ query: \\'query user($id201…' // Object.is equality",
@@ -4175,7 +4100,7 @@
           }
         },
         {
-          "id": "170",
+          "id": "167",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4200,7 +4125,7 @@
           }
         },
         {
-          "id": "171",
+          "id": "168",
           "mutatorName": "LogicalOperator",
           "replacement": "response || typeof response === 'string'",
           "statusReason": "expected { …(4) } to be '{\"body\":\"{ query: \\'query user($id201…' // Object.is equality",
@@ -4225,7 +4150,7 @@
           }
         },
         {
-          "id": "172",
+          "id": "169",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected { …(4) } to be '{\"body\":\"{ query: \\'query user($id201…' // Object.is equality",
@@ -4250,7 +4175,7 @@
           }
         },
         {
-          "id": "173",
+          "id": "170",
           "mutatorName": "EqualityOperator",
           "replacement": "typeof response !== 'string'",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4275,7 +4200,7 @@
           }
         },
         {
-          "id": "174",
+          "id": "171",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4300,7 +4225,7 @@
           }
         },
         {
-          "id": "175",
+          "id": "172",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4325,7 +4250,7 @@
           }
         },
         {
-          "id": "176",
+          "id": "173",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to strictly equal {}",
@@ -4350,7 +4275,7 @@
           }
         },
         {
-          "id": "177",
+          "id": "174",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
@@ -4375,7 +4300,7 @@
           }
         },
         {
-          "id": "178",
+          "id": "175",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected undefined to strictly equal {}",
@@ -4400,7 +4325,7 @@
           }
         },
         {
-          "id": "179",
+          "id": "176",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
@@ -4425,7 +4350,7 @@
           }
         },
         {
-          "id": "180",
+          "id": "177",
           "mutatorName": "LogicalOperator",
           "replacement": "response || response instanceof Buffer === false",
           "statusReason": "expected undefined to strictly equal {}",
@@ -4450,7 +4375,7 @@
           }
         },
         {
-          "id": "181",
+          "id": "178",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected Buffer[ 72, 101, 108, 108, 111, …(-30) ] to strictly equal {}",
@@ -4475,7 +4400,7 @@
           }
         },
         {
-          "id": "182",
+          "id": "179",
           "mutatorName": "EqualityOperator",
           "replacement": "response instanceof Buffer !== false",
           "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
@@ -4500,7 +4425,7 @@
           }
         },
         {
-          "id": "183",
+          "id": "180",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
@@ -4525,7 +4450,7 @@
           }
         },
         {
-          "id": "184",
+          "id": "181",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected {} to be 'Hello, World!' // Object.is equality",
@@ -4550,7 +4475,7 @@
           }
         },
         {
-          "id": "185",
+          "id": "182",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "status": "Survived",
@@ -4572,7 +4497,7 @@
           }
         },
         {
-          "id": "186",
+          "id": "183",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "status": "Survived",
@@ -4594,7 +4519,7 @@
           }
         },
         {
-          "id": "187",
+          "id": "184",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "status": "Survived",
@@ -4616,7 +4541,7 @@
           }
         },
         {
-          "id": "188",
+          "id": "185",
           "mutatorName": "LogicalOperator",
           "replacement": "response || response instanceof Buffer",
           "status": "Survived",
@@ -4638,7 +4563,7 @@
           }
         },
         {
-          "id": "189",
+          "id": "186",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "status": "Survived",
@@ -4660,7 +4585,7 @@
           }
         },
         {
-          "id": "190",
+          "id": "187",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "status": "Survived",
@@ -4682,7 +4607,7 @@
           }
         },
         {
-          "id": "191",
+          "id": "188",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "status": "Survived",
