@@ -21,6 +21,7 @@
     "rules": {
         "eqeqeq": "warn",
         "eslint/default-case": "error",
+        "eslint/func-style": "off",
         "eslint/no-console": "error",
         "eslint/no-div-regex": "error",
         "eslint/no-else-return": "off",
