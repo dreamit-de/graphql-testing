@@ -35,7 +35,8 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
             return response.toString('utf8')
         } else if (response && typeof response === 'string') {
             return response
-        } else return JSON.stringify(response)
+        }
+        return JSON.stringify(response)
     }
 
     /**
