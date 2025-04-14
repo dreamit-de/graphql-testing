@@ -31,6 +31,13 @@ test('StandaloneGraphQLServerResponse should work as expected', () => {
     response.end('Hello, World!')
     expect(response.getLastResponse()).toBe('Hello, World!')
     expect(response.getLastResponseAsObject()).toBe('Hello, World!')
+    expect(response.getLastResponseAsObject(false)).toBe('Hello, World!')
+
+    // Add JSON string to the responses
+    response.end('{"AKey":"AValue"}')
+    expect(response.getLastResponse()).toBe('{"AKey":"AValue"}')
+    expect(response.getLastResponseAsObject().AKey).toBe('AValue')
+    expect(response.getLastResponseAsObject(false)).toBe('{"AKey":"AValue"}')
 
     // Add an object to the responses
     const userServerRequest = requestForQuery(userQuery)

@@ -41,12 +41,20 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
 
     /**
      * Returns the last response as an object
+     * @param {boolean} parseStringToJSON - Whether to parse a string response to JSON. If it is parseable, it will be parsed to an object, otherwise it will be returned as a string.
      * @returns {string} The last response as a string
      */
     // eslint-disable-next-line no-explicit-any
-    getLastResponseAsObject(): any {
+    getLastResponseAsObject(parseStringToJSON = true): any {
         const response = this.responses.at(-1)
         if (response && response instanceof Buffer === false) {
+            if (typeof response === 'string' && parseStringToJSON) {
+                try {
+                    return JSON.parse(response)
+                } catch {
+                    return response
+                }
+            }
             return response
         }
 
