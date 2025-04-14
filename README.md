@@ -92,10 +92,10 @@ test.each`
 
 ### Response
 
-- **StandaloneGraphQLServerResponse**: [@dreamit/graphql-server][1] `GraphQLServerResponse` implementation that can be used standalone without a webserver
-    - **responses**: Field containing set responses in an unknown array
-    - **getLastResponse**: Returns the last response as a string
-    - **getLastResponseAsObject**: Returns the last response as an object
+- **StandaloneGraphQLServerResponse**: [@dreamit/graphql-server][1] `GraphQLServerResponse` implementation that can be used standalone without a webserver. Supports `string`, `object` and `Uint8Array`/`Buffer`.
+    - **responses**: Field containing set responses in an unknown array.
+    - **getLastResponse**: Returns the last response as a string.
+    - **getLastResponseAsObject(parseStringToJSON = true)**: Returns the last response as an object. If parseStringToJSON is true it will try to parse a string response to an object and returns the string if it is not possible.
 
 Example usage:
 
@@ -103,16 +103,20 @@ Example usage:
 test('StandaloneGraphQLServerResponse should work as expected', () => {
     const response = new StandaloneGraphQLServerResponse()
 
-    // Add string to the responses
-    response.end('Hello, World!')
-    expect(response.getLastResponse()).toBe('Hello, World!')
-    expect(response.getLastResponseAsObject()).toBe('Hello, World!')
+    // Add JSON string to the responses
+    response.end('{"AKey":"AValue"}')
+    expect(response.getLastResponse()).toBe('{"AKey":"AValue"}')
+    expect(response.getLastResponseAsObject().AKey).toBe('AValue')
+    expect(response.getLastResponseAsObject(false)).toBe('{"AKey":"AValue"}')
 
     // Add an object to the responses
     const userServerRequest = requestForQuery(userQuery)
     response.end(userServerRequest)
     expect(response.getLastResponse()).toBe(JSON.stringify(userServerRequest))
     expect(response.getLastResponseAsObject()).toStrictEqual(userServerRequest)
+    expect(response.getLastResponseAsObject(false)).toStrictEqual(
+        userServerRequest,
+    )
 })
 ```
 

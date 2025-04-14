@@ -13,6 +13,8 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
      */
     responses: unknown[] = []
 
+    textDecoder: TextDecoder = new TextDecoder()
+
     setHeader(name: string, value: string | number | readonly string[]): this {
         this.headers.set(name.toLocaleLowerCase(), value)
         return this
@@ -31,9 +33,9 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
      */
     getLastResponse(): string {
         const response = this.responses.at(-1)
-        if (response && response instanceof Buffer) {
-            return response.toString('utf8')
-        } else if (response && typeof response === 'string') {
+        if (response instanceof Uint8Array) {
+            return this.textDecoder.decode(response)
+        } else if (typeof response === 'string') {
             return response
         }
         return JSON.stringify(response)
@@ -47,24 +49,21 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
     // eslint-disable-next-line no-explicit-any
     getLastResponseAsObject(parseStringToJSON = true): any {
         const response = this.responses.at(-1)
-        if (response && response instanceof Buffer === false) {
-            if (typeof response === 'string' && parseStringToJSON) {
-                try {
-                    return JSON.parse(response)
-                } catch {
-                    return response
-                }
+        if (typeof response === 'string' && parseStringToJSON) {
+            try {
+                return JSON.parse(response)
+            } catch {
+                return response
             }
+        } else if (response instanceof Uint8Array) {
+            const decodedResponse = this.textDecoder.decode(response)
+            try {
+                return JSON.parse(decodedResponse)
+            } catch {
+                return decodedResponse
+            }
+        } else {
             return response
         }
-
-        try {
-            if (response && response instanceof Buffer) {
-                return JSON.parse(response.toString('utf8'))
-            }
-        } catch {
-            return {}
-        }
-        return {}
     }
 }

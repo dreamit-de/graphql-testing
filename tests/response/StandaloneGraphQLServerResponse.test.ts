@@ -5,6 +5,9 @@ import {
 } from 'src'
 import { expect, test } from 'vitest'
 
+const exampleText = 'Hello, World!'
+const exampleJSON = '{"AKey":"AValue"}'
+
 test('StandaloneGraphQLServerResponse should work as expected', () => {
     const response = new StandaloneGraphQLServerResponse()
     expect(response.statusCode).toBe(400)
@@ -25,29 +28,54 @@ test('StandaloneGraphQLServerResponse should work as expected', () => {
     expect(response.getLastResponse()).toBe(undefined)
 
     // getLastResponseAsObject function with empty response
-    expect(response.getLastResponseAsObject()).toStrictEqual({})
+    expect(response.getLastResponseAsObject()).toBeUndefined()
+    expect(response.getLastResponseAsObject(false)).toBeUndefined()
 
     // Add string to the responses
-    response.end('Hello, World!')
-    expect(response.getLastResponse()).toBe('Hello, World!')
-    expect(response.getLastResponseAsObject()).toBe('Hello, World!')
-    expect(response.getLastResponseAsObject(false)).toBe('Hello, World!')
+    response.end(exampleText)
+    expect(response.getLastResponse()).toBe(exampleText)
+    expect(response.getLastResponseAsObject()).toBe(exampleText)
+    expect(response.getLastResponseAsObject(false)).toBe(exampleText)
 
     // Add JSON string to the responses
-    response.end('{"AKey":"AValue"}')
-    expect(response.getLastResponse()).toBe('{"AKey":"AValue"}')
+    response.end(exampleJSON)
+    expect(response.getLastResponse()).toBe(exampleJSON)
     expect(response.getLastResponseAsObject().AKey).toBe('AValue')
-    expect(response.getLastResponseAsObject(false)).toBe('{"AKey":"AValue"}')
+    expect(response.getLastResponseAsObject(false)).toBe(exampleJSON)
 
     // Add an object to the responses
     const userServerRequest = requestForQuery(userQuery)
     response.end(userServerRequest)
     expect(response.getLastResponse()).toBe(JSON.stringify(userServerRequest))
     expect(response.getLastResponseAsObject()).toStrictEqual(userServerRequest)
+    expect(response.getLastResponseAsObject(false)).toStrictEqual(
+        userServerRequest,
+    )
 
     // Add a Buffer to the responses
-    const buffer = Buffer.from('Hello, World!', 'utf8')
+    let buffer = Buffer.from(exampleText, 'utf8')
     response.end(buffer)
-    expect(response.getLastResponse()).toBe('Hello, World!')
-    expect(response.getLastResponseAsObject()).toStrictEqual({})
+    expect(response.getLastResponse()).toBe(exampleText)
+    expect(response.getLastResponseAsObject()).toBe(exampleText)
+    expect(response.getLastResponseAsObject(false)).toBe(exampleText)
+
+    // Add a Buffer with JSON content to the responses
+    buffer = Buffer.from(exampleJSON, 'utf8')
+    response.end(buffer)
+    expect(response.getLastResponse()).toBe(exampleJSON)
+    expect(response.getLastResponseAsObject().AKey).toBe('AValue')
+    expect(response.getLastResponseAsObject(false).AKey).toBe('AValue')
+
+    // Add a Uint8Array with a string to the responses
+    const encoder = new TextEncoder()
+    response.end(encoder.encode(exampleText))
+    expect(response.getLastResponse()).toBe(exampleText)
+    expect(response.getLastResponseAsObject()).toBe(exampleText)
+    expect(response.getLastResponseAsObject(false)).toBe(exampleText)
+
+    // Add a Uint8Array with a JSON string to the responses
+    response.end(encoder.encode(exampleJSON))
+    expect(response.getLastResponse()).toBe(exampleJSON)
+    expect(response.getLastResponseAsObject().AKey).toBe('AValue')
+    expect(response.getLastResponseAsObject(false).AKey).toBe('AValue')
 })
