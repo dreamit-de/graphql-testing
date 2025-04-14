@@ -1,6 +1,6 @@
 {
     "name": "@dreamit/graphql-testing",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "description": "Test helper and functions to test GraphQL logic.",
     "scripts": {
         "build": "tsup-node",
