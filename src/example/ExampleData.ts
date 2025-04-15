@@ -6,42 +6,41 @@ import { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'
 
 // Contains example schemas and data that can be used across tests
 
-export interface User {
+interface User {
     userId: string
     userName: string
 }
 
-export interface LoginData {
+interface LoginData {
     jwt: string
 }
 
-export interface LogoutResult {
+interface LogoutResult {
     result: string
 }
 
-export const initialSchemaWithOnlyDescription = new GraphQLSchema({
+const initialSchemaWithOnlyDescription = new GraphQLSchema({
     description: 'initial',
 })
 
-export const userOne: User = { userId: '1', userName: 'UserOne' }
-export const userTwo: User = { userId: '2', userName: 'UserTwo' }
+const userOne: User = { userId: '1', userName: 'UserOne' }
+const userTwo: User = { userId: '2', userName: 'UserTwo' }
 
-export const sdlNotFoundResponse = `{
+const sdlNotFoundResponse = `{
     "errors":[{"message":"Cannot query field \\"_service\\" on type \\"Query\\"."
     ,"locations":[{"line":1,"column":30}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}]}`
 
-export const sensitiveDataInError =
+const sensitiveDataInError =
     'invalid value : invalid value : invalid value : ' +
     'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'
-export const coercedNullValueError =
+const coercedNullValueError =
     "Variable 'userName' has an invalid value: " +
     "Variable 'userName' has coerced Null value for NonNull type 'String!'"
 
-export const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'
-export const validationErrorMessage =
-    'Cannot query field "userId" on type "User".'
+const fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'
+const validationErrorMessage = 'Cannot query field "userId" on type "User".'
 
-export const aggregateErrorResponse = {
+const aggregateErrorResponse = {
     errors: [
         new GraphQLError('The first error!, The second error!', {
             originalError: {
@@ -56,50 +55,50 @@ export const aggregateErrorResponse = {
     ],
 }
 
-export const validationError = new GraphQLError(validationErrorMessage, {
+const validationError = new GraphQLError(validationErrorMessage, {
     extensions: {
         code: 'GRAPHQL_VALIDATION_FAILED',
         serviceName: 'user',
     },
 })
 
-export const aggregateErrorQuery =
+const aggregateErrorQuery =
     'query AggregateError { aggregateError { id type } }'
 
-export const coercedNullValueErrorQuery =
+const coercedNullValueErrorQuery =
     'mutation CoercedNullValueError { coercedNullValueError(userName:"magic_man", password:"123456") { jwt } }'
-export const userQuery =
+const userQuery =
     'query user($id201: String!){ user(id: $id201) { userId userName } }'
-export const userVariables = '{"id201":"1"}'
-export const usersQuery = 'query users{ users { userId userName } }'
-export const usersQueryWithUnknownField =
+const userVariables = '{"id201":"1"}'
+const usersQuery = 'query users{ users { userId userName } }'
+const usersQueryWithUnknownField =
     'query users{ users { userId userName hobby } }'
-export const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'
-export const returnErrorQuery = 'query returnError{ returnError { userId } }'
-export const loginMutation =
+const fetchErrorQuery = 'query fetchError{ fetchError { userId } }'
+const returnErrorQuery = 'query returnError{ returnError { userId } }'
+const loginMutation =
     'mutation login{ login(userName:"magic_man", password:"123456") { jwt } }'
-export const logoutMutation = 'mutation logout{ logout { result } }'
-export const introspectionQuery =
+const logoutMutation = 'mutation logout{ logout { result } }'
+const introspectionQuery =
     'query introspection{ __schema { queryType { name } mutationType { name } } }'
-export const sensitiveDataErrorQuery =
+const sensitiveDataErrorQuery =
     'query SensitiveDataError { sensitiveDataError { userId } }'
-export const sdlQuery = 'query GetSDL { _service { sdl } }'
-export const validationErrorQuery =
+const sdlQuery = 'query GetSDL { _service { sdl } }'
+const validationErrorQuery =
     'query ValidationError { validationError { userId } }'
 
-export const usersRequest: GraphQLRequestInfo = {
+const usersRequest: GraphQLRequestInfo = {
     operationName: 'users',
     query: usersQuery,
 }
 
-export const loginRequest: GraphQLRequestInfo = {
+const loginRequest: GraphQLRequestInfo = {
     operationName: 'login',
     query: loginMutation,
 }
-export const usersRequestWithoutOperationName: GraphQLRequestInfo = {
+const usersRequestWithoutOperationName: GraphQLRequestInfo = {
     query: usersRequest.query,
 }
-export const usersRequestWithoutVariables: GraphQLRequestInfo = {
+const usersRequestWithoutVariables: GraphQLRequestInfo = {
     operationName: usersRequest.operationName,
     query: usersRequest.query,
 }
@@ -107,7 +106,7 @@ export const usersRequestWithoutVariables: GraphQLRequestInfo = {
 /**
  * Example GraphQL schema SDL for a fictional user service.
  */
-export const userSchemaSDL = `schema {
+const userSchemaSDL = `schema {
     query: Query
     mutation: Mutation
   }
@@ -149,12 +148,12 @@ export const userSchemaSDL = `schema {
 /**
  * Example GraphQL schema for a fictional user service.
  */
-export const userSchema = buildSchema(userSchemaSDL)
+const userSchema = buildSchema(userSchemaSDL)
 
 /**
  * Schema resolvers for the fictional user service.
  */
-export const userSchemaResolvers = {
+const userSchemaResolvers = {
     _service(): { sdl: string } {
         return { sdl: userSchemaSDL }
     },
@@ -200,4 +199,41 @@ export const userSchemaResolvers = {
     validationError(): User {
         throw validationError
     },
+}
+
+export {
+    aggregateErrorQuery,
+    aggregateErrorResponse,
+    coercedNullValueError,
+    coercedNullValueErrorQuery,
+    fetchErrorQuery,
+    fetchTimeoutError,
+    initialSchemaWithOnlyDescription,
+    introspectionQuery,
+    LoginData,
+    loginMutation,
+    loginRequest,
+    logoutMutation,
+    LogoutResult,
+    returnErrorQuery,
+    sdlNotFoundResponse,
+    sdlQuery,
+    sensitiveDataErrorQuery,
+    sensitiveDataInError,
+    User,
+    userOne,
+    userQuery,
+    userSchema,
+    userSchemaResolvers,
+    userSchemaSDL,
+    usersQuery,
+    usersQueryWithUnknownField,
+    usersRequest,
+    usersRequestWithoutOperationName,
+    usersRequestWithoutVariables,
+    userTwo,
+    userVariables,
+    validationError,
+    validationErrorMessage,
+    validationErrorQuery,
 }
