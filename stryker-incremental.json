@@ -1586,590 +1586,11 @@
       ],
       "source": "import {\n    AggregateError,\n    GraphQLRequestInfo,\n} from '@dreamit/graphql-server-base'\nimport { buildSchema, GraphQLError, GraphQLSchema } from 'graphql'\n\n// Contains example schemas and data that can be used across tests\n\ninterface User {\n    userId: string\n    userName: string\n}\n\ninterface LoginData {\n    jwt: string\n}\n\ninterface LogoutResult {\n    result: string\n}\n\nconst initialSchemaWithOnlyDescription = new GraphQLSchema({\n    description: 'initial',\n})\n\nconst userOne: User = { userId: '1', userName: 'UserOne' }\nconst userTwo: User = { userId: '2', userName: 'UserTwo' }\n\nconst sdlNotFoundResponse = `{\n    \"errors\":[{\"message\":\"Cannot query field \\\\\"_service\\\\\" on type \\\\\"Query\\\\\".\"\n    ,\"locations\":[{\"line\":1,\"column\":30}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}}]}`\n\nconst sensitiveDataInError =\n    'invalid value : invalid value : invalid value : ' +\n    'invalid value : Invalid e-mail address format: xy!yz@myfunnymailer.com'\nconst coercedNullValueError =\n    \"Variable 'userName' has an invalid value: \" +\n    \"Variable 'userName' has coerced Null value for NonNull type 'String!'\"\n\nconst fetchTimeoutError = 'Request failed ETIMEDOUT connection failed'\nconst validationErrorMessage = 'Cannot query field \"userId\" on type \"User\".'\n\nconst aggregateErrorResponse = {\n    errors: [\n        new GraphQLError('The first error!, The second error!', {\n            originalError: {\n                errors: [\n                    new GraphQLError('The first error!', {}),\n                    new GraphQLError('The second error!', {}),\n                ],\n                message: 'The first error!, The second error!',\n                name: 'AggregateError',\n            } as AggregateError,\n        }),\n    ],\n}\n\nconst validationError = new GraphQLError(validationErrorMessage, {\n    extensions: {\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    },\n})\n\nconst aggregateErrorQuery =\n    'query AggregateError { aggregateError { id type } }'\n\nconst coercedNullValueErrorQuery =\n    'mutation CoercedNullValueError { coercedNullValueError(userName:\"magic_man\", password:\"123456\") { jwt } }'\nconst userQuery =\n    'query user($id201: String!){ user(id: $id201) { userId userName } }'\nconst userVariables = '{\"id201\":\"1\"}'\nconst usersQuery = 'query users{ users { userId userName } }'\nconst usersQueryWithUnknownField =\n    'query users{ users { userId userName hobby } }'\nconst fetchErrorQuery = 'query fetchError{ fetchError { userId } }'\nconst returnErrorQuery = 'query returnError{ returnError { userId } }'\nconst loginMutation =\n    'mutation login{ login(userName:\"magic_man\", password:\"123456\") { jwt } }'\nconst logoutMutation = 'mutation logout{ logout { result } }'\nconst introspectionQuery =\n    'query introspection{ __schema { queryType { name } mutationType { name } } }'\nconst sensitiveDataErrorQuery =\n    'query SensitiveDataError { sensitiveDataError { userId } }'\nconst sdlQuery = 'query GetSDL { _service { sdl } }'\nconst validationErrorQuery =\n    'query ValidationError { validationError { userId } }'\n\nconst usersRequest: GraphQLRequestInfo = {\n    operationName: 'users',\n    query: usersQuery,\n}\n\nconst loginRequest: GraphQLRequestInfo = {\n    operationName: 'login',\n    query: loginMutation,\n}\nconst usersRequestWithoutOperationName: GraphQLRequestInfo = {\n    query: usersRequest.query,\n}\nconst usersRequestWithoutVariables: GraphQLRequestInfo = {\n    operationName: usersRequest.operationName,\n    query: usersRequest.query,\n}\n\n/**\n * Example GraphQL schema SDL for a fictional user service.\n */\nconst userSchemaSDL = `schema {\n    query: Query\n    mutation: Mutation\n  }\n  \n  type Query {\n    _service: _Service\n    fetchError: User\n    returnError: User\n    sensitiveDataError: User\n    users: [User]\n    user(id: String!): User\n    validationError: User\n  }\n  \n  type Mutation {\n    coercedNullValueError(userName: String, password: String): LoginData\n    login(userName: String, password: String): LoginData\n    logout: LogoutResult\n  }\n\n  type _Service {\n    sdl: String\n  }\n  \n  type User {\n    userId: String\n    userName: String\n  }\n  \n  type LoginData {\n    jwt: String\n  }\n  \n  type LogoutResult {\n    result: String\n  }\n`\n\n/**\n * Example GraphQL schema for a fictional user service.\n */\nconst userSchema = buildSchema(userSchemaSDL)\n\n/**\n * Schema resolvers for the fictional user service.\n */\nconst userSchemaResolvers = {\n    _service(): { sdl: string } {\n        return { sdl: userSchemaSDL }\n    },\n    coercedNullValueError(_input: unknown): LoginData {\n        throw new GraphQLError(coercedNullValueError, {})\n    },\n    fetchError(): User {\n        throw new GraphQLError('Request failed ETIMEDOUT connection failed', {})\n    },\n    login(input: unknown, context: Record<string, unknown>): LoginData {\n        let jwtValue = 'jwt-'\n        if (context && context.authHeader) {\n            jwtValue += context.authHeader\n            context.jwt = jwtValue\n        }\n        return { jwt: jwtValue }\n    },\n    logout(): LogoutResult {\n        return { result: 'Goodbye!' }\n    },\n    returnError(): User {\n        throw new GraphQLError('Something went wrong!', {})\n    },\n    sensitiveDataError(): User {\n        throw new GraphQLError(sensitiveDataInError, {})\n    },\n    user(input: { id: string }): User {\n        switch (input.id) {\n            case '1':\n                return userOne\n            case '2':\n                return userTwo\n            default:\n                throw new GraphQLError(\n                    `User for userid=${input.id} was not found`,\n                    {},\n                )\n        }\n    },\n    users(): User[] {\n        return [userOne, userTwo]\n    },\n    validationError(): User {\n        throw validationError\n    },\n}\n\nexport {\n    aggregateErrorQuery,\n    aggregateErrorResponse,\n    coercedNullValueError,\n    coercedNullValueErrorQuery,\n    fetchErrorQuery,\n    fetchTimeoutError,\n    initialSchemaWithOnlyDescription,\n    introspectionQuery,\n    LoginData,\n    loginMutation,\n    loginRequest,\n    logoutMutation,\n    LogoutResult,\n    returnErrorQuery,\n    sdlNotFoundResponse,\n    sdlQuery,\n    sensitiveDataErrorQuery,\n    sensitiveDataInError,\n    User,\n    userOne,\n    userQuery,\n    userSchema,\n    userSchemaResolvers,\n    userSchemaSDL,\n    usersQuery,\n    usersQueryWithUnknownField,\n    usersRequest,\n    usersRequestWithoutOperationName,\n    usersRequestWithoutVariables,\n    userTwo,\n    userVariables,\n    validationError,\n    validationErrorMessage,\n    validationErrorQuery,\n}\n"
     },
-    "src/logger/JsonTestLogger.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "74",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to be 'test-logger' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 31,
-              "line": 13
-            },
-            "start": {
-              "column": 18,
-              "line": 13
-            }
-          }
-        },
-        {
-          "id": "75",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to be 'myTestService' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 34,
-              "line": 15
-            },
-            "start": {
-              "column": 19,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "76",
-          "mutatorName": "ArrayDeclaration",
-          "replacement": "new Array([])",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 51,
-              "line": 16
-            },
-            "start": {
-              "column": 30,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "77",
-          "mutatorName": "BooleanLiteral",
-          "replacement": "true",
-          "statusReason": "expected true to be false // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2",
-            "3",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 37,
-              "line": 18
-            },
-            "start": {
-              "column": 32,
-              "line": 18
-            }
-          }
-        },
-        {
-          "id": "78",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be false // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "2"
-          ],
-          "coveredBy": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 20
-            },
-            "start": {
-              "column": 39,
-              "line": 18
-            }
-          }
-        },
-        {
-          "id": "79",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "4",
-            "5"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 35
-            },
-            "start": {
-              "column": 13,
-              "line": 26
-            }
-          }
-        },
-        {
-          "id": "80",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "expected 1 to be +0 // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 2,
-          "static": false,
-          "killedBy": [
-            "5"
-          ],
-          "coveredBy": [
-            "4",
-            "5"
-          ],
-          "location": {
-            "end": {
-              "column": 30,
-              "line": 27
-            },
-            "start": {
-              "column": 13,
-              "line": 27
-            }
-          }
-        },
-        {
-          "id": "81",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "4",
-            "5"
-          ],
-          "location": {
-            "end": {
-              "column": 30,
-              "line": 27
-            },
-            "start": {
-              "column": 13,
-              "line": 27
-            }
-          }
-        },
-        {
-          "id": "82",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 34
-            },
-            "start": {
-              "column": 32,
-              "line": 27
-            }
-          }
-        },
-        {
-          "id": "83",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 33
-            },
-            "start": {
-              "column": 33,
-              "line": 28
-            }
-          }
-        },
-        {
-          "id": "84",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'ERROR' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "6"
-          ],
-          "coveredBy": [
-            "6"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 52
-            },
-            "start": {
-              "column": 13,
-              "line": 43
-            }
-          }
-        },
-        {
-          "id": "85",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected 'INFO' to be 'ERROR' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "6"
-          ],
-          "coveredBy": [
-            "6"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 51
-            },
-            "start": {
-              "column": 29,
-              "line": 44
-            }
-          }
-        },
-        {
-          "id": "86",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'INFO' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "7"
-          ],
-          "coveredBy": [
-            "7"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 65
-            },
-            "start": {
-              "column": 13,
-              "line": 58
-            }
-          }
-        },
-        {
-          "id": "87",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'info' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "7"
-          ],
-          "coveredBy": [
-            "7"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 64
-            },
-            "start": {
-              "column": 29,
-              "line": 59
-            }
-          }
-        },
-        {
-          "id": "88",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'WARN' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "8"
-          ],
-          "coveredBy": [
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 78
-            },
-            "start": {
-              "column": 13,
-              "line": 71
-            }
-          }
-        },
-        {
-          "id": "89",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected 'INFO' to be 'WARN' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "8"
-          ],
-          "coveredBy": [
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 77
-            },
-            "start": {
-              "column": 29,
-              "line": 72
-            }
-          }
-        },
-        {
-          "id": "90",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "3",
-            "4",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 91
-            },
-            "start": {
-              "column": 56,
-              "line": 80
-            }
-          }
-        },
-        {
-          "id": "91",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'test' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "3",
-            "4",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 89
-            },
-            "start": {
-              "column": 36,
-              "line": 81
-            }
-          }
-        },
-        {
-          "id": "92",
-          "mutatorName": "LogicalOperator",
-          "replacement": "logEntryInput.loglevel && LogLevel.info",
-          "statusReason": "expected undefined to be 'INFO' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "3",
-            "4",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 59,
-              "line": 83
-            },
-            "start": {
-              "column": 20,
-              "line": 83
-            }
-          }
-        },
-        {
-          "id": "93",
-          "mutatorName": "OptionalChaining",
-          "replacement": "logEntryInput.error.stack",
-          "statusReason": "Cannot read properties of undefined (reading 'stack')",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "3",
-            "4",
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 51,
-              "line": 87
-            },
-            "start": {
-              "column": 25,
-              "line": 87
-            }
-          }
-        },
-        {
-          "id": "94",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to be 'stacktrace' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "6"
-          ],
-          "coveredBy": [
-            "6"
-          ],
-          "location": {
-            "end": {
-              "column": 66,
-              "line": 87
-            },
-            "start": {
-              "column": 54,
-              "line": 87
-            }
-          }
-        }
-      ],
-      "source": "import { DateFunction, testDateString } from '@dreamit/funpara'\nimport {\n    LogEntry,\n    LogEntryInput,\n    Logger,\n    LogLevel,\n} from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that saves created log entries in an LogEntry array.\n */\nexport class JsonTestLogger implements Logger {\n    loggerName = 'test-logger'\n    debugEnabled: boolean\n    serviceName = 'myTestService'\n    logEntries: LogEntry[] = new Array<LogEntry>()\n\n    constructor(debugEnabled = false) {\n        this.debugEnabled = debugEnabled\n    }\n\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        if (this.debugEnabled) {\n            this.createLogEntry({\n                context,\n                dateFunction,\n                logMessage,\n                loglevel: LogLevel.debug,\n            })\n        }\n    }\n\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            customErrorName,\n            dateFunction,\n            error,\n            logMessage,\n            loglevel: LogLevel.error,\n        })\n    }\n\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: LogLevel.info,\n        })\n    }\n\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: LogLevel.warn,\n        })\n    }\n\n    createLogEntry(logEntryInput: LogEntryInput): void {\n        const logEntry: LogEntry = {\n            errorName: logEntryInput.customErrorName,\n            level: logEntryInput.loglevel ?? LogLevel.info,\n            logger: this.loggerName,\n            message: logEntryInput.logMessage,\n            serviceName: this.serviceName,\n            stacktrace: logEntryInput.error?.stack ? 'stacktrace' : undefined,\n            timestamp: testDateString,\n        }\n        this.logEntries.push(logEntry)\n    }\n}\n"
-    },
     "src/logger/NoLogger.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "95",
+          "id": "100",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be false // Object.is equality",
@@ -2194,7 +1615,7 @@
           }
         },
         {
-          "id": "96",
+          "id": "101",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected true to be false // Object.is equality",
@@ -2219,7 +1640,7 @@
           }
         },
         {
-          "id": "97",
+          "id": "102",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -2238,7 +1659,7 @@
           }
         },
         {
-          "id": "98",
+          "id": "103",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -2263,7 +1684,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "99",
+          "id": "104",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'test-logger' // Object.is equality",
@@ -2285,16 +1706,16 @@
           "location": {
             "end": {
               "column": 31,
-              "line": 13
+              "line": 8
             },
             "start": {
               "column": 18,
-              "line": 13
+              "line": 8
             }
           }
         },
         {
-          "id": "100",
+          "id": "105",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'myTestService' // Object.is equality",
@@ -2316,16 +1737,16 @@
           "location": {
             "end": {
               "column": 34,
-              "line": 15
+              "line": 10
             },
             "start": {
               "column": 19,
-              "line": 15
+              "line": 10
             }
           }
         },
         {
-          "id": "101",
+          "id": "106",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[\"Stryker was here\"]",
           "statusReason": "expected 'Stryker was here' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2347,16 +1768,16 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 16
+              "line": 11
             },
             "start": {
               "column": 28,
-              "line": 16
+              "line": 11
             }
           }
         },
         {
-          "id": "102",
+          "id": "107",
           "mutatorName": "BooleanLiteral",
           "replacement": "true",
           "statusReason": "expected true to be false // Object.is equality",
@@ -2377,16 +1798,16 @@
           "location": {
             "end": {
               "column": 37,
-              "line": 18
+              "line": 13
             },
             "start": {
               "column": 32,
-              "line": 18
+              "line": 13
             }
           }
         },
         {
-          "id": "103",
+          "id": "108",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be false // Object.is equality",
@@ -2408,42 +1829,16 @@
           "location": {
             "end": {
               "column": 6,
-              "line": 20
+              "line": 15
             },
             "start": {
               "column": 39,
-              "line": 18
+              "line": 13
             }
           }
         },
         {
-          "id": "104",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "11"
-          ],
-          "coveredBy": [
-            "11",
-            "12"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 35
-            },
-            "start": {
-              "column": 13,
-              "line": 26
-            }
-          }
-        },
-        {
-          "id": "105",
+          "id": "110",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 1 to be +0 // Object.is equality",
@@ -2460,16 +1855,16 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 27
+              "line": 22
             },
             "start": {
               "column": 13,
-              "line": 27
+              "line": 22
             }
           }
         },
         {
-          "id": "106",
+          "id": "111",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
@@ -2486,303 +1881,16 @@
           "location": {
             "end": {
               "column": 30,
-              "line": 27
+              "line": 22
             },
             "start": {
               "column": 13,
-              "line": 27
+              "line": 22
             }
           }
         },
         {
-          "id": "107",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "11"
-          ],
-          "coveredBy": [
-            "11"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 34
-            },
-            "start": {
-              "column": 32,
-              "line": 27
-            }
-          }
-        },
-        {
-          "id": "108",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "11"
-          ],
-          "coveredBy": [
-            "11"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 33
-            },
-            "start": {
-              "column": 33,
-              "line": 28
-            }
-          }
-        },
-        {
-          "id": "109",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "13"
-          ],
-          "coveredBy": [
-            "13"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 52
-            },
-            "start": {
-              "column": 13,
-              "line": 43
-            }
-          }
-        },
-        {
-          "id": "110",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "13"
-          ],
-          "coveredBy": [
-            "13"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 51
-            },
-            "start": {
-              "column": 29,
-              "line": 44
-            }
-          }
-        },
-        {
-          "id": "111",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "14"
-          ],
-          "coveredBy": [
-            "14"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 65
-            },
-            "start": {
-              "column": 13,
-              "line": 58
-            }
-          }
-        },
-        {
-          "id": "112",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "14"
-          ],
-          "coveredBy": [
-            "14"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 64
-            },
-            "start": {
-              "column": 29,
-              "line": 59
-            }
-          }
-        },
-        {
-          "id": "113",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 78
-            },
-            "start": {
-              "column": 13,
-              "line": 71
-            }
-          }
-        },
-        {
-          "id": "114",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "15"
-          ],
-          "coveredBy": [
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 77
-            },
-            "start": {
-              "column": 29,
-              "line": 72
-            }
-          }
-        },
-        {
-          "id": "115",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "10"
-          ],
-          "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 96
-            },
-            "start": {
-              "column": 56,
-              "line": 80
-            }
-          }
-        },
-        {
-          "id": "116",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "10"
-          ],
-          "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 10,
-              "line": 89
-            },
-            "start": {
-              "column": 36,
-              "line": 81
-            }
-          }
-        },
-        {
-          "id": "117",
-          "mutatorName": "LogicalOperator",
-          "replacement": "logEntryInput.loglevel && LogLevel.info",
-          "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "10"
-          ],
-          "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
-          ],
-          "location": {
-            "end": {
-              "column": 59,
-              "line": 83
-            },
-            "start": {
-              "column": 20,
-              "line": 83
-            }
-          }
-        },
-        {
-          "id": "118",
+          "id": "128",
           "mutatorName": "OptionalChaining",
           "replacement": "logEntryInput.error.stack",
           "statusReason": "Cannot read properties of undefined (reading 'stack')",
@@ -2802,16 +1910,16 @@
           "location": {
             "end": {
               "column": 51,
-              "line": 87
+              "line": 82
             },
             "start": {
               "column": 25,
-              "line": 87
+              "line": 82
             }
           }
         },
         {
-          "id": "119",
+          "id": "129",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [ERROR]test-…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -2827,16 +1935,16 @@
           "location": {
             "end": {
               "column": 66,
-              "line": 87
+              "line": 82
             },
             "start": {
               "column": 54,
-              "line": 87
+              "line": 82
             }
           }
         },
         {
-          "id": "120",
+          "id": "130",
           "mutatorName": "ArithmeticOperator",
           "replacement": "`${logEntry.timestamp} [${logEntry.level.toUpperCase()}]` + `${this.loggerName}-${this.serviceName} :` + logEntry.message - (logEntry.stacktrace ? ` ${logEntry.stacktrace}` : '')",
           "statusReason": "expected NaN to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2856,16 +1964,16 @@
           "location": {
             "end": {
               "column": 71,
-              "line": 94
+              "line": 89
             },
             "start": {
               "column": 13,
-              "line": 91
+              "line": 86
             }
           }
         },
         {
-          "id": "121",
+          "id": "131",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'test-logger-myTestService :test' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2885,16 +1993,16 @@
           "location": {
             "end": {
               "column": 70,
-              "line": 91
+              "line": 86
             },
             "start": {
               "column": 13,
-              "line": 91
+              "line": 86
             }
           }
         },
         {
-          "id": "122",
+          "id": "132",
           "mutatorName": "MethodExpression",
           "replacement": "logEntry.level.toLowerCase()",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [info]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2914,16 +2022,16 @@
           "location": {
             "end": {
               "column": 67,
-              "line": 91
+              "line": 86
             },
             "start": {
               "column": 39,
-              "line": 91
+              "line": 86
             }
           }
         },
         {
-          "id": "123",
+          "id": "133",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2943,16 +2051,16 @@
           "location": {
             "end": {
               "column": 59,
-              "line": 92
+              "line": 87
             },
             "start": {
               "column": 17,
-              "line": 92
+              "line": 87
             }
           }
         },
         {
-          "id": "124",
+          "id": "134",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [ERROR]test-…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
@@ -2968,16 +2076,16 @@
           "location": {
             "end": {
               "column": 65,
-              "line": 94
+              "line": 89
             },
             "start": {
               "column": 40,
-              "line": 94
+              "line": 89
             }
           }
         },
         {
-          "id": "125",
+          "id": "135",
           "mutatorName": "StringLiteral",
           "replacement": "\"Stryker was here!\"",
           "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
@@ -2996,22 +2104,460 @@
           "location": {
             "end": {
               "column": 70,
-              "line": 94
+              "line": 89
             },
             "start": {
               "column": 68,
-              "line": 94
+              "line": 89
+            }
+          }
+        },
+        {
+          "id": "109",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "11"
+          ],
+          "coveredBy": [
+            "11",
+            "12"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 30
+            },
+            "start": {
+              "column": 13,
+              "line": 21
+            }
+          }
+        },
+        {
+          "id": "112",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "11"
+          ],
+          "coveredBy": [
+            "11"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 29
+            },
+            "start": {
+              "column": 32,
+              "line": 22
+            }
+          }
+        },
+        {
+          "id": "114",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z []test-logge…' to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "11"
+          ],
+          "coveredBy": [
+            "11"
+          ],
+          "location": {
+            "end": {
+              "column": 34,
+              "line": 27
+            },
+            "start": {
+              "column": 27,
+              "line": 27
+            }
+          }
+        },
+        {
+          "id": "113",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [DEBUG]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "11"
+          ],
+          "coveredBy": [
+            "11"
+          ],
+          "location": {
+            "end": {
+              "column": 14,
+              "line": 28
+            },
+            "start": {
+              "column": 33,
+              "line": 23
+            }
+          }
+        },
+        {
+          "id": "115",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "13"
+          ],
+          "coveredBy": [
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 47
+            },
+            "start": {
+              "column": 13,
+              "line": 38
+            }
+          }
+        },
+        {
+          "id": "118",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "14"
+          ],
+          "coveredBy": [
+            "14"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 60
+            },
+            "start": {
+              "column": 13,
+              "line": 53
+            }
+          }
+        },
+        {
+          "id": "116",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "13"
+          ],
+          "coveredBy": [
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 46
+            },
+            "start": {
+              "column": 29,
+              "line": 39
+            }
+          }
+        },
+        {
+          "id": "117",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z []test-logge…' to be '1001-01-01T00:00:00.000Z [ERROR]test-…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "13"
+          ],
+          "coveredBy": [
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 45
+            },
+            "start": {
+              "column": 23,
+              "line": 45
+            }
+          }
+        },
+        {
+          "id": "119",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "14"
+          ],
+          "coveredBy": [
+            "14"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 59
+            },
+            "start": {
+              "column": 29,
+              "line": 54
+            }
+          }
+        },
+        {
+          "id": "122",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z [INFO]test-l…' to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 72
+            },
+            "start": {
+              "column": 29,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "120",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z []test-logge…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "14"
+          ],
+          "coveredBy": [
+            "14"
+          ],
+          "location": {
+            "end": {
+              "column": 29,
+              "line": 58
+            },
+            "start": {
+              "column": 23,
+              "line": 58
+            }
+          }
+        },
+        {
+          "id": "123",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z []test-logge…' to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 29,
+              "line": 71
+            },
+            "start": {
+              "column": 23,
+              "line": 71
+            }
+          }
+        },
+        {
+          "id": "121",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [WARN]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "15"
+          ],
+          "coveredBy": [
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 73
+            },
+            "start": {
+              "column": 13,
+              "line": 66
+            }
+          }
+        },
+        {
+          "id": "125",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "13",
+            "14",
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 84
+            },
+            "start": {
+              "column": 36,
+              "line": 76
+            }
+          }
+        },
+        {
+          "id": "126",
+          "mutatorName": "LogicalOperator",
+          "replacement": "logEntryInput.loglevel && 'INFO'",
+          "statusReason": "Cannot read properties of undefined (reading 'toUpperCase')",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "13",
+            "14",
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 78
+            },
+            "start": {
+              "column": 20,
+              "line": 78
+            }
+          }
+        },
+        {
+          "id": "124",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "13",
+            "14",
+            "15"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 91
+            },
+            "start": {
+              "column": 56,
+              "line": 75
+            }
+          }
+        },
+        {
+          "id": "127",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '1001-01-01T00:00:00.000Z []test-logge…' to be '1001-01-01T00:00:00.000Z [INFO]test-l…' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 78
+            },
+            "start": {
+              "column": 46,
+              "line": 78
             }
           }
         }
       ],
-      "source": "import { DateFunction, testDateString } from '@dreamit/funpara'\nimport {\n    LogEntry,\n    LogEntryInput,\n    Logger,\n    LogLevel,\n} from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that saves created log entries in a string array.\n */\nexport class TextTestLogger implements Logger {\n    loggerName = 'test-logger'\n    debugEnabled: boolean\n    serviceName = 'myTestService'\n    logEntries: string[] = []\n\n    constructor(debugEnabled = false) {\n        this.debugEnabled = debugEnabled\n    }\n\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        if (this.debugEnabled) {\n            this.createLogEntry({\n                context,\n                dateFunction,\n                logMessage,\n                loglevel: LogLevel.debug,\n            })\n        }\n    }\n\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            customErrorName,\n            dateFunction,\n            error,\n            logMessage,\n            loglevel: LogLevel.error,\n        })\n    }\n\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: LogLevel.info,\n        })\n    }\n\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: LogLevel.warn,\n        })\n    }\n\n    createLogEntry(logEntryInput: LogEntryInput): void {\n        const logEntry: LogEntry = {\n            errorName: logEntryInput.customErrorName,\n            level: logEntryInput.loglevel ?? LogLevel.info,\n            logger: this.loggerName,\n            message: logEntryInput.logMessage,\n            serviceName: this.serviceName,\n            stacktrace: logEntryInput.error?.stack ? 'stacktrace' : undefined,\n            timestamp: testDateString,\n        }\n        this.logEntries.push(\n            `${logEntry.timestamp} [${logEntry.level.toUpperCase()}]` +\n                `${this.loggerName}-${this.serviceName} :` +\n                logEntry.message +\n                (logEntry.stacktrace ? ` ${logEntry.stacktrace}` : ''),\n        )\n    }\n}\n"
+      "source": "import { DateFunction, testDateString } from '@dreamit/funpara'\nimport { LogEntry, LogEntryInput, Logger } from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that saves created log entries in a string array.\n */\nexport class TextTestLogger implements Logger {\n    loggerName = 'test-logger'\n    debugEnabled: boolean\n    serviceName = 'myTestService'\n    logEntries: string[] = []\n\n    constructor(debugEnabled = false) {\n        this.debugEnabled = debugEnabled\n    }\n\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        if (this.debugEnabled) {\n            this.createLogEntry({\n                context,\n                dateFunction,\n                logMessage,\n                loglevel: 'DEBUG',\n            })\n        }\n    }\n\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            customErrorName,\n            dateFunction,\n            error,\n            logMessage,\n            loglevel: 'ERROR',\n        })\n    }\n\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: 'INFO',\n        })\n    }\n\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: 'WARN',\n        })\n    }\n\n    createLogEntry(logEntryInput: LogEntryInput): void {\n        const logEntry: LogEntry = {\n            errorName: logEntryInput.customErrorName,\n            level: logEntryInput.loglevel ?? 'INFO',\n            logger: this.loggerName,\n            message: logEntryInput.logMessage,\n            serviceName: this.serviceName,\n            stacktrace: logEntryInput.error?.stack ? 'stacktrace' : undefined,\n            timestamp: testDateString,\n        }\n        this.logEntries.push(\n            `${logEntry.timestamp} [${logEntry.level.toUpperCase()}]` +\n                `${this.loggerName}-${this.serviceName} :` +\n                logEntry.message +\n                (logEntry.stacktrace ? ` ${logEntry.stacktrace}` : ''),\n        )\n    }\n}\n"
     },
     "src/request/GenerateGetParametersFromGraphQLRequestInfo.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "126",
+          "id": "136",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3039,7 +2585,7 @@
           }
         },
         {
-          "id": "127",
+          "id": "137",
           "mutatorName": "StringLiteral",
           "replacement": "\"Stryker was here!\"",
           "statusReason": "expected 'Stryker%20was%20here!query=testQuery&…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3067,7 +2613,7 @@
           }
         },
         {
-          "id": "128",
+          "id": "138",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=undefined&operationName=testOpN…' to be 'operationName=testOpName&variables=%2…' // Object.is equality",
@@ -3095,7 +2641,7 @@
           }
         },
         {
-          "id": "129",
+          "id": "139",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3123,7 +2669,7 @@
           }
         },
         {
-          "id": "130",
+          "id": "140",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3150,7 +2696,7 @@
           }
         },
         {
-          "id": "131",
+          "id": "141",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'operationName=testOpName&variables=%2…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3177,7 +2723,7 @@
           }
         },
         {
-          "id": "132",
+          "id": "142",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=undefin…' to be 'query=testQuery&variables=%22testVars…' // Object.is equality",
@@ -3205,7 +2751,7 @@
           }
         },
         {
-          "id": "133",
+          "id": "143",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3233,7 +2779,7 @@
           }
         },
         {
-          "id": "134",
+          "id": "144",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3260,7 +2806,7 @@
           }
         },
         {
-          "id": "135",
+          "id": "145",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'query=testQuery&variables=%22testVars…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3287,7 +2833,7 @@
           }
         },
         {
-          "id": "136",
+          "id": "146",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3315,7 +2861,7 @@
           }
         },
         {
-          "id": "137",
+          "id": "147",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3343,7 +2889,7 @@
           }
         },
         {
-          "id": "138",
+          "id": "148",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3370,7 +2916,7 @@
           }
         },
         {
-          "id": "139",
+          "id": "149",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3397,7 +2943,7 @@
           }
         },
         {
-          "id": "140",
+          "id": "150",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3425,7 +2971,7 @@
           }
         },
         {
-          "id": "141",
+          "id": "151",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3453,7 +2999,7 @@
           }
         },
         {
-          "id": "142",
+          "id": "152",
           "mutatorName": "MethodExpression",
           "replacement": "result.startsWith('&')",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3481,7 +3027,7 @@
           }
         },
         {
-          "id": "143",
+          "id": "153",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3509,7 +3055,7 @@
           }
         },
         {
-          "id": "144",
+          "id": "154",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3534,7 +3080,7 @@
           }
         },
         {
-          "id": "145",
+          "id": "155",
           "mutatorName": "MethodExpression",
           "replacement": "result",
           "statusReason": "expected 'query=testQuery&operationName=testOpN…' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3559,7 +3105,7 @@
           }
         },
         {
-          "id": "146",
+          "id": "156",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected 'q' to be 'query=testQuery&operationName=testOpN…' // Object.is equality",
@@ -3590,7 +3136,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "147",
+          "id": "157",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -3609,7 +3155,7 @@
           }
         },
         {
-          "id": "148",
+          "id": "158",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -3634,7 +3180,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "149",
+          "id": "159",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to strictly equal { …(4) }",
@@ -3661,7 +3207,7 @@
           }
         },
         {
-          "id": "150",
+          "id": "160",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected {} to strictly equal { …(4) }",
@@ -3688,7 +3234,7 @@
           }
         },
         {
-          "id": "151",
+          "id": "161",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expected { body: '', headers: { …(1) }, …(2) } to strictly equal { …(4) }",
@@ -3715,7 +3261,7 @@
           }
         },
         {
-          "id": "152",
+          "id": "162",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { …(4) } to strictly equal { …(4) }",
@@ -3742,7 +3288,7 @@
           }
         },
         {
-          "id": "153",
+          "id": "163",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { …(4) } to strictly equal { …(4) }",
@@ -3775,7 +3321,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "154",
+          "id": "164",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[\"Stryker was here\"]",
           "statusReason": "expected [ 'Stryker was here' ] to strictly equal []",
@@ -3800,7 +3346,7 @@
           }
         },
         {
-          "id": "155",
+          "id": "165",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'application/json' // Object.is equality",
@@ -3825,7 +3371,7 @@
           }
         },
         {
-          "id": "156",
+          "id": "166",
           "mutatorName": "MethodExpression",
           "replacement": "name.toLocaleUpperCase()",
           "statusReason": "expected undefined to be 'application/json' // Object.is equality",
@@ -3850,7 +3396,7 @@
           }
         },
         {
-          "id": "157",
+          "id": "167",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -3875,7 +3421,7 @@
           }
         },
         {
-          "id": "158",
+          "id": "168",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected 'application/json' to be undefined",
@@ -3900,7 +3446,7 @@
           }
         },
         {
-          "id": "159",
+          "id": "169",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -3925,7 +3471,7 @@
           }
         },
         {
-          "id": "160",
+          "id": "170",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -3950,7 +3496,7 @@
           }
         },
         {
-          "id": "161",
+          "id": "171",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected '' to be undefined // Object.is equality",
@@ -3975,7 +3521,7 @@
           }
         },
         {
-          "id": "162",
+          "id": "172",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected '{\"type\":\"Buffer\",\"data\":[72,101,108,1…' to be 'Hello, World!' // Object.is equality",
@@ -4000,7 +3546,7 @@
           }
         },
         {
-          "id": "163",
+          "id": "173",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected '{\"type\":\"Buffer\",\"data\":[72,101,108,1…' to be 'Hello, World!' // Object.is equality",
@@ -4025,7 +3571,7 @@
           }
         },
         {
-          "id": "164",
+          "id": "174",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected { …(4) } to be '{\"body\":\"{\\\"query\\\":\\\"query user($id2…' // Object.is equality",
@@ -4050,7 +3596,7 @@
           }
         },
         {
-          "id": "165",
+          "id": "175",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4075,7 +3621,7 @@
           }
         },
         {
-          "id": "166",
+          "id": "176",
           "mutatorName": "EqualityOperator",
           "replacement": "typeof response !== 'string'",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4100,7 +3646,7 @@
           }
         },
         {
-          "id": "167",
+          "id": "177",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4125,7 +3671,7 @@
           }
         },
         {
-          "id": "168",
+          "id": "178",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected '\"Hello, World!\"' to be 'Hello, World!' // Object.is equality",
@@ -4150,7 +3696,7 @@
           }
         },
         {
-          "id": "169",
+          "id": "179",
           "mutatorName": "BooleanLiteral",
           "replacement": "false",
           "statusReason": "expected undefined to be 'AValue' // Object.is equality",
@@ -4175,7 +3721,7 @@
           }
         },
         {
-          "id": "170",
+          "id": "180",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4200,7 +3746,7 @@
           }
         },
         {
-          "id": "171",
+          "id": "181",
           "mutatorName": "UnaryOperator",
           "replacement": "+1",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4225,7 +3771,7 @@
           }
         },
         {
-          "id": "172",
+          "id": "182",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected { AKey: 'AValue' } to be '{\"AKey\":\"AValue\"}' // Object.is equality",
@@ -4250,7 +3796,7 @@
           }
         },
         {
-          "id": "173",
+          "id": "183",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected undefined to be 'AValue' // Object.is equality",
@@ -4275,7 +3821,7 @@
           }
         },
         {
-          "id": "174",
+          "id": "184",
           "mutatorName": "LogicalOperator",
           "replacement": "typeof response === 'string' || parseStringToJSON",
           "statusReason": "expected { AKey: 'AValue' } to be '{\"AKey\":\"AValue\"}' // Object.is equality",
@@ -4300,7 +3846,7 @@
           }
         },
         {
-          "id": "175",
+          "id": "185",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected Buffer[ 72, 101, 108, 108, 111, …(-30) ] to be 'Hello, World!' // Object.is equality",
@@ -4325,7 +3871,7 @@
           }
         },
         {
-          "id": "176",
+          "id": "186",
           "mutatorName": "EqualityOperator",
           "replacement": "typeof response !== 'string'",
           "statusReason": "expected undefined to be 'AValue' // Object.is equality",
@@ -4350,7 +3896,7 @@
           }
         },
         {
-          "id": "177",
+          "id": "187",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected undefined to be 'AValue' // Object.is equality",
@@ -4375,7 +3921,7 @@
           }
         },
         {
-          "id": "178",
+          "id": "188",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4400,7 +3946,7 @@
           }
         },
         {
-          "id": "179",
+          "id": "189",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4425,7 +3971,7 @@
           }
         },
         {
-          "id": "180",
+          "id": "190",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4450,7 +3996,7 @@
           }
         },
         {
-          "id": "181",
+          "id": "191",
           "mutatorName": "ConditionalExpression",
           "replacement": "true",
           "statusReason": "expected '' to be undefined",
@@ -4475,7 +4021,7 @@
           }
         },
         {
-          "id": "182",
+          "id": "192",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
           "statusReason": "expected Buffer[ 72, 101, 108, 108, 111, …(-30) ] to be 'Hello, World!' // Object.is equality",
@@ -4500,7 +4046,7 @@
           }
         },
         {
-          "id": "183",
+          "id": "193",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4525,7 +4071,7 @@
           }
         },
         {
-          "id": "184",
+          "id": "194",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4550,7 +4096,7 @@
           }
         },
         {
-          "id": "185",
+          "id": "195",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4575,7 +4121,7 @@
           }
         },
         {
-          "id": "186",
+          "id": "196",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'Hello, World!' // Object.is equality",
@@ -4601,6 +4147,710 @@
         }
       ],
       "source": "import { GraphQLServerResponse } from '@dreamit/graphql-server-base'\n\n/**\n * GraphQLServerResponse implementation that can be used standalone without a webserver\n */\nexport class StandaloneGraphQLServerResponse implements GraphQLServerResponse {\n    statusCode = 400\n    // Response headers are set to lowercase to ease testing\n    headers = new Map<string, string | number | readonly string[]>()\n\n    /**\n     * Set responses in an unknown array\n     */\n    responses: unknown[] = []\n\n    textDecoder: TextDecoder = new TextDecoder()\n\n    setHeader(name: string, value: string | number | readonly string[]): this {\n        this.headers.set(name.toLocaleLowerCase(), value)\n        return this\n    }\n    end(chunk: unknown): this {\n        this.responses.push(chunk)\n        return this\n    }\n    removeHeader(name: string): void {\n        this.headers.delete(name)\n    }\n\n    /**\n     * Returns the last response as a string\n     * @returns {string} The last response as a string\n     */\n    getLastResponse(): string {\n        const response = this.responses.at(-1)\n        if (response instanceof Uint8Array) {\n            return this.textDecoder.decode(response)\n        } else if (typeof response === 'string') {\n            return response\n        }\n        return JSON.stringify(response)\n    }\n\n    /**\n     * Returns the last response as an object\n     * @param {boolean} parseStringToJSON - Whether to parse a string response to JSON. If it is parseable, it will be parsed to an object, otherwise it will be returned as a string.\n     * @returns {string} The last response as a string\n     */\n    // eslint-disable-next-line no-explicit-any\n    getLastResponseAsObject(parseStringToJSON = true): any {\n        const response = this.responses.at(-1)\n        if (typeof response === 'string' && parseStringToJSON) {\n            try {\n                return JSON.parse(response)\n            } catch {\n                return response\n            }\n        } else if (response instanceof Uint8Array) {\n            const decodedResponse = this.textDecoder.decode(response)\n            try {\n                return JSON.parse(decodedResponse)\n            } catch {\n                return decodedResponse\n            }\n        } else {\n            return response\n        }\n    }\n}\n"
+    },
+    "src/logger/JsonTestLogger.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "79",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4",
+            "5"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 30
+            },
+            "start": {
+              "column": 13,
+              "line": 21
+            }
+          }
+        },
+        {
+          "id": "75",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'myTestService' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 34,
+              "line": 10
+            },
+            "start": {
+              "column": 19,
+              "line": 10
+            }
+          }
+        },
+        {
+          "id": "74",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'test-logger' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 8
+            },
+            "start": {
+              "column": 18,
+              "line": 8
+            }
+          }
+        },
+        {
+          "id": "76",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "new Array([])",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 51,
+              "line": 11
+            },
+            "start": {
+              "column": 30,
+              "line": 11
+            }
+          }
+        },
+        {
+          "id": "78",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be false // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 15
+            },
+            "start": {
+              "column": 39,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "77",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "true",
+          "statusReason": "expected true to be false // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 37,
+              "line": 13
+            },
+            "start": {
+              "column": 32,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "80",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected 1 to be +0 // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "5"
+          ],
+          "coveredBy": [
+            "4",
+            "5"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 22
+            },
+            "start": {
+              "column": 13,
+              "line": 22
+            }
+          }
+        },
+        {
+          "id": "81",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4",
+            "5"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 22
+            },
+            "start": {
+              "column": 13,
+              "line": 22
+            }
+          }
+        },
+        {
+          "id": "82",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 29
+            },
+            "start": {
+              "column": 32,
+              "line": 22
+            }
+          }
+        },
+        {
+          "id": "83",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 14,
+              "line": 28
+            },
+            "start": {
+              "column": 33,
+              "line": 23
+            }
+          }
+        },
+        {
+          "id": "84",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'DEBUG' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 34,
+              "line": 27
+            },
+            "start": {
+              "column": 27,
+              "line": 27
+            }
+          }
+        },
+        {
+          "id": "86",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected 'INFO' to be 'ERROR' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "6"
+          ],
+          "coveredBy": [
+            "6"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 46
+            },
+            "start": {
+              "column": 29,
+              "line": 39
+            }
+          }
+        },
+        {
+          "id": "85",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'ERROR' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "6"
+          ],
+          "coveredBy": [
+            "6"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 47
+            },
+            "start": {
+              "column": 13,
+              "line": 38
+            }
+          }
+        },
+        {
+          "id": "87",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'ERROR' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "6"
+          ],
+          "coveredBy": [
+            "6"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 45
+            },
+            "start": {
+              "column": 23,
+              "line": 45
+            }
+          }
+        },
+        {
+          "id": "88",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'INFO' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "7"
+          ],
+          "coveredBy": [
+            "7"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 60
+            },
+            "start": {
+              "column": 13,
+              "line": 53
+            }
+          }
+        },
+        {
+          "id": "89",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'info' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "7"
+          ],
+          "coveredBy": [
+            "7"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 59
+            },
+            "start": {
+              "column": 29,
+              "line": 54
+            }
+          }
+        },
+        {
+          "id": "90",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'INFO' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "7"
+          ],
+          "coveredBy": [
+            "7"
+          ],
+          "location": {
+            "end": {
+              "column": 29,
+              "line": 58
+            },
+            "start": {
+              "column": 23,
+              "line": 58
+            }
+          }
+        },
+        {
+          "id": "91",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'WARN' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "8"
+          ],
+          "coveredBy": [
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 73
+            },
+            "start": {
+              "column": 13,
+              "line": 66
+            }
+          }
+        },
+        {
+          "id": "92",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected 'INFO' to be 'WARN' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "8"
+          ],
+          "coveredBy": [
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 72
+            },
+            "start": {
+              "column": 29,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "93",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'WARN' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "8"
+          ],
+          "coveredBy": [
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 29,
+              "line": 71
+            },
+            "start": {
+              "column": 23,
+              "line": 71
+            }
+          }
+        },
+        {
+          "id": "94",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "3",
+            "4",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 86
+            },
+            "start": {
+              "column": 56,
+              "line": 75
+            }
+          }
+        },
+        {
+          "id": "95",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'test' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "3",
+            "4",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 10,
+              "line": 84
+            },
+            "start": {
+              "column": 36,
+              "line": 76
+            }
+          }
+        },
+        {
+          "id": "97",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'INFO' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 78
+            },
+            "start": {
+              "column": 46,
+              "line": 78
+            }
+          }
+        },
+        {
+          "id": "96",
+          "mutatorName": "LogicalOperator",
+          "replacement": "logEntryInput.loglevel && 'INFO'",
+          "statusReason": "expected undefined to be 'INFO' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "3",
+            "4",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 78
+            },
+            "start": {
+              "column": 20,
+              "line": 78
+            }
+          }
+        },
+        {
+          "id": "98",
+          "mutatorName": "OptionalChaining",
+          "replacement": "logEntryInput.error.stack",
+          "statusReason": "Cannot read properties of undefined (reading 'stack')",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "3",
+            "4",
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 51,
+              "line": 82
+            },
+            "start": {
+              "column": 25,
+              "line": 82
+            }
+          }
+        },
+        {
+          "id": "99",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'stacktrace' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "6"
+          ],
+          "coveredBy": [
+            "6"
+          ],
+          "location": {
+            "end": {
+              "column": 66,
+              "line": 82
+            },
+            "start": {
+              "column": 54,
+              "line": 82
+            }
+          }
+        }
+      ],
+      "source": "import { DateFunction, testDateString } from '@dreamit/funpara'\nimport { LogEntry, LogEntryInput, Logger } from '@dreamit/graphql-server-base'\n\n/**\n * Logger implementation that saves created log entries in an LogEntry array.\n */\nexport class JsonTestLogger implements Logger {\n    loggerName = 'test-logger'\n    debugEnabled: boolean\n    serviceName = 'myTestService'\n    logEntries: LogEntry[] = new Array<LogEntry>()\n\n    constructor(debugEnabled = false) {\n        this.debugEnabled = debugEnabled\n    }\n\n    debug(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        if (this.debugEnabled) {\n            this.createLogEntry({\n                context,\n                dateFunction,\n                logMessage,\n                loglevel: 'DEBUG',\n            })\n        }\n    }\n\n    error(\n        logMessage: string,\n        error: Error,\n        customErrorName: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            customErrorName,\n            dateFunction,\n            error,\n            logMessage,\n            loglevel: 'ERROR',\n        })\n    }\n\n    info(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: 'INFO',\n        })\n    }\n\n    warn(\n        logMessage: string,\n        context?: unknown,\n        dateFunction?: DateFunction,\n    ): void {\n        this.createLogEntry({\n            context,\n            dateFunction,\n            logMessage,\n            loglevel: 'WARN',\n        })\n    }\n\n    createLogEntry(logEntryInput: LogEntryInput): void {\n        const logEntry: LogEntry = {\n            errorName: logEntryInput.customErrorName,\n            level: logEntryInput.loglevel ?? 'INFO',\n            logger: this.loggerName,\n            message: logEntryInput.logMessage,\n            serviceName: this.serviceName,\n            stacktrace: logEntryInput.error?.stack ? 'stacktrace' : undefined,\n            timestamp: testDateString,\n        }\n        this.logEntries.push(logEntry)\n    }\n}\n"
     }
   },
   "schemaVersion": "1.0",
@@ -4659,7 +4909,7 @@
           "name": "Warn entry should be written"
         }
       ],
-      "source": "/* eslint-disable max-len */\nimport { testDateFunction } from '@dreamit/funpara'\nimport { LogLevel } from '@dreamit/graphql-server-base'\nimport { JsonTestLogger } from 'src/logger/JsonTestLogger'\nimport { expect, test } from 'vitest'\n\ntest('Creating a Logger should work with default options', () => {\n    const logger = new JsonTestLogger()\n    expect(logger.debugEnabled).toBe(false)\n    expect(logger.loggerName).toBe('test-logger')\n    expect(logger.serviceName).toBe('myTestService')\n})\n\ntest('Logging entry should work even if no loglevel is provided', () => {\n    const logger = new JsonTestLogger()\n    logger.createLogEntry({\n        context: undefined,\n        logMessage: 'test',\n    })\n    const logEntry = logger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe(LogLevel.info)\n})\n\ntest('Debug entry should be written if debug is enabled', () => {\n    const debugLogger = new JsonTestLogger(true)\n    debugLogger.debug('test', undefined, testDateFunction)\n    const logEntry = debugLogger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe(LogLevel.debug)\n})\n\ntest('Debug entry should not be written if debug is disabled', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.debug('test')\n    expect(defaultLogger.logEntries.length).toBe(0)\n})\n\ntest('Error entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    const testError = new Error('error')\n    testError.stack = 'stacktrace'\n    defaultLogger.error(\n        'error',\n        testError,\n        'custom',\n        undefined,\n        testDateFunction,\n    )\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe(LogLevel.error)\n    expect(createdLogEntry?.message).toBe('error')\n    expect(createdLogEntry?.errorName).toBe('custom')\n    expect(createdLogEntry?.stacktrace).toBe('stacktrace')\n})\n\ntest('Info entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.info('info', undefined, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe(LogLevel.info)\n    expect(createdLogEntry?.message).toBe('info')\n})\n\ntest('Warn entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.warn('warn', undefined, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe(LogLevel.warn)\n    expect(createdLogEntry?.message).toBe('warn')\n})\n"
+      "source": "/* eslint-disable max-len */\nimport { testDateFunction } from '@dreamit/funpara'\nimport { JsonTestLogger } from 'src/logger/JsonTestLogger'\nimport { expect, test } from 'vitest'\n\ntest('Creating a Logger should work with default options', () => {\n    const logger = new JsonTestLogger()\n    expect(logger.debugEnabled).toBe(false)\n    expect(logger.loggerName).toBe('test-logger')\n    expect(logger.serviceName).toBe('myTestService')\n})\n\ntest('Logging entry should work even if no loglevel is provided', () => {\n    const logger = new JsonTestLogger()\n    logger.createLogEntry({\n        context: undefined,\n        logMessage: 'test',\n    })\n    const logEntry = logger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe('INFO')\n})\n\ntest('Debug entry should be written if debug is enabled', () => {\n    const debugLogger = new JsonTestLogger(true)\n    debugLogger.debug('test', undefined, testDateFunction)\n    const logEntry = debugLogger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe('DEBUG')\n})\n\ntest('Debug entry should not be written if debug is disabled', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.debug('test')\n    expect(defaultLogger.logEntries.length).toBe(0)\n})\n\ntest('Error entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    const testError = new Error('error')\n    testError.stack = 'stacktrace'\n    defaultLogger.error(\n        'error',\n        testError,\n        'custom',\n        undefined,\n        testDateFunction,\n    )\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('ERROR')\n    expect(createdLogEntry?.message).toBe('error')\n    expect(createdLogEntry?.errorName).toBe('custom')\n    expect(createdLogEntry?.stacktrace).toBe('stacktrace')\n})\n\ntest('Info entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.info('info', undefined, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('INFO')\n    expect(createdLogEntry?.message).toBe('info')\n})\n\ntest('Warn entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.warn('warn', undefined, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('WARN')\n    expect(createdLogEntry?.message).toBe('warn')\n})\n"
     },
     "tests/logger/TextTestLogger.test.ts": {
       "tests": [
