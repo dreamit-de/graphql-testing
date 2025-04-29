@@ -22,24 +22,24 @@ class NoLogger implements Logger {
     }
     debug(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {}
     error(
         logMessage: string,
+        context: Record<string, unknown>,
         error: Error,
         customErrorName?: string,
-        context?: unknown,
         dateFunction?: DateFunction,
     ): void {}
     info(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {}
     warn(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {}
 }
