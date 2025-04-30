@@ -6,6 +6,7 @@ import {
 import { expect, test } from 'vitest'
 
 const exampleText = 'Hello, World!'
+const exampleTextTwo = 'Hello, World 2nd!'
 const exampleJSON = '{"AKey":"AValue"}'
 
 test('StandaloneGraphQLServerResponse should work as expected', () => {
@@ -16,8 +17,10 @@ test('StandaloneGraphQLServerResponse should work as expected', () => {
     )
     expect(response.responses).toStrictEqual([])
 
-    // setHeader function
-    response.setHeader('content-type', 'application/json')
+    // setHeader and header function
+    response.setHeader('content-type', 'application/text')
+    expect(response.headers.get('content-type')).toBe('application/text')
+    response.header('content-type', 'application/json')
     expect(response.headers.get('content-type')).toBe('application/json')
 
     // removeHeader function
@@ -36,6 +39,10 @@ test('StandaloneGraphQLServerResponse should work as expected', () => {
     expect(response.getLastResponse()).toBe(exampleText)
     expect(response.getLastResponseAsObject()).toBe(exampleText)
     expect(response.getLastResponseAsObject(false)).toBe(exampleText)
+    response.send(exampleTextTwo)
+    expect(response.getLastResponse()).toBe(exampleTextTwo)
+    expect(response.getLastResponseAsObject()).toBe(exampleTextTwo)
+    expect(response.getLastResponseAsObject(false)).toBe(exampleTextTwo)
 
     // Add JSON string to the responses
     response.end(exampleJSON)

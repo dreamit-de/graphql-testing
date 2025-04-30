@@ -15,11 +15,19 @@ export class StandaloneGraphQLServerResponse implements GraphQLServerResponse {
 
     textDecoder: TextDecoder = new TextDecoder()
 
+    header(name: string, value: string | number | readonly string[]): this {
+        this.headers.set(name.toLocaleLowerCase(), value)
+        return this
+    }
     setHeader(name: string, value: string | number | readonly string[]): this {
         this.headers.set(name.toLocaleLowerCase(), value)
         return this
     }
     end(chunk: unknown): this {
+        this.responses.push(chunk)
+        return this
+    }
+    send(chunk: unknown): this {
         this.responses.push(chunk)
         return this
     }
