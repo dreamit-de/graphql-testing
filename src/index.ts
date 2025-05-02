@@ -45,3 +45,4 @@ export { JsonContentTypeHeader } from './request/JsonContentTypeHeader'
 export { requestForQuery } from './request/RequestForQuery'
 
 export { StandaloneGraphQLServerResponse } from './response/StandaloneGraphQLServerResponse'
+export { StandaloneGraphQLServerResponseCompat } from './response/StandaloneGraphQLServerResponseCompat'
