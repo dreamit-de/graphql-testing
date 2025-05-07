@@ -24,24 +24,32 @@ As it seems to be unlikely that the test logic is used in production code it is 
 Example usage:
 
 ```typescript
+test('Error entry should be written', () => {
+    const defaultLogger = new JsonTestLogger()
+    const testError = new Error('error')
+    testError.stack = 'stacktrace'
+    defaultLogger.error('error', {}, testError, 'custom', testDateFunction)
+    const createdLogEntry = defaultLogger.logEntries.at(0)
+    expect(createdLogEntry?.level).toBe('ERROR')
+    expect(createdLogEntry?.message).toBe('error')
+    expect(createdLogEntry?.errorName).toBe('custom')
+    expect(createdLogEntry?.stacktrace).toBe('stacktrace')
+})
+
 test('Info entry should be written', () => {
     const defaultLogger = new JsonTestLogger()
-    defaultLogger.info('info', undefined, testDateFunction)
+    defaultLogger.info('info', {}, testDateFunction)
     const createdLogEntry = defaultLogger.logEntries.at(0)
-    expect(createdLogEntry?.level).toBe(LogLevel.info)
+    expect(createdLogEntry?.level).toBe('INFO')
     expect(createdLogEntry?.message).toBe('info')
 })
 
-test('Logging entry should work even if no loglevel is provided', () => {
-    const logger = new TextTestLogger()
-    logger.createLogEntry({
-        context: undefined,
-        logMessage: 'test',
-    })
-    // Then
-    expect(logger.logEntries.at(0)).toBe(
-        `${testDateString} [INFO]test-logger-myTestService :test`,
-    )
+test('Warn entry should be written', () => {
+    const defaultLogger = new JsonTestLogger()
+    defaultLogger.warn('warn', {}, testDateFunction)
+    const createdLogEntry = defaultLogger.logEntries.at(0)
+    expect(createdLogEntry?.level).toBe('WARN')
+    expect(createdLogEntry?.message).toBe('warn')
 })
 ```
 
@@ -74,25 +82,31 @@ test.each`
 )
 
 test.each`
-    query         | headers                  | expectedBody                    | expectedHeaders
-    ${usersQuery} | ${undefined}             | ${`{ query: '${usersQuery}' }`} | ${JsonContentTypeHeader}
-    ${usersQuery} | ${textContentTypeHeader} | ${`{ query: '${usersQuery}' }`} | ${textContentTypeHeader}
+    query         | headers                  | expectedBody                   | expectedHeaders
+    ${usersQuery} | ${undefined}             | ${`{"query":"${usersQuery}"}`} | ${JsonContentTypeHeader}
+    ${usersQuery} | ${textContentTypeHeader} | ${`{"query":"${usersQuery}"}`} | ${textContentTypeHeader}
 `(
     'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',
-    ({ query, headers, expectedBody, expectedHeaders }) => {
-        expect(requestForQuery(query, headers)).toStrictEqual({
-            body: expectedBody,
-            headers: expectedHeaders,
-            method: 'POST',
-            url: '/graphql',
-        })
+    async ({ query, headers, expectedBody, expectedHeaders }) => {
+        const request = requestForQuery(query, headers)
+        expect(request.body).toStrictEqual(expectedBody)
+        expect(request.headers).toStrictEqual(expectedHeaders)
+        expect(request.method).toStrictEqual('POST')
+        expect(request.url).toStrictEqual('/graphql')
+        expect(request.text).toBeDefined()
+        expect(request.text).toBeInstanceOf(Function)
+        if (request.text) {
+            expect(request.text()).resolves.toStrictEqual(expectedBody)
+        } else {
+            throw new Error('request.text is undefined')
+        }
     },
 )
 ```
 
 ### Response
 
-- **StandaloneGraphQLServerResponse**: [@dreamit/graphql-server][1] `GraphQLServerResponse` implementation that can be used standalone without a webserver. Supports `string`, `object` and `Uint8Array`/`Buffer`.
+- **StandaloneGraphQLServerResponse**: [@dreamit/graphql-server][1] `GraphQLServerResponse` implementation that can be used standalone without a webserver. Supports `string`, `object` and `Uint8Array`/`Buffer`. **StandaloneGraphQLServerResponseCompat** only implements `send` and `header` function and can be used to test fallback behavior for webserver compatibility
     - **responses**: Field containing set responses in an unknown array.
     - **getLastResponse**: Returns the last response as a string.
     - **getLastResponseAsObject(parseStringToJSON = true)**: Returns the last response as an object. If parseStringToJSON is true it will try to parse a string response to an object and returns the string if it is not possible.
