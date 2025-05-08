@@ -37,7 +37,7 @@ export {
 
 export { JsonTestLogger } from './logger/JsonTestLogger'
 export { NoConsole } from './logger/NoConsole'
-export { NoLogger, NoOpTestLogger } from './logger/NoLogger'
+export { NoOpLogger, NoOpTestLogger } from './logger/NoOpLogger'
 export { TextTestLogger } from './logger/TextTestLogger'
 
 export { generateGetParametersFromGraphQLRequestInfo } from './request/GenerateGetParametersFromGraphQLRequestInfo'
@@ -45,3 +45,4 @@ export { JsonContentTypeHeader } from './request/JsonContentTypeHeader'
 export { requestForQuery } from './request/RequestForQuery'
 
 export { StandaloneGraphQLServerResponse } from './response/StandaloneGraphQLServerResponse'
+export { StandaloneGraphQLServerResponseCompat } from './response/StandaloneGraphQLServerResponseCompat'

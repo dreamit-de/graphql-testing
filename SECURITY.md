@@ -12,6 +12,7 @@ Please consider using only supported versions.
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 1.x.x   | :white_check_mark: |
 | 0.1.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability

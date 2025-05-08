@@ -16,6 +16,7 @@ export function requestForQuery(
         body: `{"query":"${query}"}`,
         headers: headers,
         method: 'POST',
+        text: async () => `{"query":"${query}"}`,
         url: '/graphql',
     }
 }

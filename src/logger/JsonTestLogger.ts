@@ -1,10 +1,5 @@
 import { DateFunction, testDateString } from '@dreamit/funpara'
-import {
-    LogEntry,
-    LogEntryInput,
-    Logger,
-    LogLevel,
-} from '@dreamit/graphql-server-base'
+import { LogEntry, LogEntryInput, Logger } from '@dreamit/graphql-server-base'
 
 /**
  * Logger implementation that saves created log entries in an LogEntry array.
@@ -21,7 +16,7 @@ export class JsonTestLogger implements Logger {
 
     debug(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {
         if (this.debugEnabled) {
@@ -29,16 +24,16 @@ export class JsonTestLogger implements Logger {
                 context,
                 dateFunction,
                 logMessage,
-                loglevel: LogLevel.debug,
+                loglevel: 'DEBUG',
             })
         }
     }
 
     error(
         logMessage: string,
+        context: Record<string, unknown>,
         error: Error,
         customErrorName: string,
-        context?: unknown,
         dateFunction?: DateFunction,
     ): void {
         this.createLogEntry({
@@ -47,40 +42,40 @@ export class JsonTestLogger implements Logger {
             dateFunction,
             error,
             logMessage,
-            loglevel: LogLevel.error,
+            loglevel: 'ERROR',
         })
     }
 
     info(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {
         this.createLogEntry({
             context,
             dateFunction,
             logMessage,
-            loglevel: LogLevel.info,
+            loglevel: 'INFO',
         })
     }
 
     warn(
         logMessage: string,
-        context?: unknown,
+        context: Record<string, unknown>,
         dateFunction?: DateFunction,
     ): void {
         this.createLogEntry({
             context,
             dateFunction,
             logMessage,
-            loglevel: LogLevel.warn,
+            loglevel: 'WARN',
         })
     }
 
     createLogEntry(logEntryInput: LogEntryInput): void {
         const logEntry: LogEntry = {
             errorName: logEntryInput.customErrorName,
-            level: logEntryInput.loglevel ?? LogLevel.info,
+            level: logEntryInput.loglevel ?? 'INFO',
             logger: this.loggerName,
             message: logEntryInput.logMessage,
             serviceName: this.serviceName,
