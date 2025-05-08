@@ -59,7 +59,7 @@
     },
     "peerDependencies": {
         "@dreamit/funpara": "^1.0.0",
-        "@dreamit/graphql-server-base": "file:dreamit-graphql-server-base-3.0.0.tgz",
+        "@dreamit/graphql-server-base": "^3.0.0",
         "graphql": "^16.0.0"
     },
     "engines": {
