@@ -5,7 +5,7 @@ import { Logger } from '@dreamit/graphql-server-base'
 /**
  * Logger implementation that does not log or output anything.
  */
-class NoLogger implements Logger {
+class NoOpLogger implements Logger {
     loggerName: string
     serviceName: string
     debugEnabled: boolean
@@ -44,6 +44,6 @@ class NoLogger implements Logger {
     ): void {}
 }
 
-const NoOpTestLogger = new NoLogger('no-logger', 'myTestService')
+const NoOpTestLogger = new NoOpLogger('no-logger', 'myTestService')
 
-export { NoLogger, NoOpTestLogger }
+export { NoOpLogger, NoOpTestLogger }

@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-import { NoLogger } from 'src/logger/NoLogger'
+import { NoOpLogger } from 'src/logger/NoOpLogger'
 import { expect, test } from 'vitest'
 
 test('Should be able to use NoLogger without running into errors', () => {
-    const logger = new NoLogger('no-logger', 'no-service')
+    const logger = new NoOpLogger('no-logger', 'no-service')
     expect(logger.debugEnabled).toBe(false)
     const testMessage = 'Test message'
 

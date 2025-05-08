@@ -18,7 +18,7 @@ As it seems to be unlikely that the test logic is used in production code it is 
 
 - **JsonTestLogger**: [@dreamit/graphql-server][1] `Logger` implementation that saves created log entries in an LogEntry array.
 - **NoConsole**: A `Console` that does nothing
-- **NoLogger**: [@dreamit/graphql-server][1] `Logger` implementation that does not log or output anything.
+- **NoOpLogger**: [@dreamit/graphql-server][1] `Logger` implementation that does not log or output anything.
 - **TextTestLogger**: [@dreamit/graphql-server][1] `Logger` implementation that saves created log entries in a string array.
 
 Example usage:
