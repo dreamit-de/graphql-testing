@@ -1,5 +1,11 @@
-import { DateFunction, testDateString } from '@dreamit/funpara'
-import { LogEntry, LogEntryInput, Logger } from '@dreamit/graphql-server-base'
+import { testDateString } from '@dreamit/funpara'
+// eslint-disable-next-line @typescript-eslint/no-duplicate-imports
+import type { DateFunction } from '@dreamit/funpara'
+import type {
+    LogEntry,
+    LogEntryInput,
+    Logger,
+} from '@dreamit/graphql-server-base'
 
 /**
  * Logger implementation that saves created log entries in an LogEntry array.

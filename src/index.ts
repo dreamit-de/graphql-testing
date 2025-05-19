@@ -1,7 +1,4 @@
 export {
-    LoginData,
-    LogoutResult,
-    User,
     aggregateErrorQuery,
     aggregateErrorResponse,
     coercedNullValueError,
@@ -34,6 +31,7 @@ export {
     validationErrorMessage,
     validationErrorQuery,
 } from './example/ExampleData'
+export type { LoginData, LogoutResult, User } from './example/ExampleData'
 
 export { JsonTestLogger } from './logger/JsonTestLogger'
 export { NoConsole } from './logger/NoConsole'

@@ -1,5 +1,5 @@
-import { GraphQLServerRequest } from '@dreamit/graphql-server-base'
-import { IncomingHttpHeaders } from 'node:http'
+import type { GraphQLServerRequest } from '@dreamit/graphql-server-base'
+import type { IncomingHttpHeaders } from 'node:http'
 import { JsonContentTypeHeader } from './JsonContentTypeHeader'
 
 /**
