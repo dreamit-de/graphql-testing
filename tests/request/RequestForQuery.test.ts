@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { IncomingHttpHeaders } from 'node:http'
+import type { IncomingHttpHeaders } from 'node:http'
 import { usersQuery } from 'src/example/ExampleData'
 import { JsonContentTypeHeader } from 'src/request/JsonContentTypeHeader'
 import { requestForQuery } from 'src/request/RequestForQuery'

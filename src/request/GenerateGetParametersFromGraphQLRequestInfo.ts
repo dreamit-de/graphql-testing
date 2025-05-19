@@ -1,4 +1,4 @@
-import { GraphQLRequestInfo } from '@dreamit/graphql-server-base'
+import type { GraphQLRequestInfo } from '@dreamit/graphql-server-base'
 
 /**
  * Generates a URL param string with the query, operationName and variables of a GraphQLRequestInfo object.

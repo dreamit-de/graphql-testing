@@ -1,6 +1,6 @@
 /* eslint-disable no-empty-function, no-unused-vars */
-import { DateFunction } from '@dreamit/funpara'
-import { Logger } from '@dreamit/graphql-server-base'
+import type { DateFunction } from '@dreamit/funpara'
+import type { Logger } from '@dreamit/graphql-server-base'
 
 /**
  * Logger implementation that does not log or output anything.

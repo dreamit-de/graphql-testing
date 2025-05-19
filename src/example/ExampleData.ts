@@ -1,4 +1,4 @@
-import {
+import type {
     AggregateError,
     GraphQLRequestInfo,
 } from '@dreamit/graphql-server-base'
@@ -210,17 +210,14 @@ export {
     fetchTimeoutError,
     initialSchemaWithOnlyDescription,
     introspectionQuery,
-    LoginData,
     loginMutation,
     loginRequest,
     logoutMutation,
-    LogoutResult,
     returnErrorQuery,
     sdlNotFoundResponse,
     sdlQuery,
     sensitiveDataErrorQuery,
     sensitiveDataInError,
-    User,
     userOne,
     userQuery,
     userSchema,
@@ -237,3 +234,4 @@ export {
     validationErrorMessage,
     validationErrorQuery,
 }
+export type { LoginData, LogoutResult, User }

@@ -1,4 +1,4 @@
-import { GraphQLServerResponse } from '@dreamit/graphql-server-base'
+import type { GraphQLServerResponse } from '@dreamit/graphql-server-base'
 
 /**
  * GraphQLServerResponse implementation that can be used standalone without a webserver.
