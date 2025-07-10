@@ -47,7 +47,7 @@ jobs:
           node-version: "20.x"
           registry-url: https://registry.npmjs.org/
       - run: npm ci --ignore-scripts
-      - run: npm publish --provenance --access public
+      - run: npm deprecate @dreamit/graphql-testing "@dreamit/graphql-testing is deprecated and will no longer be maintained. Use at your own risk!"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
