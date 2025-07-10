@@ -2,6 +2,8 @@
 
 Test helper and functions to test GraphQL logic with and without [@dreamit/graphql-server][1]
 
+**Deprecated**: This library will no longer be maintained. Use at your own risk!
+
 ## Install
 
 ```sh
