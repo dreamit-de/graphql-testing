@@ -1598,16 +1598,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "2"
+            "4"
           ],
           "coveredBy": [
-            "2",
-            "3",
             "4",
             "5",
             "6",
             "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -1629,16 +1629,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "2"
+            "4"
           ],
           "coveredBy": [
-            "2",
-            "3",
             "4",
             "5",
             "6",
             "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -1660,16 +1660,16 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "2",
-            "3",
             "4",
             "5",
             "6",
             "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -1691,15 +1691,15 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "2"
+            "4"
           ],
           "coveredBy": [
-            "2",
-            "3",
+            "4",
             "5",
-            "6",
             "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -1721,16 +1721,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "2"
+            "4"
           ],
           "coveredBy": [
-            "2",
-            "3",
             "4",
             "5",
             "6",
             "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -1752,11 +1752,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "4"
+            "6"
           ],
           "coveredBy": [
-            "4",
-            "5"
+            "6",
+            "7"
           ],
           "location": {
             "end": {
@@ -1778,11 +1778,11 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "5"
+            "7"
           ],
           "coveredBy": [
-            "4",
-            "5"
+            "6",
+            "7"
           ],
           "location": {
             "end": {
@@ -1804,11 +1804,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "4"
+            "6"
           ],
           "coveredBy": [
-            "4",
-            "5"
+            "6",
+            "7"
           ],
           "location": {
             "end": {
@@ -1830,10 +1830,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "4"
+            "6"
           ],
           "coveredBy": [
-            "4"
+            "6"
           ],
           "location": {
             "end": {
@@ -1855,10 +1855,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "4"
+            "6"
           ],
           "coveredBy": [
-            "4"
+            "6"
           ],
           "location": {
             "end": {
@@ -1880,10 +1880,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "4"
+            "6"
           ],
           "coveredBy": [
-            "4"
+            "6"
           ],
           "location": {
             "end": {
@@ -1905,10 +1905,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "6"
+            "8"
           ],
           "coveredBy": [
-            "6"
+            "8"
           ],
           "location": {
             "end": {
@@ -1930,10 +1930,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "6"
+            "8"
           ],
           "coveredBy": [
-            "6"
+            "8"
           ],
           "location": {
             "end": {
@@ -1955,10 +1955,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "6"
+            "8"
           ],
           "coveredBy": [
-            "6"
+            "8"
           ],
           "location": {
             "end": {
@@ -1980,10 +1980,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "7"
+            "9"
           ],
           "coveredBy": [
-            "7"
+            "9"
           ],
           "location": {
             "end": {
@@ -2005,10 +2005,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "7"
+            "9"
           ],
           "coveredBy": [
-            "7"
+            "9"
           ],
           "location": {
             "end": {
@@ -2030,10 +2030,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "7"
+            "9"
           ],
           "coveredBy": [
-            "7"
+            "9"
           ],
           "location": {
             "end": {
@@ -2055,10 +2055,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "8"
+            "10"
           ],
           "coveredBy": [
-            "8"
+            "10"
           ],
           "location": {
             "end": {
@@ -2080,10 +2080,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "8"
+            "10"
           ],
           "coveredBy": [
-            "8"
+            "10"
           ],
           "location": {
             "end": {
@@ -2105,10 +2105,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "8"
+            "10"
           ],
           "coveredBy": [
-            "8"
+            "10"
           ],
           "location": {
             "end": {
@@ -2130,14 +2130,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "3",
-            "4",
+            "5",
             "6",
-            "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -2159,14 +2159,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "3",
-            "4",
+            "5",
             "6",
-            "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -2188,14 +2188,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "3",
-            "4",
+            "5",
             "6",
-            "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -2217,10 +2217,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "3"
+            "5"
           ],
           "location": {
             "end": {
@@ -2242,14 +2242,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "3"
+            "5"
           ],
           "coveredBy": [
-            "3",
-            "4",
+            "5",
             "6",
-            "7",
-            "8"
+            "8",
+            "9",
+            "10"
           ],
           "location": {
             "end": {
@@ -2271,10 +2271,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "6"
+            "8"
           ],
           "coveredBy": [
-            "6"
+            "8"
           ],
           "location": {
             "end": {
@@ -2302,10 +2302,10 @@
           "testsCompleted": 1,
           "static": true,
           "killedBy": [
-            "22"
+            "16"
           ],
           "coveredBy": [
-            "22"
+            "16"
           ],
           "location": {
             "end": {
@@ -2327,10 +2327,10 @@
           "testsCompleted": 1,
           "static": true,
           "killedBy": [
-            "22"
+            "16"
           ],
           "coveredBy": [
-            "22"
+            "16"
           ],
           "location": {
             "end": {
@@ -2396,16 +2396,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "17"
           ],
           "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2427,16 +2427,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "17"
           ],
           "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2458,16 +2458,16 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2489,15 +2489,15 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "17"
           ],
           "coveredBy": [
-            "9",
-            "10",
-            "12",
-            "13",
-            "14",
-            "15"
+            "17",
+            "18",
+            "20",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2519,16 +2519,16 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "17"
           ],
           "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2550,11 +2550,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "11"
+            "19"
           ],
           "coveredBy": [
-            "11",
-            "12"
+            "19",
+            "20"
           ],
           "location": {
             "end": {
@@ -2576,11 +2576,11 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "12"
+            "20"
           ],
           "coveredBy": [
-            "11",
-            "12"
+            "19",
+            "20"
           ],
           "location": {
             "end": {
@@ -2602,11 +2602,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "11"
+            "19"
           ],
           "coveredBy": [
-            "11",
-            "12"
+            "19",
+            "20"
           ],
           "location": {
             "end": {
@@ -2628,10 +2628,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "11"
+            "19"
           ],
           "coveredBy": [
-            "11"
+            "19"
           ],
           "location": {
             "end": {
@@ -2653,10 +2653,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "11"
+            "19"
           ],
           "coveredBy": [
-            "11"
+            "19"
           ],
           "location": {
             "end": {
@@ -2678,10 +2678,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "11"
+            "19"
           ],
           "coveredBy": [
-            "11"
+            "19"
           ],
           "location": {
             "end": {
@@ -2703,10 +2703,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "13"
+            "21"
           ],
           "coveredBy": [
-            "13"
+            "21"
           ],
           "location": {
             "end": {
@@ -2728,10 +2728,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "13"
+            "21"
           ],
           "coveredBy": [
-            "13"
+            "21"
           ],
           "location": {
             "end": {
@@ -2753,10 +2753,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "13"
+            "21"
           ],
           "coveredBy": [
-            "13"
+            "21"
           ],
           "location": {
             "end": {
@@ -2778,10 +2778,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "14"
+            "22"
           ],
           "coveredBy": [
-            "14"
+            "22"
           ],
           "location": {
             "end": {
@@ -2803,10 +2803,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "14"
+            "22"
           ],
           "coveredBy": [
-            "14"
+            "22"
           ],
           "location": {
             "end": {
@@ -2828,10 +2828,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "14"
+            "22"
           ],
           "coveredBy": [
-            "14"
+            "22"
           ],
           "location": {
             "end": {
@@ -2853,10 +2853,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "15"
+            "23"
           ],
           "coveredBy": [
-            "15"
+            "23"
           ],
           "location": {
             "end": {
@@ -2878,10 +2878,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "15"
+            "23"
           ],
           "coveredBy": [
-            "15"
+            "23"
           ],
           "location": {
             "end": {
@@ -2903,10 +2903,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "15"
+            "23"
           ],
           "coveredBy": [
-            "15"
+            "23"
           ],
           "location": {
             "end": {
@@ -2928,14 +2928,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2957,14 +2957,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -2986,14 +2986,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3015,10 +3015,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10"
+            "18"
           ],
           "location": {
             "end": {
@@ -3040,14 +3040,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3069,10 +3069,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "13"
+            "21"
           ],
           "coveredBy": [
-            "13"
+            "21"
           ],
           "location": {
             "end": {
@@ -3094,14 +3094,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3123,14 +3123,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3152,14 +3152,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3181,14 +3181,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "13",
-            "14",
-            "15"
+            "18",
+            "19",
+            "21",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3210,10 +3210,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "13"
+            "21"
           ],
           "coveredBy": [
-            "13"
+            "21"
           ],
           "location": {
             "end": {
@@ -3235,13 +3235,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "10"
+            "18"
           ],
           "coveredBy": [
-            "10",
-            "11",
-            "14",
-            "15"
+            "18",
+            "19",
+            "22",
+            "23"
           ],
           "location": {
             "end": {
@@ -3269,13 +3269,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3297,13 +3297,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3325,13 +3325,13 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "19"
+            "13"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3353,13 +3353,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3381,12 +3381,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "20",
-            "21"
+            "12",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3408,12 +3408,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "20",
-            "21"
+            "12",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3435,13 +3435,13 @@
           "testsCompleted": 3,
           "static": false,
           "killedBy": [
-            "20"
+            "14"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3463,13 +3463,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3491,12 +3491,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "21"
+            "12",
+            "13",
+            "15"
           ],
           "location": {
             "end": {
@@ -3518,12 +3518,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "21"
+            "12",
+            "13",
+            "15"
           ],
           "location": {
             "end": {
@@ -3545,13 +3545,13 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3573,13 +3573,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3601,12 +3601,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20"
+            "12",
+            "13",
+            "14"
           ],
           "location": {
             "end": {
@@ -3628,12 +3628,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20"
+            "12",
+            "13",
+            "14"
           ],
           "location": {
             "end": {
@@ -3655,13 +3655,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3683,13 +3683,13 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3711,13 +3711,13 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3739,13 +3739,13 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "18"
+            "12"
           ],
           "coveredBy": [
-            "18",
-            "19",
-            "20",
-            "21"
+            "12",
+            "13",
+            "14",
+            "15"
           ],
           "location": {
             "end": {
@@ -3767,10 +3767,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "21"
+            "15"
           ],
           "location": {
             "end": {
@@ -3792,10 +3792,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "21"
+            "15"
           ],
           "location": {
             "end": {
@@ -3817,10 +3817,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "21"
+            "15"
           ],
           "coveredBy": [
-            "21"
+            "15"
           ],
           "location": {
             "end": {
@@ -3880,6 +3880,200 @@
       ],
       "source": "import type { IncomingHttpHeaders } from 'node:http'\n\n/**\n * The IncomingHttpHeaders for JSON content type\n */\nexport const JsonContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'application/json',\n}\n"
     },
+    "src/request/RequestForQuery.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "159",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Cannot read properties of undefined (reading 'body')",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 22
+            },
+            "start": {
+              "column": 25,
+              "line": 14
+            }
+          }
+        },
+        {
+          "id": "160",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected undefined to strictly equal '{\"query\":\"query users{ users { userId…'",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 21
+            },
+            "start": {
+              "column": 12,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "161",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expected '' to strictly equal '{\"query\":\"query users{ users { userId…'",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 37,
+              "line": 16
+            },
+            "start": {
+              "column": 15,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "162",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to strictly equal 'POST'",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 23,
+              "line": 18
+            },
+            "start": {
+              "column": 17,
+              "line": 18
+            }
+          }
+        },
+        {
+          "id": "163",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "You must provide a Promise to expect() when using .resolves, not 'undefined'.",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 49,
+              "line": 19
+            },
+            "start": {
+              "column": 15,
+              "line": 19
+            }
+          }
+        },
+        {
+          "id": "164",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expected '' to strictly equal '{\"query\":\"query users{ users { userId…'",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2"
+          ],
+          "location": {
+            "end": {
+              "column": 49,
+              "line": 19
+            },
+            "start": {
+              "column": 27,
+              "line": 19
+            }
+          }
+        },
+        {
+          "id": "165",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to strictly equal '/graphql'",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3"
+          ],
+          "location": {
+            "end": {
+              "column": 24,
+              "line": 20
+            },
+            "start": {
+              "column": 14,
+              "line": 20
+            }
+          }
+        }
+      ],
+      "source": "import type { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport type { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{\"query\":\"${query}\"}`,\n        headers: headers,\n        method: 'POST',\n        text: async () => `{\"query\":\"${query}\"}`,\n        url: '/graphql',\n    }\n}\n"
+    },
     "src/response/StandaloneGraphQLServerResponse.ts": {
       "language": "typescript",
       "mutants": [
@@ -3892,10 +4086,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -3917,10 +4111,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -3942,10 +4136,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -3973,10 +4167,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -3998,10 +4192,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4023,10 +4217,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4048,10 +4242,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4073,10 +4267,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4098,10 +4292,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4123,10 +4317,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4148,10 +4342,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4173,10 +4367,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4198,10 +4392,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4223,10 +4417,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4248,10 +4442,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4273,10 +4467,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4298,10 +4492,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4323,10 +4517,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4348,10 +4542,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4373,10 +4567,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4398,10 +4592,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4423,10 +4617,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4448,10 +4642,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4473,10 +4667,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4498,10 +4692,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4523,10 +4717,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4548,10 +4742,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4573,10 +4767,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4598,10 +4792,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4623,10 +4817,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4648,10 +4842,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4673,10 +4867,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4698,10 +4892,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4723,10 +4917,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4748,10 +4942,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4773,10 +4967,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "1"
+            "3"
           ],
           "coveredBy": [
-            "1"
+            "3"
           ],
           "location": {
             "end": {
@@ -4791,200 +4985,6 @@
         }
       ],
       "source": "import type { GraphQLServerResponse } from '@dreamit/graphql-server-base'\n\n/**\n * GraphQLServerResponse implementation that can be used standalone without a webserver.\n * Compat implementation does not implement setHeader() and end() methods to test their fallbacks header() and send().\n */\nexport class StandaloneGraphQLServerResponseCompat\n    implements GraphQLServerResponse\n{\n    statusCode = 400\n    // Response headers are set to lowercase to ease testing\n    headers = new Map<string, string | number | readonly string[]>()\n\n    /**\n     * Set responses in an unknown array\n     */\n    responses: unknown[] = []\n\n    textDecoder: TextDecoder = new TextDecoder()\n\n    header(name: string, value: string | number | readonly string[]): this {\n        this.headers.set(name.toLocaleLowerCase(), value)\n        return this\n    }\n    send(chunk: unknown): this {\n        this.responses.push(chunk)\n        return this\n    }\n    removeHeader(name: string): void {\n        this.headers.delete(name)\n    }\n\n    /**\n     * Returns the last response as a string\n     * @returns {string} The last response as a string\n     */\n    getLastResponse(): string {\n        const response = this.responses.at(-1)\n        if (response instanceof Uint8Array) {\n            return this.textDecoder.decode(response)\n        } else if (typeof response === 'string') {\n            return response\n        }\n        return JSON.stringify(response)\n    }\n\n    /**\n     * Returns the last response as an object\n     * @param {boolean} parseStringToJSON - Whether to parse a string response to JSON. If it is parseable, it will be parsed to an object, otherwise it will be returned as a string.\n     * @returns {string} The last response as a string\n     */\n    // eslint-disable-next-line no-explicit-any\n    getLastResponseAsObject(parseStringToJSON = true): any {\n        const response = this.responses.at(-1)\n        if (typeof response === 'string' && parseStringToJSON) {\n            try {\n                return JSON.parse(response)\n            } catch {\n                return response\n            }\n        } else if (response instanceof Uint8Array) {\n            const decodedResponse = this.textDecoder.decode(response)\n            try {\n                return JSON.parse(decodedResponse)\n            } catch {\n                return decodedResponse\n            }\n        } else {\n            return response\n        }\n    }\n}\n"
-    },
-    "src/request/RequestForQuery.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "164",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expected '' to strictly equal '{\"query\":\"query users{ users { userId…'",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 49,
-              "line": 19
-            },
-            "start": {
-              "column": 27,
-              "line": 19
-            }
-          }
-        },
-        {
-          "id": "161",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expected '' to strictly equal '{\"query\":\"query users{ users { userId…'",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 37,
-              "line": 16
-            },
-            "start": {
-              "column": 15,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "162",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to strictly equal 'POST'",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 23,
-              "line": 18
-            },
-            "start": {
-              "column": 17,
-              "line": 18
-            }
-          }
-        },
-        {
-          "id": "160",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected undefined to strictly equal '{\"query\":\"query users{ users { userId…'",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 21
-            },
-            "start": {
-              "column": 12,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "159",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Cannot read properties of undefined (reading 'body')",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 22
-            },
-            "start": {
-              "column": 25,
-              "line": 14
-            }
-          }
-        },
-        {
-          "id": "163",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "You must provide a Promise to expect() when using .resolves, not 'undefined'.",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 49,
-              "line": 19
-            },
-            "start": {
-              "column": 15,
-              "line": 19
-            }
-          }
-        },
-        {
-          "id": "165",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to strictly equal '/graphql'",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "1",
-            "16",
-            "17"
-          ],
-          "location": {
-            "end": {
-              "column": 24,
-              "line": 20
-            },
-            "start": {
-              "column": 14,
-              "line": 20
-            }
-          }
-        }
-      ],
-      "source": "import type { GraphQLServerRequest } from '@dreamit/graphql-server-base'\nimport type { IncomingHttpHeaders } from 'node:http'\nimport { JsonContentTypeHeader } from './JsonContentTypeHeader'\n\n/**\n * Creates a GraphQLServerRequest for given query and headers.\n * @param {string} query - The GraphQL query.\n * @param {IncomingHttpHeaders} headers - The HTTPHeaders.\n * @returns {GraphQLServerRequest} A GraphQLServerRequest.\n */\nexport function requestForQuery(\n    query: string,\n    headers: IncomingHttpHeaders = JsonContentTypeHeader,\n): GraphQLServerRequest {\n    return {\n        body: `{\"query\":\"${query}\"}`,\n        headers: headers,\n        method: 'POST',\n        text: async () => `{\"query\":\"${query}\"}`,\n        url: '/graphql',\n    }\n}\n"
     }
   },
   "schemaVersion": "1.0",
@@ -5003,10 +5003,23 @@
       ],
       "source": "import { graphql } from 'graphql'\nimport {\n    coercedNullValueError,\n    coercedNullValueErrorQuery,\n    fetchErrorQuery,\n    fetchTimeoutError,\n    loginMutation,\n    logoutMutation,\n    returnErrorQuery,\n    sdlQuery,\n    sensitiveDataErrorQuery,\n    sensitiveDataInError,\n    userOne,\n    userQuery,\n    userSchema,\n    userSchemaResolvers,\n    userSchemaSDL,\n    usersQuery,\n    userTwo,\n    validationErrorMessage,\n    validationErrorQuery,\n} from 'src/example/ExampleData'\nimport { expect, test } from 'vitest'\n\ntest('Should be able to execute requests against user test schema', async () => {\n    // _sdl query\n    let result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: sdlQuery,\n    })\n    expect(result.data).toEqual({ _service: { sdl: userSchemaSDL } })\n\n    // CoercedNullValueError mutation\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: coercedNullValueErrorQuery,\n    })\n    expect(result.errors?.at(0)?.message).toEqual(coercedNullValueError)\n\n    // FetchError mutation\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: fetchErrorQuery,\n    })\n    expect(result.errors?.at(0)?.message).toEqual(fetchTimeoutError)\n\n    // Login mutation without auth context\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: loginMutation,\n    })\n    expect(result.data).toEqual({ login: { jwt: 'jwt-' } })\n\n    // Login mutation with auth context\n    result = await graphql({\n        contextValue: { authHeader: 'MYJWT' },\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: loginMutation,\n    })\n    expect(result.data).toEqual({ login: { jwt: 'jwt-MYJWT' } })\n\n    // Logout mutation\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: logoutMutation,\n    })\n    expect(result.data).toEqual({ logout: { result: 'Goodbye!' } })\n\n    // Return error query\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: returnErrorQuery,\n    })\n    expect(result.errors?.at(0)?.message).toEqual('Something went wrong!')\n\n    // SensitiveDataError query\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: sensitiveDataErrorQuery,\n    })\n    expect(result.errors?.at(0)?.message).toEqual(sensitiveDataInError)\n\n    // User query for user one\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: userQuery,\n        variableValues: { id201: userOne.userId },\n    })\n    expect(result.data).toEqual({ user: userOne })\n\n    // User query for user two\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: userQuery,\n        variableValues: { id201: userTwo.userId },\n    })\n    expect(result.data).toEqual({ user: userTwo })\n\n    // User query for unknown user\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: userQuery,\n        variableValues: { id201: '3' },\n    })\n    expect(result.errors?.at(0)?.message).toEqual(\n        'User for userid=3 was not found',\n    )\n\n    // Users query\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: usersQuery,\n    })\n    expect(result.data).toEqual({ users: [userOne, userTwo] })\n\n    // ValidationErrorQuery\n    result = await graphql({\n        rootValue: userSchemaResolvers,\n        schema: userSchema,\n        source: validationErrorQuery,\n    })\n    const error = result.errors?.at(0)\n    expect(error?.message).toEqual(validationErrorMessage)\n    expect(error?.extensions).toEqual({\n        code: 'GRAPHQL_VALIDATION_FAILED',\n        serviceName: 'user',\n    })\n})\n"
     },
-    "tests/response/StandaloneGraphQLServerResponse.test.ts": {
+    "tests/request/RequestForQuery.test.ts": {
       "tests": [
         {
           "id": "1",
+          "name": "For the given query 'query users{ users { userId userName …' and headers undefined the expected Request object is created with body undefined"
+        },
+        {
+          "id": "2",
+          "name": "For the given query 'query users{ users { userId userName …' and headers { 'content-type': 'text/html' } the expected Request object is created with body undefined"
+        }
+      ],
+      "source": "/* eslint-disable max-len */\nimport type { IncomingHttpHeaders } from 'node:http'\nimport { usersQuery } from 'src/example/ExampleData'\nimport { JsonContentTypeHeader } from 'src/request/JsonContentTypeHeader'\nimport { requestForQuery } from 'src/request/RequestForQuery'\nimport { expect, test } from 'vitest'\n\nconst textContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'text/html',\n}\n\ntest.each`\n    query         | headers                  | expectedBody                   | expectedHeaders\n    ${usersQuery} | ${undefined}             | ${`{\"query\":\"${usersQuery}\"}`} | ${JsonContentTypeHeader}\n    ${usersQuery} | ${textContentTypeHeader} | ${`{\"query\":\"${usersQuery}\"}`} | ${textContentTypeHeader}\n`(\n    'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',\n    async ({ query, headers, expectedBody, expectedHeaders }) => {\n        const request = requestForQuery(query, headers)\n        expect(request.body).toStrictEqual(expectedBody)\n        expect(request.headers).toStrictEqual(expectedHeaders)\n        expect(request.method).toStrictEqual('POST')\n        expect(request.url).toStrictEqual('/graphql')\n        expect(request.text).toBeDefined()\n        expect(request.text).toBeInstanceOf(Function)\n        if (request.text) {\n            expect(request.text()).resolves.toStrictEqual(expectedBody)\n        } else {\n            throw new Error('request.text is undefined')\n        }\n    },\n)\n"
+    },
+    "tests/response/StandaloneGraphQLServerResponse.test.ts": {
+      "tests": [
+        {
+          "id": "3",
           "name": "StandaloneGraphQLServerResponse should work as expected"
         }
       ],
@@ -5015,98 +5028,61 @@
     "tests/logger/JsonTestLogger.test.ts": {
       "tests": [
         {
-          "id": "2",
+          "id": "4",
           "name": "Creating a Logger should work with default options"
         },
         {
-          "id": "3",
+          "id": "5",
           "name": "Logging entry should work even if no loglevel is provided"
         },
         {
-          "id": "4",
+          "id": "6",
           "name": "Debug entry should be written if debug is enabled"
         },
         {
-          "id": "5",
+          "id": "7",
           "name": "Debug entry should not be written if debug is disabled"
         },
         {
-          "id": "6",
+          "id": "8",
           "name": "Error entry should be written"
         },
         {
-          "id": "7",
+          "id": "9",
           "name": "Info entry should be written"
         },
         {
-          "id": "8",
+          "id": "10",
           "name": "Warn entry should be written"
         }
       ],
       "source": "/* eslint-disable max-len */\nimport { testDateFunction } from '@dreamit/funpara'\nimport { JsonTestLogger } from 'src/logger/JsonTestLogger'\nimport { expect, test } from 'vitest'\n\ntest('Creating a Logger should work with default options', () => {\n    const logger = new JsonTestLogger()\n    expect(logger.debugEnabled).toBe(false)\n    expect(logger.loggerName).toBe('test-logger')\n    expect(logger.serviceName).toBe('myTestService')\n})\n\ntest('Logging entry should work even if no loglevel is provided', () => {\n    const logger = new JsonTestLogger()\n    logger.createLogEntry({\n        context: {},\n        logMessage: 'test',\n    })\n    const logEntry = logger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe('INFO')\n})\n\ntest('Debug entry should be written if debug is enabled', () => {\n    const debugLogger = new JsonTestLogger(true)\n    debugLogger.debug('test', {}, testDateFunction)\n    const logEntry = debugLogger.logEntries.at(0)\n    expect(logEntry?.message).toBe('test')\n    expect(logEntry?.level).toBe('DEBUG')\n})\n\ntest('Debug entry should not be written if debug is disabled', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.debug('test', {})\n    expect(defaultLogger.logEntries.length).toBe(0)\n})\n\ntest('Error entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    const testError = new Error('error')\n    testError.stack = 'stacktrace'\n    defaultLogger.error('error', {}, testError, 'custom', testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('ERROR')\n    expect(createdLogEntry?.message).toBe('error')\n    expect(createdLogEntry?.errorName).toBe('custom')\n    expect(createdLogEntry?.stacktrace).toBe('stacktrace')\n})\n\ntest('Info entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.info('info', {}, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('INFO')\n    expect(createdLogEntry?.message).toBe('info')\n})\n\ntest('Warn entry should be written', () => {\n    const defaultLogger = new JsonTestLogger()\n    defaultLogger.warn('warn', {}, testDateFunction)\n    const createdLogEntry = defaultLogger.logEntries.at(0)\n    expect(createdLogEntry?.level).toBe('WARN')\n    expect(createdLogEntry?.message).toBe('warn')\n})\n"
     },
-    "tests/logger/TextTestLogger.test.ts": {
+    "tests/logger/NoConsole.test.ts": {
       "tests": [
-        {
-          "id": "9",
-          "name": "Creating a Logger should work with default options"
-        },
-        {
-          "id": "10",
-          "name": "Logging entry should work even if no loglevel is provided"
-        },
         {
           "id": "11",
-          "name": "Debug entry should be written if debug is enabled"
-        },
-        {
-          "id": "12",
-          "name": "Debug entry should not be written if debug is disabled"
-        },
-        {
-          "id": "13",
-          "name": "Error entry should be written"
-        },
-        {
-          "id": "14",
-          "name": "Info entry should be written"
-        },
-        {
-          "id": "15",
-          "name": "Warn entry should be written"
+          "name": "Using NoConsole log should not throw an error"
         }
       ],
-      "source": "/* eslint-disable max-len */\nimport { testDateFunction, testDateString } from '@dreamit/funpara'\nimport { TextTestLogger } from 'src/logger/TextTestLogger'\nimport { expect, test } from 'vitest'\n\ntest('Creating a Logger should work with default options', () => {\n    const logger = new TextTestLogger()\n    expect(logger.debugEnabled).toBe(false)\n    expect(logger.loggerName).toBe('test-logger')\n    expect(logger.serviceName).toBe('myTestService')\n})\n\ntest('Logging entry should work even if no loglevel is provided', () => {\n    const logger = new TextTestLogger()\n    logger.createLogEntry({\n        context: {},\n        logMessage: 'test',\n    })\n    // Then\n    expect(logger.logEntries.at(0)).toBe(\n        `${testDateString} [INFO]test-logger-myTestService :test`,\n    )\n})\n\ntest('Debug entry should be written if debug is enabled', () => {\n    const debugLogger = new TextTestLogger(true)\n    debugLogger.debug('test', {}, testDateFunction)\n    expect(debugLogger.logEntries.at(0)).toBe(\n        `${testDateString} [DEBUG]test-logger-myTestService :test`,\n    )\n})\n\ntest('Debug entry should not be written if debug is disabled', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.debug('test', {})\n    expect(defaultLogger.logEntries.length).toBe(0)\n})\n\ntest('Error entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    const testError = new Error('error')\n    testError.stack = 'stacktrace'\n    defaultLogger.error('error', {}, testError, 'custom', testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [ERROR]test-logger-myTestService :error stacktrace',\n    )\n})\n\ntest('Info entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.info('info', {}, testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [INFO]test-logger-myTestService :info',\n    )\n})\n\ntest('Warn entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.warn('warn', {}, testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [WARN]test-logger-myTestService :warn',\n    )\n})\n"
-    },
-    "tests/request/RequestForQuery.test.ts": {
-      "tests": [
-        {
-          "id": "16",
-          "name": "For the given query 'query users{ users { userId userName …' and headers undefined the expected Request object is created with body undefined"
-        },
-        {
-          "id": "17",
-          "name": "For the given query 'query users{ users { userId userName …' and headers { 'content-type': 'text/html' } the expected Request object is created with body undefined"
-        }
-      ],
-      "source": "/* eslint-disable max-len */\nimport type { IncomingHttpHeaders } from 'node:http'\nimport { usersQuery } from 'src/example/ExampleData'\nimport { JsonContentTypeHeader } from 'src/request/JsonContentTypeHeader'\nimport { requestForQuery } from 'src/request/RequestForQuery'\nimport { expect, test } from 'vitest'\n\nconst textContentTypeHeader: IncomingHttpHeaders = {\n    'content-type': 'text/html',\n}\n\ntest.each`\n    query         | headers                  | expectedBody                   | expectedHeaders\n    ${usersQuery} | ${undefined}             | ${`{\"query\":\"${usersQuery}\"}`} | ${JsonContentTypeHeader}\n    ${usersQuery} | ${textContentTypeHeader} | ${`{\"query\":\"${usersQuery}\"}`} | ${textContentTypeHeader}\n`(\n    'For the given query $query and headers $headers the expected Request object is created with body $expectedServerRequest',\n    async ({ query, headers, expectedBody, expectedHeaders }) => {\n        const request = requestForQuery(query, headers)\n        expect(request.body).toStrictEqual(expectedBody)\n        expect(request.headers).toStrictEqual(expectedHeaders)\n        expect(request.method).toStrictEqual('POST')\n        expect(request.url).toStrictEqual('/graphql')\n        expect(request.text).toBeDefined()\n        expect(request.text).toBeInstanceOf(Function)\n        if (request.text) {\n            expect(request.text()).resolves.toStrictEqual(expectedBody)\n        } else {\n            throw new Error('request.text is undefined')\n        }\n    },\n)\n"
+      "source": "/* eslint-disable max-len */\nimport { NoConsole } from 'src'\nimport { expect, test } from 'vitest'\n\ntest('Using NoConsole log should not throw an error', () => {\n    expect(() => NoConsole.log('123')).not.toThrowError()\n})\n"
     },
     "tests/request/GenerateGetParametersFromGraphQLRequestInfo.test.ts": {
       "tests": [
         {
-          "id": "18",
+          "id": "12",
           "name": "For the given query 'testQuery' , operation name 'testOpName' and variables 'testVars' the expected parameters are created 'query=testQuery&operationName=testOpN…'"
         },
         {
-          "id": "19",
+          "id": "13",
           "name": "For the given query undefined , operation name 'testOpName' and variables 'testVars' the expected parameters are created 'operationName=testOpName&variables=%2…'"
         },
         {
-          "id": "20",
+          "id": "14",
           "name": "For the given query 'testQuery' , operation name undefined and variables 'testVars' the expected parameters are created 'query=testQuery&variables=%22testVars…'"
         },
         {
-          "id": "21",
+          "id": "15",
           "name": "For the given query 'testQuery' , operation name 'testOpName' and variables undefined the expected parameters are created 'query=testQuery&operationName=testOpN…'"
         }
       ],
@@ -5115,20 +5091,44 @@
     "tests/logger/NoOpLogger.test.ts": {
       "tests": [
         {
-          "id": "22",
+          "id": "16",
           "name": "Should be able to use NoLogger without running into errors"
         }
       ],
       "source": "/* eslint-disable max-len */\nimport { NoOpLogger } from 'src/logger/NoOpLogger'\nimport { expect, test } from 'vitest'\n\ntest('Should be able to use NoLogger without running into errors', () => {\n    const logger = new NoOpLogger('no-logger', 'no-service')\n    expect(logger.debugEnabled).toBe(false)\n    const testMessage = 'Test message'\n\n    // Then\n    expect(() => logger.debug(testMessage, {})).not.toThrowError()\n    expect(() =>\n        logger.error(testMessage, {}, new Error(testMessage)),\n    ).not.toThrowError()\n    expect(() => logger.info(testMessage, {})).not.toThrowError()\n    expect(() => logger.warn(testMessage, {})).not.toThrowError()\n})\n"
     },
-    "tests/logger/NoConsole.test.ts": {
+    "tests/logger/TextTestLogger.test.ts": {
       "tests": [
         {
+          "id": "17",
+          "name": "Creating a Logger should work with default options"
+        },
+        {
+          "id": "18",
+          "name": "Logging entry should work even if no loglevel is provided"
+        },
+        {
+          "id": "19",
+          "name": "Debug entry should be written if debug is enabled"
+        },
+        {
+          "id": "20",
+          "name": "Debug entry should not be written if debug is disabled"
+        },
+        {
+          "id": "21",
+          "name": "Error entry should be written"
+        },
+        {
+          "id": "22",
+          "name": "Info entry should be written"
+        },
+        {
           "id": "23",
-          "name": "Using NoConsole log should not throw an error"
+          "name": "Warn entry should be written"
         }
       ],
-      "source": "/* eslint-disable max-len */\nimport { NoConsole } from 'src'\nimport { expect, test } from 'vitest'\n\ntest('Using NoConsole log should not throw an error', () => {\n    expect(() => NoConsole.log('123')).not.toThrowError()\n})\n"
+      "source": "/* eslint-disable max-len */\nimport { testDateFunction, testDateString } from '@dreamit/funpara'\nimport { TextTestLogger } from 'src/logger/TextTestLogger'\nimport { expect, test } from 'vitest'\n\ntest('Creating a Logger should work with default options', () => {\n    const logger = new TextTestLogger()\n    expect(logger.debugEnabled).toBe(false)\n    expect(logger.loggerName).toBe('test-logger')\n    expect(logger.serviceName).toBe('myTestService')\n})\n\ntest('Logging entry should work even if no loglevel is provided', () => {\n    const logger = new TextTestLogger()\n    logger.createLogEntry({\n        context: {},\n        logMessage: 'test',\n    })\n    // Then\n    expect(logger.logEntries.at(0)).toBe(\n        `${testDateString} [INFO]test-logger-myTestService :test`,\n    )\n})\n\ntest('Debug entry should be written if debug is enabled', () => {\n    const debugLogger = new TextTestLogger(true)\n    debugLogger.debug('test', {}, testDateFunction)\n    expect(debugLogger.logEntries.at(0)).toBe(\n        `${testDateString} [DEBUG]test-logger-myTestService :test`,\n    )\n})\n\ntest('Debug entry should not be written if debug is disabled', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.debug('test', {})\n    expect(defaultLogger.logEntries.length).toBe(0)\n})\n\ntest('Error entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    const testError = new Error('error')\n    testError.stack = 'stacktrace'\n    defaultLogger.error('error', {}, testError, 'custom', testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [ERROR]test-logger-myTestService :error stacktrace',\n    )\n})\n\ntest('Info entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.info('info', {}, testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [INFO]test-logger-myTestService :info',\n    )\n})\n\ntest('Warn entry should be written', () => {\n    const defaultLogger = new TextTestLogger()\n    defaultLogger.warn('warn', {}, testDateFunction)\n    expect(defaultLogger.logEntries.at(0)).toBe(\n        '1001-01-01T00:00:00.000Z [WARN]test-logger-myTestService :warn',\n    )\n})\n"
     }
   },
   "projectRoot": "C:\\ws_nodejs\\graphql-testing",
